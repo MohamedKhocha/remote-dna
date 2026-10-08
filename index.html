@@ -261,6 +261,7 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
       <button data-lang="ar" class="on">ع</button>
       <button data-lang="fr">FR</button>
       <button data-lang="en">EN</button>
+      <button data-lang="zh">中</button>
     </div>
   </div>
 </header>
@@ -487,7 +488,7 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
 </footer>
 
 <script>
-/* ---------------- i18n: AR (in markup) / FR / EN ---------------- */
+/* ---------------- i18n: AR (in markup) / FR / EN / ZH ---------------- */
 const I18N = {
   fr: {
     "nav.features":"Fonctions","nav.how":"Comment","nav.pricing":"Tarifs","nav.faq":"FAQ","nav.guide":"Guide","nav.support":"Support",
@@ -568,6 +569,99 @@ const I18N = {
     "sup.eyebrow":"Support","sup.title":"We’re here to help","sup.lead":"Questions, technical issues, or a device that won’t respond? Write to us.",
     "sup.mail":"Email","sup.privacy":"Privacy policy","sup.readPolicy":"Read the full policy","sup.publisher":"Publisher","sup.country":"Algeria",
     "foot.rights":"All rights reserved"
+  },
+  zh: {
+    "nav.features":"功能",
+    "nav.how":"使用方法",
+    "nav.pricing":"价格",
+    "nav.faq":"常见问题",
+    "nav.guide":"使用指南",
+    "nav.support":"支持",
+    "hero.eyebrow":"智能万能遥控器",
+    "hero.h1a":"你的手机就是",
+    "hero.h1b":"遥控器",
+    "hero.lead":"用手机控制电视和空调，支持红外线和 Wi‑Fi。无需联网即可使用，内置 465 个品牌，还能学会任何列表都不认识的电视按键。",
+    "hero.cta1":"在 Google Play 获取",
+    "hero.cta2":"查看功能",
+    "hero.note":"免费使用 · Android · 无需强制注册",
+    "stat.brands":"个内置品牌",
+    "stat.langs":"种应用语言",
+    "stat.net":"需要联网",
+    "stat.hunter":"套内置码库",
+    "feat.eyebrow":"功能",
+    "feat.title":"一个真正的遥控器该有的一切",
+    "feat.lead":"从零打造：协议编码器全部手写，而不只是打包的代码表。",
+    "f1.t":"红外线控制电视",
+    "f1.d":"Samsung32、NEC、RC5、RC6、Sony SIRC、RCA 和 Panasonic，覆盖大多数电视，即开即用，无需联网。",
+    "f2.t":"旋钮式空调遥控",
+    "f2.d":"转动旋钮调节温度，点按中心切换模式。Kelon、Gree、Coolix 和 Midea 支持完整状态，另有 15 个品牌的遥控器。",
+    "f3.t":"教会我的电视",
+    "f3.d":"品牌不在列表里？把手机对准电视，回答一个问题，应用就能找到它并逐个学会按键。某个按键失灵？“修复按键”可以重新学习。",
+    "f4.t":"智能 DNA 助手",
+    "f4.d":"基于信息论的筛选，用最少的问题识别你的设备，而不是随机猜测。",
+    "f5.t":"Wi‑Fi 控制",
+    "f5.d":"手机没有红外发射器？通过本地网络直接控制 Android TV、Google TV、LG、Samsung 和 Roku。",
+    "f6.t":"基因网络",
+    "f6.d":"匿名分享你的代码，码库为所有人变得更好，每位用户都让应用更聪明。",
+    "how.eyebrow":"快速开始",
+    "how.title":"三步即可使用",
+    "s1.t":"添加设备",
+    "s1.d":"选择类型（电视或空调），再从按字母排序的列表中选择品牌。",
+    "s2.t":"测试电源键",
+    "s2.d":"把手机对准设备并按电源键。设备有反应？保存这套代码。",
+    "s3.t":"完全控制",
+    "s3.d":"一个完整的遥控器握在手中，任何失灵的按键几分钟内就能重新学会。",
+    "price.eyebrow":"价格",
+    "price.title":"人人免费 · Pro 功能更多",
+    "price.lead":"一次升级，终身使用，没有月费，也没有续费。",
+    "plan.free":"免费版",
+    "plan.pro":"Pro 版",
+    "plan.dzd":"DZD",
+    "plan.forever":"永久免费",
+    "plan.once":"一次付款 · 终身使用",
+    "plan.cta":"在 Google Play 获取",
+    "pf1":"最多保存 3 台设备",
+    "pf2":"全部电视和空调协议",
+    "pf3":"465 个品牌的码库",
+    "pf4":"DNA 助手和 Wi‑Fi 控制",
+    "pf5":"“修复按键”每使用 3 次显示一条短广告",
+    "pp1":"设备数量不限",
+    "pp2":"“修复按键”完全没有广告",
+    "pp3":"支持一位阿尔及利亚独立开发者 🇩🇿",
+    "pp4":"包含今后的所有功能",
+    "pp5":"换新手机后可恢复购买",
+    "price.note":"Pro 在应用内通过 Google Play 一次性购买。此处显示的是阿尔及利亚的价格，Google Play 会显示你所在国家的价格。",
+    "shots.eyebrow":"应用界面",
+    "shots.title":"为单手操作而设计",
+    "shots.lead":"日间与夜间主题，四种语言，专为在电视前的暗处使用而设计。",
+    "shot.1":"遥控器界面",
+    "shot.2":"空调旋钮",
+    "shot.3":"教会我的电视",
+    "shot.4":"我的设备",
+    "shot.soon":"截图即将上线",
+    "faq.eyebrow":"常见问题",
+    "faq.title":"大家都在问",
+    "q1":"我的手机需要红外发射器吗？",
+    "a1":"使用红外线功能需要，许多小米等品牌的手机都有。如果没有，仍可通过 Wi‑Fi 控制智能电视，无需额外硬件。",
+    "q2":"应用可以离线使用吗？",
+    "a2":"可以。所有代码和协议都内置在应用中。只有购买或恢复 Pro、或更新社区码库时才需要联网。",
+    "q3":"我的设备不在列表里怎么办？",
+    "a3":"使用“教会我的电视”：把手机对准电视并回答问题，应用就能找到它并学会按键。你教给它的内容可以分享出来帮助他人。",
+    "q4":"免费版和 Pro 版有什么区别？",
+    "a4":"免费版功能完整，最多保存 3 台设备，“修复按键”每使用 3 次显示一条短广告。Pro 取消数量限制和广告，一次付款，终身使用。",
+    "q5":"你们会收集我的数据吗？",
+    "a5":"不收集姓名、联系人或位置。你保存的设备只留在手机上。分享代码完全自愿，并且完全匿名。",
+    "q6":"我买了 Pro 后换了手机，会失去它吗？",
+    "a6":"不会。购买记录与你的 Google 账号绑定：在新手机上打开 Pro 页面，点按“恢复购买”即可。",
+    "sup.eyebrow":"支持",
+    "sup.title":"我们随时为你提供帮助",
+    "sup.lead":"有疑问、遇到技术问题，或设备没有反应？请写信给我们。",
+    "sup.mail":"电子邮件",
+    "sup.privacy":"隐私政策",
+    "sup.readPolicy":"阅读完整政策",
+    "sup.publisher":"发布者",
+    "sup.country":"阿尔及利亚",
+    "foot.rights":"版权所有"
   }
 };
 
@@ -597,7 +691,7 @@ document.querySelectorAll('.lang button').forEach(b =>
   let saved = null;
   try { saved = localStorage.getItem('rdna-lang'); } catch(e){}
   const nav = (navigator.language || 'ar').slice(0,2);
-  setLang(saved || (['ar','fr','en'].includes(nav) ? nav : 'ar'));
+  setLang(saved || (['ar','fr','en','zh'].includes(nav) ? nav : 'ar'));
 })();
 
 /* Reveal-on-scroll */
