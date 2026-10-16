@@ -36,7 +36,7 @@
 <div class="wrap">
 <header>
   <a class="brand" href="./"><img src="assets/logo-mark.svg" alt="">REMOTE DNA</a>
-  <div class="switch"><button data-lang="ar" class="on">ع</button><button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="zh">中</button></div>
+  <div class="switch"><button data-lang="ar" class="on">ع</button><button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="zh">中</button><button data-lang="es">ES</button></div>
 </header>
 
 <section class="lang" data-lang="ar" lang="ar" dir="rtl">
@@ -238,6 +238,56 @@
   </details>
   <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.beinteck.remotedna" target="_blank" rel="noopener">在 Google Play 获取</a> <a class="ghost" href="./">网站</a></p>
 </section>
+
+<section class="lang" data-lang="es" lang="es" dir="ltr" hidden>
+  <h1>Guía de uso</h1>
+  <p class="intro">Toca un capítulo para abrirlo. Dentro de la app, el ícono (i) explica la función que tienes enfrente cuando lo tocas.</p>
+  <details open>
+    <summary><span class="ico">🚀</span>Primeros pasos</summary>
+    <p>El control por infrarrojo necesita un teléfono con emisor infrarrojo (común en Xiaomi, Redmi, POCO, Huawei y Honor). Apunta la parte superior del teléfono a la TV, como harías con el control original. Los teléfonos sin emisor igual pueden controlar Smart TV por Wi‑Fi.</p>
+  </details>
+  <details>
+    <summary><span class="ico">📺</span>Agregar una TV</summary>
+    <p>En “Mis dispositivos”, toca “Agregar dispositivo”, luego “TV”, elige tu marca y prueba el botón de encendido. Si tu marca no está o nada funciona, usa “Enseñar mi TV”. “Manual / IR rápido” prueba los 40 controles más comunes uno tras otro.</p>
+  </details>
+  <details>
+    <summary><span class="ico">🎓</span>Enseñar mi TV</summary>
+    <p>Para una TV cuya marca no conoces. Enciéndela con su propio botón y apunta el teléfono hacia ella. La app envía señales y pregunta “¿pasó algo en la TV?”: responde “Sí” cuando aparezca una barra de volumen o un menú. Cuando encuentra tu TV, envía una señal a la vez y tú eliges qué hizo la TV (volumen, encendido, OK…). Cada botón se envía dos veces para confirmarlo antes de guardarlo.</p>
+  </details>
+  <details>
+    <summary><span class="ico">🔧</span>Arreglar un botón</summary>
+    <p>¿Falta un botón o no funciona? En la pantalla del control toca “Arreglar un botón”, elige los botones afectados y di qué hace la TV. Los botones que funcionan no se tocan. El “Modo experto” manual sigue al final de la pantalla para técnicos.</p>
+  </details>
+  <details>
+    <summary><span class="ico">❄️</span>Aire acondicionado</summary>
+    <p>En “Agregar dispositivo”, elige “Aire acondicionado” y luego su marca, o prueba los protocolos uno por uno hasta que el equipo reaccione. En su control, gira el dial para fijar la temperatura y toca el centro para cambiar de modo.</p>
+  </details>
+  <details>
+    <summary><span class="ico">📶</span>Smart TV por Wi‑Fi</summary>
+    <p>El teléfono y la TV deben estar en la misma red. En “Búsqueda Wi‑Fi”, busca en la red o escribe la dirección IP de la TV y toca “Revisar dirección”: la app reconoce su sistema por sí sola. Las TV LG y Samsung te piden aceptar una vez en pantalla. Algunas TV solo permiten abrir YouTube y Netflix por Wi‑Fi, y la app te lo indica.</p>
+  </details>
+  <details>
+    <summary><span class="ico">🤖</span>Android TV y Google TV</summary>
+    <p>En “Agregar dispositivo”, elige “Android TV”: las TV aparecen solas; elige la tuya y escribe, una sola vez, el código de 6 caracteres que muestra su pantalla. En el control: desliza en el panel táctil para moverte y toca para seleccionar; verás el estado de la TV y su nivel de volumen real, y podrás abrir YouTube, Netflix y más directamente.</p>
+  </details>
+  <details>
+    <summary><span class="ico">🗂️</span>Mis dispositivos</summary>
+    <p>Guarda varios dispositivos y toca “Activar” para cambiar entre ellos. El botón ⋮ de cada tarjeta te permite “Renombrar” y “Compartir” como código QR; otro teléfono lo importa con “Importar con QR”.</p>
+  </details>
+  <details>
+    <summary><span class="ico">📱</span>Widget y acceso en Ajustes rápidos</summary>
+    <p>Agrega el widget de REMOTE DNA a tu pantalla de inicio, o su acceso a los Ajustes rápidos, para encender y subir o bajar el volumen del dispositivo activo sin abrir la app.</p>
+  </details>
+  <details>
+    <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
+    <p>Un solo pago, sin suscripción: dispositivos guardados ilimitados (gratis: 3), sin anuncios en toda la app y todas las funciones futuras. Inicia sesión para recuperar la licencia en un teléfono nuevo.</p>
+  </details>
+  <details>
+    <summary><span class="ico">🔒</span>Privacidad</summary>
+    <p>Tus dispositivos y códigos se quedan en tu teléfono. La app no pide micrófono, ubicación ni contactos. La cuenta es opcional, y compartir códigos es anónimo y está desactivado salvo que lo actives. La política completa está en “Yo”.</p>
+  </details>
+  <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.beinteck.remotedna" target="_blank" rel="noopener">Descárgalo en Google Play</a> <a class="ghost" href="./">Sitio web</a></p>
+</section>
 <footer>© 2026 Solar AI Systems</footer>
 </div>
 <script>
@@ -253,7 +303,7 @@ document.querySelectorAll('.switch button').forEach(function(b){ b.addEventListe
   var saved = null;
   try { saved = localStorage.getItem('rdna-lang'); } catch(e){}
   var nav = (navigator.language || 'ar').slice(0,2).toLowerCase();
-  var l = saved || (['ar','fr','en','zh'].indexOf(nav) >= 0 ? nav : 'en');
+  var l = saved || (['ar','fr','en','zh','es'].indexOf(nav) >= 0 ? nav : 'en');
   setLang(l);
 })();
 </script>
