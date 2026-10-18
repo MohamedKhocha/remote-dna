@@ -887,12 +887,15 @@ function setLang(lang){
 document.querySelectorAll('.lang button').forEach(b =>
   b.addEventListener('click', () => setLang(b.dataset.lang)));
 
-/* Restore the saved choice, else follow the browser language. */
+/* The language named in the link (the app opens ?lang=ar), else the saved choice, else the browser's. */
 (function initLang(){
   let saved = null;
   try { saved = localStorage.getItem('rdna-lang'); } catch(e){}
   const nav = (navigator.language || 'ar').slice(0,2);
-  setLang(saved || (['ar','fr','en','zh','es','pt'].includes(nav) ? nav : 'ar'));
+  const langs = ['ar','fr','en','zh','es','pt'];
+  let asked = null;
+  try { asked = new URLSearchParams(location.search).get('lang'); } catch(e){}
+  setLang(langs.includes(asked) ? asked : saved || (langs.includes(nav) ? nav : 'ar'));
 })();
 
 /* Reveal-on-scroll */
