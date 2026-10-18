@@ -4,28 +4,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>REMOTE DNA — دليل الاستخدام · User guide</title>
-<meta name="description" content="REMOTE DNA user guide: add a TV, Teach my TV, Fix a button, air conditioners, Wi-Fi and Android TV, Pro, privacy.">
+<meta name="description" content="REMOTE DNA user guide, step by step: find by model, add a TV, Teach my TV and deep search, Fix a button, air conditioners, Wi-Fi and Android TV, troubleshooting, Pro, privacy.">
 <meta name="theme-color" content="#0B101D">
 <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
 <style>
-  :root{--bg:#0B101D;--card:#131A2B;--line:#243049;--text:#E8EDF7;--dim:#93A1BC;--blue:#3B82F6}
+  :root{--bg:#0B101D;--card:#131A2B;--line:#243049;--text:#E8EDF7;--dim:#93A1BC;--blue:#3B82F6;--green:#22C55E}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic",sans-serif}
   .wrap{max-width:760px;margin:0 auto;padding:20px 16px 56px}
-  header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+  header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
   .brand{display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:.5px}
   .brand img{width:26px;height:26px}
-  .switch{display:flex;gap:4px;border:1px solid var(--line);border-radius:10px;padding:3px}
+  .switch{display:flex;gap:4px;border:1px solid var(--line);border-radius:10px;padding:3px;flex-wrap:wrap}
   .switch button{background:none;border:0;color:var(--dim);font:inherit;font-weight:700;font-size:13px;padding:5px 10px;border-radius:7px;cursor:pointer}
   .switch button.on{background:var(--blue);color:#fff}
   h1{font-size:28px;margin:18px 0 6px}
   .intro{color:var(--dim);margin:0 0 18px}
+  .paths{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 18px}
+  .paths h2{font-size:17px;margin:0 0 8px}
+  .paths ul{list-style:none;margin:0;padding:0}
+  .paths li{padding:7px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .paths li:first-child{border-top:0}
+  .paths li span{color:var(--dim)}
+  .paths a{color:var(--text);font-weight:700;text-decoration:none;white-space:nowrap}
+  .paths a:hover{color:var(--blue)}
   details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:0 16px}
   details[open]{border-color:var(--blue)}
   summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;align-items:center;gap:10px}
   summary::-webkit-details-marker{display:none}
   .ico{font-size:20px}
-  details p{margin:0 0 16px;color:var(--text)}
+  .new{background:var(--green);color:#06210F;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px}
+  details p{margin:0 0 12px}
+  details h3{font-size:15px;margin:16px 0 6px}
+  details ol,details ul{margin:0 0 14px;padding-inline-start:22px}
+  details li{margin:4px 0}
+  .tip{color:var(--dim);border-inline-start:3px solid var(--blue);padding-inline-start:10px}
   .cta{margin-top:24px;display:flex;gap:10px;flex-wrap:wrap}
   .btn{background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:999px}
   .ghost{color:var(--text);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:999px;border:1px solid var(--line)}
@@ -41,150 +54,456 @@
 
 <section class="lang" data-lang="ar" lang="ar" dir="rtl">
   <h1>دليل الاستخدام</h1>
-  <p class="intro">اضغط على أي فصل لفتحه. وفي شاشات التطبيق، أيقونة (i) تشرح الميزة التي أمامك عند الضغط عليها.</p>
-  <details open>
+  <p class="intro">اضغط على أي فصل لفتحه. وفي شاشات التطبيق، أيقونة (i) تشرح الميزة التي أمامك.</p>
+  <div class="paths">
+    <h2>أي طريق أختار؟</h2>
+    <ul>
+      <li><span>تعرف رقم موديل التلفاز</span><a href="#ar-model">🔎 ابحث بالموديل</a></li>
+      <li><span>تعرف العلامة فقط</span><a href="#ar-tv">📺 أضف تلفازاً</a></li>
+      <li><span>لا تعرف شيئاً، أو لم يعمل شيء</span><a href="#ar-teach">🎓 علّم تلفازك</a></li>
+      <li><span>تلفاز Android TV أو Google TV</span><a href="#ar-atv">🤖 Android TV</a></li>
+      <li><span>تلفاز ذكي آخر، أو هاتف بلا أشعة</span><a href="#ar-wifi">📶 الواي‑فاي</a></li>
+      <li><span>مكيّف هواء</span><a href="#ar-ac">❄️ المكيّف</a></li>
+    </ul>
+  </div>
+  <details id="ar-start" open>
     <summary><span class="ico">🚀</span>أول خطوة</summary>
-    <p>التحكم بالأشعة يحتاج هاتفاً فيه باعث أشعة تحت الحمراء (شائع في Xiaomi وRedmi وPOCO وHuawei وHonor). وجّه أعلى الهاتف نحو التلفاز كما تفعل بالريموت الأصلي. الهواتف التي لا تملكه تتحكم في التلفزيونات الذكية عبر الواي‑فاي.</p>
+    <ol>
+      <li>التحكم بالأشعة يحتاج هاتفاً فيه باعث أشعة تحت الحمراء (IR)، وهو شائع في Xiaomi وRedmi وPOCO وHuawei وHonor. إن لم يكن في هاتفك، يخبرك التطبيق بذلك.</li>
+      <li>وجّه أعلى الهاتف نحو التلفاز، كما تفعل بالريموت الأصلي.</li>
+      <li>افتح «أجهزتي» واضغط «＋ إضافة جهاز»، ثم اختر طريقك من الجدول أعلاه.</li>
+    </ol>
+    <p class="tip">هاتف بلا أشعة؟ يتحكم في التلفزيونات الذكية عبر الواي‑فاي.</p>
   </details>
-  <details>
-    <summary><span class="ico">📺</span>أضف تلفازاً</summary>
-    <p>من «أجهزتي» اضغط «إضافة جهاز» ثم «تلفاز» واختر علامتك من القائمة، ثم جرّب زر التشغيل. إن لم تجد علامتك أو لم يعمل أي ريموت، استعمل «علّم تلفازك». و«يدوي / أشعة سريع» يجرّب أشهر 40 ريموتاً واحداً بعد الآخر.</p>
+  <details id="ar-model">
+    <summary><span class="ico">🔎</span>ابحث بالموديل <span class="new">جديد</span></summary>
+    <p>أسرع طريق: صورة واحدة للملصق تقودك إلى ريموت تلفازك.</p>
+    <ol>
+      <li>رقم الموديل مكتوب على الملصق خلف التلفاز، أو تحت غطاء بطاريات الريموت، مثلاً <b>43G7200</b>.</li>
+      <li>من «＋ إضافة جهاز» اختر «ابحث بالموديل».</li>
+      <li>اختر طريقة واحدة:
+        <ul>
+          <li>«صوّر الملصق»: املأ الإطار بالملصق في ضوء جيد، ثم «التقط الصورة».</li>
+          <li>«اختر صورة من الهاتف»: إن كنت صوّرت الملصق من قبل.</li>
+          <li>اكتب الرقم في الخانة واضغط «بحث».</li>
+        </ul>
+      </li>
+      <li>تظهر الريموتات المطابقة. وجّه الهاتف نحو التلفاز واضغط «تجربة». إن استجاب التلفاز، اضغط «اعتماد».</li>
+      <li>سمِّ الجهاز واضغط «حفظ».</li>
+    </ol>
+    <h3>معلومات مفيدة</h3>
+    <ul>
+      <li>يكفي جزء من الرقم: «G7200» يجد «43G7200».</li>
+      <li>«مجرَّب على تلفاز حقيقي» تعني أن هذا الموديل اختُبر في الميدان.</li>
+      <li>إن كان تلفازك Android TV، يظهر زر «إضافة Android TV» لتتحكم فيه عبر الواي‑فاي.</li>
+      <li>إن لم نعرف الموديل بعد، اضغط «علّم تلفازك». يحمل معه العلامة والموديل المقروءين، وإن شاركت الشيفرات في النهاية، وجده من يأتي بعدك بصورة واحدة.</li>
+      <li>الملصق يُقرأ على الهاتف، بلا إنترنت. الصورة الملتقطة تُحذف بعد قراءتها، ولا تُرسل أي صورة أبداً.</li>
+    </ul>
   </details>
-  <details>
+  <details id="ar-tv">
+    <summary><span class="ico">📺</span>أضف تلفازاً بالعلامة</summary>
+    <ol>
+      <li>من «＋ إضافة جهاز» اختر «تلفاز».</li>
+      <li>اختر علامتك من القائمة الأبجدية.</li>
+      <li>وجّه الهاتف واضغط «تجربة» على المجموعة الأولى. إن استجاب التلفاز اضغط «اعتماد»، وإلا جرّب المجموعة التالية.</li>
+      <li>سمِّ الجهاز واضغط «حفظ».</li>
+    </ol>
+    <p class="tip">لم تجد علامتك أو لم تعمل أي مجموعة؟ استعمل «علّم تلفازك». و«يدوي / أشعة سريع» يجرّب أشهر 40 ريموتاً واحداً بعد الآخر.</p>
+  </details>
+  <details id="ar-teach">
     <summary><span class="ico">🎓</span>علّم تلفازك</summary>
-    <p>لتلفاز لا تعرف علامته. شغّل التلفاز من زرّه ووجّه الهاتف نحوه. يرسل التطبيق إشارات ويسألك «هل حدث شيء على التلفاز؟»: أجب «نعم» عند ظهور شريط الصوت أو قائمة. بعد أن يجد تلفازك، يرسل إشارة واحدة في كل مرة وتختار ما فعله التلفاز (صوت، تشغيل، موافق…). كل زر يُرسل مرتين للتأكد قبل حفظه.</p>
+    <p>لتلفاز لا تعرف علامته، أو لم تنجح معه طريقة أخرى. أنت لا تحتاج أن تعرف شيئاً: تخبر التطبيق فقط بما تراه على الشاشة.</p>
+    <ol>
+      <li>شغّل التلفاز من زرّه، ووجّه الهاتف نحوه، واضغط «ابدأ».</li>
+      <li><b>البحث:</b> يرسل التطبيق إشارات ويسأل: «هل ظهر شريط الصوت أو قائمة، أو تغيّر شيء على التلفاز؟». أجب «نعم» أو «لا» أو «لست متأكداً». وإن انطفأ التلفاز، اضغط «انطفأ التلفاز»: هذا أيضاً جواب يفيد البحث.</li>
+      <li>حين يجده يقول: «وجدنا تلفازك!».</li>
+      <li><b>التعلّم:</b> يرسل إشارة واحدة في كل مرة ويسأل «ماذا فعل التلفاز؟». اختر ما رأيت (صوت، تشغيل، موافق…) أو «لا شيء». كل زر يُرسل مرتين للتأكد قبل حفظه. وإن فُتحت قائمة على التلفاز، اضغط «أخرجني من القائمة».</li>
+      <li>اضغط «أنهِ الآن» متى شئت، ثم «احفظ الريموت». ما نقص من أزرار تكمله لاحقاً من «أصلح زراً».</li>
+      <li>اختياري: «شارك هذه الشيفرات (مجهول)» يساعد كل من عنده التلفاز نفسه.</li>
+    </ol>
+    <h3>البحث الأعمق</h3>
+    <p>إن لم يتفاعل التلفاز مع أي إشارة، يظهر زر «بحث أعمق (أطول)». يجرّب عناوين لا يستعملها أي ريموت في فهرسنا، بأزرار الأرقام. اترك التلفاز على قناة، وأجب «نعم» حين يتغيّر رقم القناة. يحتاج أسئلة أكثر من البحث العادي.</p>
   </details>
-  <details>
+  <details id="ar-fix">
     <summary><span class="ico">🔧</span>أصلح زراً</summary>
-    <p>زر لا يعمل أو ناقص في ريموتك؟ في شاشة الريموت اضغط «أصلح زراً»، واختر الأزرار المعنية، ثم أجب عمّا يفعله التلفاز. الأزرار التي تعمل لا تُمسّ. «وضع الخبراء» اليدوي متاح أسفل الشاشة للفنيين.</p>
+    <ol>
+      <li>في شاشة الريموت اضغط «أصلح زراً».</li>
+      <li>اختر الزر الذي لا يعمل أو الناقص، ثم «ابدأ».</li>
+      <li>أجب عمّا يفعله التلفاز، كما في «علّم تلفازك».</li>
+    </ol>
+    <p class="tip">الأزرار التي تعمل لا تُمسّ. و«وضع الخبراء» اليدوي متاح أسفل الشاشة للفنيين.</p>
   </details>
-  <details>
+  <details id="ar-ac">
     <summary><span class="ico">❄️</span>المكيّف</summary>
-    <p>من «إضافة جهاز» اختر «مكيّف هواء» ثم علامته، أو جرّب البروتوكولات واحداً واحداً حتى يستجيب المكيّف. في ريموت المكيّف أدِر القرص لضبط الحرارة، واضغط وسطه لتغيير الوضع.</p>
+    <ol>
+      <li>من «＋ إضافة جهاز» اختر «مكيّف هواء».</li>
+      <li>اختر علامته، أو جرّب البروتوكولات واحداً واحداً حتى يستجيب المكيّف.</li>
+      <li>في ريموت المكيّف: أدِر القرص لضبط الحرارة، واضغط وسطه لتغيير الوضع.</li>
+    </ol>
   </details>
-  <details>
+  <details id="ar-wifi">
     <summary><span class="ico">📶</span>التلفزيونات الذكية عبر الواي‑فاي</summary>
-    <p>يجب أن يكون الهاتف والتلفاز على الشبكة نفسها. في «مسح واي‑فاي» ابحث في الشبكة، أو اكتب عنوان IP للتلفاز واضغط «فحص العنوان» فيتعرّف التطبيق على نظامه بنفسه. تلفزيونات LG وSamsung تطلب الموافقة على شاشتها مرة واحدة. بعض التلفزيونات لا تقبل عبر الواي‑فاي إلا فتح YouTube وNetflix، والتطبيق يخبرك بذلك.</p>
+    <ol>
+      <li>صِل الهاتف والتلفاز بالشبكة نفسها.</li>
+      <li>من «＋ إضافة جهاز» اختر «مسح واي‑فاي (التلفزيونات الذكية)».</li>
+      <li>ابحث في الشبكة، أو اكتب عنوان IP للتلفاز واضغط «فحص العنوان»، فيتعرّف التطبيق على نظامه بنفسه.</li>
+      <li>تلفزيونات LG وSamsung تطلب موافقتك على شاشتها، مرة واحدة فقط.</li>
+    </ol>
+    <p class="tip">بعض التلفزيونات لا تقبل عبر الواي‑فاي إلا فتح YouTube وNetflix، والتطبيق يخبرك بذلك.</p>
   </details>
-  <details>
+  <details id="ar-atv">
     <summary><span class="ico">🤖</span>Android TV و Google TV</summary>
-    <p>من «إضافة جهاز» اختر «Android TV»: تظهر التلفزيونات وحدها، فتختار تلفازك وتكتب الرمز المكوّن من 6 خانات الظاهر على شاشته، مرة واحدة فقط. في الريموت: اسحب على لوحة اللمس للتنقّل واضغط للاختيار، وتظهر حالة التلفاز ومستوى الصوت الحقيقي، ويمكنك فتح YouTube وNetflix وغيرهما مباشرة.</p>
+    <ol>
+      <li>من «＋ إضافة جهاز» اختر «Android TV». تظهر التلفزيونات وحدها.</li>
+      <li>اختر تلفازك، واكتب الرمز المكوّن من 6 خانات الظاهر على شاشته، مرة واحدة فقط.</li>
+      <li>في الريموت: اسحب على لوحة اللمس للتنقّل، واضغط للاختيار.</li>
+    </ol>
+    <p class="tip">تظهر حالة التلفاز ومستوى الصوت الحقيقي، وتفتح YouTube وNetflix وغيرهما مباشرة.</p>
   </details>
-  <details>
+  <details id="ar-devices">
     <summary><span class="ico">🗂️</span>أجهزتي</summary>
-    <p>احفظ عدة أجهزة واضغط «تفعيل» للتبديل بينها. زر ⋮ في كل بطاقة يتيح «إعادة تسمية» و«مشاركة» عبر رمز QR، ويمكن لهاتف آخر استيراده من «استيراد عبر QR».</p>
+    <ul>
+      <li>احفظ عدة أجهزة، واضغط «تفعيل» للتبديل بينها.</li>
+      <li>زر ⋮ في كل بطاقة: «إعادة تسمية»، و«مشاركة» عبر رمز QR.</li>
+      <li>هاتف آخر يستورد الجهاز من «استيراد عبر QR».</li>
+    </ul>
   </details>
-  <details>
+  <details id="ar-widget">
     <summary><span class="ico">📱</span>الودجت وزر الإعدادات السريعة</summary>
-    <p>أضف ودجت REMOTE DNA إلى الشاشة الرئيسية، أو زرّه إلى الإعدادات السريعة في شريط الإشعارات، للتحكم في التشغيل والصوت للجهاز المفعَّل دون فتح التطبيق.</p>
+    <p>أضف ودجت REMOTE DNA إلى الشاشة الرئيسية، أو زرّه إلى الإعدادات السريعة في شريط الإشعارات. تتحكم بهما في التشغيل والصوت للجهاز المفعَّل، دون فتح التطبيق.</p>
   </details>
-  <details>
+  <details id="ar-help">
+    <summary><span class="ico">🆘</span>التلفاز لا يستجيب؟</summary>
+    <ol>
+      <li>تأكّد أن هاتفك فيه باعث أشعة: إن لم يكن، يظهر «لم يُكتشف باعث أشعة في هذا الهاتف».</li>
+      <li>وجّه <b>أعلى</b> الهاتف نحو التلفاز، واقترب، وأزل أي حاجز بينهما.</li>
+      <li>جرّب المجموعة التالية في القائمة: علامة واحدة قد تستعمل عدة ريموتات.</li>
+      <li>إن لم تنجح أي مجموعة، استعمل «علّم تلفازك»، ثم «بحث أعمق (أطول)» إن لزم.</li>
+      <li>يعمل أغلب الأزرار وزر واحد لا؟ استعمل «أصلح زراً».</li>
+    </ol>
+  </details>
+  <details id="ar-pro">
     <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
-    <p>شراء لمرة واحدة، دون اشتراك: أجهزة محفوظة بلا حدود (المجاني 3)، ولا إعلانات في أي مكان من التطبيق، وكل الميزات القادمة. سجّل الدخول لاسترجاع الترخيص على هاتف جديد.</p>
+    <ul>
+      <li>شراء لمرة واحدة، دون اشتراك.</li>
+      <li>أجهزة محفوظة بلا حدود (المجاني: 3).</li>
+      <li>لا إعلانات في أي مكان من التطبيق، وكل الميزات القادمة.</li>
+      <li>سجّل الدخول لاسترجاع الترخيص على هاتف جديد.</li>
+    </ul>
   </details>
-  <details>
+  <details id="ar-privacy">
     <summary><span class="ico">🔒</span>الخصوصية</summary>
-    <p>أجهزتك وشيفراتك تبقى على هاتفك. التطبيق لا يطلب الميكروفون ولا الموقع ولا جهات الاتصال. الحساب اختياري، ومشاركة الشيفرات مجهولة ومعطّلة ما لم تفعّلها. نص السياسة كاملاً في «حسابي».</p>
+    <ul>
+      <li>أجهزتك وشيفراتك تبقى على هاتفك.</li>
+      <li>التطبيق لا يطلب الميكروفون ولا الموقع ولا جهات الاتصال.</li>
+      <li>الكاميرا لمسح رموز QR وقراءة الملصق فقط، والقراءة تتم على الهاتف.</li>
+      <li>الحساب اختياري، ومشاركة الشيفرات مجهولة ومعطّلة ما لم تفعّلها.</li>
+      <li>نص السياسة كاملاً في «حسابي».</li>
+    </ul>
   </details>
   <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.beinteck.remotedna" target="_blank" rel="noopener">حمّل من Google Play</a> <a class="ghost" href="./">الموقع</a></p>
 </section>
 
 <section class="lang" data-lang="fr" lang="fr" dir="ltr" hidden>
   <h1>Guide d’utilisation</h1>
-  <p class="intro">Touchez un chapitre pour l’ouvrir. Dans l’application, l’icône (i) explique la fonction affichée quand vous la touchez.</p>
-  <details open>
+  <p class="intro">Touchez un chapitre pour l’ouvrir. Dans l’application, l’icône (i) explique la fonction affichée.</p>
+  <div class="paths">
+    <h2>Quel chemin choisir ?</h2>
+    <ul>
+      <li><span>Vous connaissez le numéro de modèle</span><a href="#fr-model">🔎 Trouver par modèle</a></li>
+      <li><span>Vous connaissez seulement la marque</span><a href="#fr-tv">📺 Ajouter un téléviseur</a></li>
+      <li><span>Vous ne savez rien, ou rien n’a marché</span><a href="#fr-teach">🎓 Apprendre ma télé</a></li>
+      <li><span>Télé Android TV ou Google TV</span><a href="#fr-atv">🤖 Android TV</a></li>
+      <li><span>Autre télé connectée, ou téléphone sans infrarouge</span><a href="#fr-wifi">📶 Wi‑Fi</a></li>
+      <li><span>Climatiseur</span><a href="#fr-ac">❄️ Climatiseur</a></li>
+    </ul>
+  </div>
+  <details id="fr-start" open>
     <summary><span class="ico">🚀</span>Pour commencer</summary>
-    <p>Le contrôle infrarouge demande un téléphone équipé d’un émetteur IR (fréquent chez Xiaomi, Redmi, POCO, Huawei et Honor). Pointez le haut du téléphone vers le téléviseur, comme la télécommande d’origine. Sans émetteur, vous pouvez piloter les téléviseurs connectés en Wi‑Fi.</p>
+    <ol>
+      <li>Le contrôle infrarouge demande un téléphone équipé d’un émetteur IR, fréquent chez Xiaomi, Redmi, POCO, Huawei et Honor. S’il n’y en a pas, l’application vous le dit.</li>
+      <li>Pointez le haut du téléphone vers la télé, comme la télécommande d’origine.</li>
+      <li>Ouvrez « Mes appareils », touchez « ＋ Ajouter un appareil », puis choisissez votre chemin dans le tableau ci-dessus.</li>
+    </ol>
+    <p class="tip">Pas d’émetteur IR ? Le téléphone pilote les télés connectées en Wi‑Fi.</p>
   </details>
-  <details>
-    <summary><span class="ico">📺</span>Ajouter un téléviseur</summary>
-    <p>Dans « Mes appareils », touchez « Ajouter un appareil », puis « Téléviseur », choisissez votre marque et testez la touche marche. Si votre marque manque ou si rien ne marche, utilisez « Apprendre ma télé ». « Manuel / infrarouge rapide » essaie les 40 télécommandes les plus courantes l’une après l’autre.</p>
+  <details id="fr-model">
+    <summary><span class="ico">🔎</span>Trouver par modèle <span class="new">Nouveau</span></summary>
+    <p>Le chemin le plus rapide : une photo de l’étiquette mène à la télécommande de votre télé.</p>
+    <ol>
+      <li>Le numéro de modèle est sur l’étiquette au dos de la télé, ou sous le couvercle des piles de la télécommande, par exemple <b>43G7200</b>.</li>
+      <li>Dans « ＋ Ajouter un appareil », choisissez « Trouver par modèle ».</li>
+      <li>Choisissez une méthode :
+        <ul>
+          <li>« Photographier l’étiquette » : remplissez le cadre avec l’étiquette, bien éclairée, puis « Prendre la photo ».</li>
+          <li>« Choisir une photo » : si vous avez déjà photographié l’étiquette.</li>
+          <li>Tapez le numéro dans le champ et touchez « Chercher ».</li>
+        </ul>
+      </li>
+      <li>Les télécommandes correspondantes s’affichent. Visez la télé et touchez « Tester ». Si elle réagit, touchez « Utiliser ».</li>
+      <li>Nommez l’appareil et touchez « Enregistrer ».</li>
+    </ol>
+    <h3>Bon à savoir</h3>
+    <ul>
+      <li>Une partie du numéro suffit : « G7200 » trouve « 43G7200 ».</li>
+      <li>« Testé sur une vraie télé » signifie que ce modèle a été vérifié sur le terrain.</li>
+      <li>Si votre télé est une Android TV, le bouton « Ajouter une Android TV » apparaît pour la piloter en Wi‑Fi.</li>
+      <li>Modèle encore inconnu ? Touchez « Apprendre ma télé ». La marque et le modèle lus l’accompagnent, et si vous partagez les codes à la fin, la personne suivante trouvera sa télé avec une seule photo.</li>
+      <li>L’étiquette est lue sur le téléphone, sans internet. La photo prise est supprimée après lecture, et aucune photo n’est jamais envoyée.</li>
+    </ul>
   </details>
-  <details>
+  <details id="fr-tv">
+    <summary><span class="ico">📺</span>Ajouter un téléviseur par marque</summary>
+    <ol>
+      <li>Dans « ＋ Ajouter un appareil », choisissez « Téléviseur ».</li>
+      <li>Choisissez votre marque dans la liste alphabétique.</li>
+      <li>Visez la télé et touchez « Tester » sur le premier jeu. Si la télé réagit, touchez « Utiliser » ; sinon, essayez le jeu suivant.</li>
+      <li>Nommez l’appareil et touchez « Enregistrer ».</li>
+    </ol>
+    <p class="tip">Marque absente ou aucun jeu ne marche ? Utilisez « Apprendre ma télé ». « Manuel / infrarouge rapide » essaie les 40 télécommandes les plus courantes l’une après l’autre.</p>
+  </details>
+  <details id="fr-teach">
     <summary><span class="ico">🎓</span>Apprendre ma télé</summary>
-    <p>Pour une télé de marque inconnue. Allumez-la avec son bouton et visez-la. L’application envoie des signaux et demande « quelque chose s’est-il passé ? » : répondez « Oui » si la barre de volume ou un menu apparaît. Une fois la télé trouvée, un signal part à la fois et vous choisissez ce qu’a fait la télé (volume, marche, OK…). Chaque touche est envoyée deux fois pour confirmer avant d’être enregistrée.</p>
+    <p>Pour une télé de marque inconnue, ou quand rien d’autre n’a marché. Vous n’avez rien à savoir : dites seulement à l’application ce que vous voyez à l’écran.</p>
+    <ol>
+      <li>Allumez la télé avec son bouton, visez-la et touchez « Commencer ».</li>
+      <li><b>La recherche :</b> l’application envoie des signaux et demande : « La barre de volume, un menu ou autre chose est-il apparu sur la télé ? ». Répondez « Oui », « Non » ou « Pas sûr ». Si la télé s’éteint, touchez « La télé s’est éteinte » : c’est aussi une réponse utile.</li>
+      <li>Quand elle la trouve : « Télé trouvée ! ».</li>
+      <li><b>L’apprentissage :</b> un signal part à la fois, et l’application demande « Qu’a fait la télé ? ». Choisissez ce que vous avez vu (volume, marche, OK…) ou « Rien ». Chaque touche est envoyée deux fois pour confirmer avant d’être enregistrée. Si un menu s’ouvre, touchez « Sortir du menu ».</li>
+      <li>Touchez « Terminer » quand vous voulez, puis « Enregistrer la télécommande ». Les touches manquantes se complètent plus tard avec « Réparer une touche ».</li>
+      <li>Facultatif : « Partager ces codes (anonyme) » aide tous ceux qui ont la même télé.</li>
+    </ol>
+    <h3>Recherche approfondie</h3>
+    <p>Si la télé n’a réagi à aucun signal, le bouton « Recherche approfondie (plus longue) » apparaît. Elle essaie, avec les touches chiffres, des adresses qu’aucune télécommande de notre catalogue n’utilise. Laissez la télé sur une chaîne et répondez « Oui » quand son numéro change. Elle demande plus de questions que la recherche normale.</p>
   </details>
-  <details>
+  <details id="fr-fix">
     <summary><span class="ico">🔧</span>Réparer une touche</summary>
-    <p>Une touche ne marche pas ou manque ? Sur l’écran de la télécommande, touchez « Réparer une touche », choisissez les touches concernées, puis dites ce que fait la télé. Les touches qui marchent ne sont pas modifiées. Le « Mode expert » manuel reste accessible en bas de l’écran pour les techniciens.</p>
+    <ol>
+      <li>Sur l’écran de la télécommande, touchez « Réparer une touche ».</li>
+      <li>Choisissez la touche qui manque ou ne marche pas, puis « Commencer ».</li>
+      <li>Dites ce que fait la télé, comme dans « Apprendre ma télé ».</li>
+    </ol>
+    <p class="tip">Les touches qui marchent ne sont pas modifiées. Le « Mode expert » manuel reste en bas de l’écran pour les techniciens.</p>
   </details>
-  <details>
+  <details id="fr-ac">
     <summary><span class="ico">❄️</span>Climatiseur</summary>
-    <p>Dans « Ajouter un appareil », choisissez « Climatiseur » puis la marque, ou testez les protocoles un par un jusqu’à ce que l’appareil réagisse. Sur la télécommande, tournez la molette pour la température et touchez son centre pour changer de mode.</p>
+    <ol>
+      <li>Dans « ＋ Ajouter un appareil », choisissez « Climatiseur ».</li>
+      <li>Choisissez sa marque, ou testez les protocoles un par un jusqu’à ce que l’appareil réagisse.</li>
+      <li>Sur sa télécommande : tournez la molette pour la température, touchez son centre pour changer de mode.</li>
+    </ol>
   </details>
-  <details>
+  <details id="fr-wifi">
     <summary><span class="ico">📶</span>Téléviseurs connectés en Wi‑Fi</summary>
-    <p>Le téléphone et la télé doivent être sur le même réseau. Dans « Recherche Wi-Fi », lancez la recherche, ou saisissez l’adresse IP de la télé et touchez « Tester l’adresse » : l’application reconnaît seule son système. Les télés LG et Samsung demandent une seule fois votre accord à l’écran. Certaines télés n’acceptent en Wi‑Fi que l’ouverture de YouTube et Netflix, et l’application vous le dit.</p>
+    <ol>
+      <li>Connectez le téléphone et la télé au même réseau.</li>
+      <li>Dans « ＋ Ajouter un appareil », choisissez « Recherche Wi-Fi (TV connectées) ».</li>
+      <li>Lancez la recherche, ou saisissez l’adresse IP de la télé et touchez « Tester l’adresse » : l’application reconnaît seule son système.</li>
+      <li>Les télés LG et Samsung demandent votre accord à l’écran, une seule fois.</li>
+    </ol>
+    <p class="tip">Certaines télés n’acceptent en Wi‑Fi que l’ouverture de YouTube et Netflix, et l’application vous le dit.</p>
   </details>
-  <details>
+  <details id="fr-atv">
     <summary><span class="ico">🤖</span>Android TV et Google TV</summary>
-    <p>Dans « Ajouter un appareil », choisissez « Android TV » : les télés apparaissent seules ; choisissez la vôtre et saisissez une seule fois le code à 6 caractères affiché à l’écran. Sur la télécommande : glissez sur le pavé pour naviguer, touchez pour valider ; l’état de la télé et le vrai niveau du volume s’affichent, et vous ouvrez YouTube, Netflix et d’autres directement.</p>
+    <ol>
+      <li>Dans « ＋ Ajouter un appareil », choisissez « Android TV ». Les télés apparaissent seules.</li>
+      <li>Choisissez la vôtre et saisissez le code à 6 caractères affiché à l’écran, une seule fois.</li>
+      <li>Sur la télécommande : glissez sur le pavé pour naviguer, touchez pour valider.</li>
+    </ol>
+    <p class="tip">L’état de la télé et le vrai niveau du volume s’affichent, et vous ouvrez YouTube, Netflix et d’autres directement.</p>
   </details>
-  <details>
+  <details id="fr-devices">
     <summary><span class="ico">🗂️</span>Mes appareils</summary>
-    <p>Enregistrez plusieurs appareils et touchez « Activer » pour passer de l’un à l’autre. Le bouton ⋮ de chaque carte permet « Renommer » et « Partager » par QR code ; un autre téléphone l’importe avec « Importer par QR ».</p>
+    <ul>
+      <li>Enregistrez plusieurs appareils et touchez « Activer » pour passer de l’un à l’autre.</li>
+      <li>Le bouton ⋮ de chaque carte : « Renommer » et « Partager » par QR code.</li>
+      <li>Un autre téléphone l’importe avec « Importer par QR ».</li>
+    </ul>
   </details>
-  <details>
+  <details id="fr-widget">
     <summary><span class="ico">📱</span>Widget et réglages rapides</summary>
-    <p>Ajoutez le widget REMOTE DNA à l’écran d’accueil, ou sa tuile aux réglages rapides, pour la marche et le volume de l’appareil actif sans ouvrir l’application.</p>
+    <p>Ajoutez le widget REMOTE DNA à l’écran d’accueil, ou sa tuile aux réglages rapides. Ils commandent la marche et le volume de l’appareil actif sans ouvrir l’application.</p>
   </details>
-  <details>
+  <details id="fr-help">
+    <summary><span class="ico">🆘</span>La télé ne réagit pas ?</summary>
+    <ol>
+      <li>Vérifiez que le téléphone a un émetteur IR : sinon, « Aucun émetteur IR détecté sur ce téléphone » s’affiche.</li>
+      <li>Pointez le <b>haut</b> du téléphone vers la télé, rapprochez-vous et retirez tout obstacle.</li>
+      <li>Essayez le jeu suivant de la liste : une marque peut utiliser plusieurs télécommandes.</li>
+      <li>Si aucun jeu ne marche, utilisez « Apprendre ma télé », puis « Recherche approfondie (plus longue) » si besoin.</li>
+      <li>Presque tout marche sauf une touche ? Utilisez « Réparer une touche ».</li>
+    </ol>
+  </details>
+  <details id="fr-pro">
     <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
-    <p>Achat unique, sans abonnement : appareils illimités (gratuit : 3), aucune publicité dans toute l’application, toutes les fonctions à venir. Connectez-vous pour restaurer la licence sur un nouveau téléphone.</p>
+    <ul>
+      <li>Achat unique, sans abonnement.</li>
+      <li>Appareils enregistrés illimités (gratuit : 3).</li>
+      <li>Aucune publicité dans toute l’application, et toutes les fonctions à venir.</li>
+      <li>Connectez-vous pour restaurer la licence sur un nouveau téléphone.</li>
+    </ul>
   </details>
-  <details>
+  <details id="fr-privacy">
     <summary><span class="ico">🔒</span>Confidentialité</summary>
-    <p>Vos appareils et vos codes restent sur votre téléphone. L’application ne demande ni micro, ni localisation, ni contacts. Le compte est facultatif, et le partage de codes est anonyme et désactivé tant que vous ne l’activez pas. La politique complète est dans « Moi ».</p>
+    <ul>
+      <li>Vos appareils et vos codes restent sur votre téléphone.</li>
+      <li>L’application ne demande ni micro, ni localisation, ni contacts.</li>
+      <li>L’appareil photo sert seulement aux QR codes et à lire l’étiquette, et la lecture se fait sur le téléphone.</li>
+      <li>Le compte est facultatif, et le partage de codes est anonyme et désactivé tant que vous ne l’activez pas.</li>
+      <li>La politique complète est dans « Moi ».</li>
+    </ul>
   </details>
   <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.beinteck.remotedna" target="_blank" rel="noopener">Télécharger sur Google Play</a> <a class="ghost" href="./">Le site</a></p>
 </section>
 
 <section class="lang" data-lang="en" lang="en" dir="ltr" hidden>
   <h1>User guide</h1>
-  <p class="intro">Tap a chapter to open it. Inside the app, the (i) icon explains the feature in front of you when you tap it.</p>
-  <details open>
+  <p class="intro">Tap a chapter to open it. Inside the app, the (i) icon explains the feature in front of you.</p>
+  <div class="paths">
+    <h2>Which way should I choose?</h2>
+    <ul>
+      <li><span>You know the TV’s model number</span><a href="#en-model">🔎 Find by model</a></li>
+      <li><span>You only know the brand</span><a href="#en-tv">📺 Add a TV</a></li>
+      <li><span>You know nothing, or nothing worked</span><a href="#en-teach">🎓 Teach my TV</a></li>
+      <li><span>An Android TV or Google TV</span><a href="#en-atv">🤖 Android TV</a></li>
+      <li><span>Another smart TV, or a phone without IR</span><a href="#en-wifi">📶 Wi‑Fi</a></li>
+      <li><span>An air conditioner</span><a href="#en-ac">❄️ Air conditioner</a></li>
+    </ul>
+  </div>
+  <details id="en-start" open>
     <summary><span class="ico">🚀</span>Getting started</summary>
-    <p>Infrared control needs a phone with an IR blaster (common on Xiaomi, Redmi, POCO, Huawei and Honor). Point the top of the phone at the TV, as you would the original remote. Phones without one can still control smart TVs over Wi‑Fi.</p>
+    <ol>
+      <li>Infrared control needs a phone with an IR blaster, common on Xiaomi, Redmi, POCO, Huawei and Honor. If yours has none, the app tells you.</li>
+      <li>Point the top of the phone at the TV, as you would the original remote.</li>
+      <li>Open “My Devices”, tap “＋ Add device”, then pick your way from the table above.</li>
+    </ol>
+    <p class="tip">No IR blaster? The phone can still control smart TVs over Wi‑Fi.</p>
   </details>
-  <details>
-    <summary><span class="ico">📺</span>Add a TV</summary>
-    <p>In “My Devices”, tap “Add device”, then “TV”, pick your brand and test the power button. If your brand is missing or nothing works, use “Teach my TV”. “Manual / Quick IR” tries the 40 most common remotes one after another.</p>
+  <details id="en-model">
+    <summary><span class="ico">🔎</span>Find by model <span class="new">New</span></summary>
+    <p>The fastest way: one photo of the label leads to your TV’s remote.</p>
+    <ol>
+      <li>The model number is on the label on the back of the TV, or under the remote’s battery cover, for example <b>43G7200</b>.</li>
+      <li>In “＋ Add device”, choose “Find by model”.</li>
+      <li>Pick one way:
+        <ul>
+          <li>“Photograph the label”: fill the frame with the label, in good light, then “Take the photo”.</li>
+          <li>“Choose a photo”: if you already photographed the label.</li>
+          <li>Type the number in the box and tap “Search”.</li>
+        </ul>
+      </li>
+      <li>The matching remotes appear. Point the phone at the TV and tap “Test”. If the TV reacts, tap “Use this”.</li>
+      <li>Name the device and tap “Save”.</li>
+    </ol>
+    <h3>Good to know</h3>
+    <ul>
+      <li>Part of the number is enough: “G7200” finds “43G7200”.</li>
+      <li>“Tested on a real TV” means this model was checked in the field.</li>
+      <li>If your TV is an Android TV, an “Add an Android TV” button appears so you can control it over Wi‑Fi.</li>
+      <li>Model not known yet? Tap “Teach my TV”. The brand and model read on the label go with it, and if you share the codes at the end, the next person finds their TV with one photo.</li>
+      <li>The label is read on the phone, without internet. The photo you take is deleted once read, and no photo is ever sent.</li>
+    </ul>
   </details>
-  <details>
+  <details id="en-tv">
+    <summary><span class="ico">📺</span>Add a TV by brand</summary>
+    <ol>
+      <li>In “＋ Add device”, choose “TV”.</li>
+      <li>Pick your brand from the alphabetical list.</li>
+      <li>Point the phone and tap “Test” on the first set. If the TV reacts, tap “Use this”; if not, try the next set.</li>
+      <li>Name the device and tap “Save”.</li>
+    </ol>
+    <p class="tip">Brand missing, or no set works? Use “Teach my TV”. “Manual / Quick IR” tries the 40 most common remotes one after another.</p>
+  </details>
+  <details id="en-teach">
     <summary><span class="ico">🎓</span>Teach my TV</summary>
-    <p>For a TV whose brand you don’t know. Turn it on with its own button and point the phone at it. The app sends signals and asks “did anything happen on the TV?”: answer “Yes” when a volume bar or a menu appears. Once your TV is found, one signal goes out at a time and you pick what the TV did (volume, power, OK…). Every button is sent twice to confirm before it is saved.</p>
+    <p>For a TV whose brand you don’t know, or when nothing else worked. You don’t need to know anything: just tell the app what you see on the screen.</p>
+    <ol>
+      <li>Turn the TV on with its own button, point the phone at it and tap “Start”.</li>
+      <li><b>The search:</b> the app sends signals and asks: “Did a volume bar, a menu or anything else appear on the TV?”. Answer “Yes”, “No” or “Not sure”. If the TV switches off, tap “The TV switched off”: that answer helps the search too.</li>
+      <li>When it finds the TV: “Found your TV!”.</li>
+      <li><b>The learning:</b> one signal goes out at a time and the app asks “What did the TV do?”. Pick what you saw (volume, power, OK…) or “Nothing”. Every button is sent twice to confirm before it is saved. If a menu opens, tap “Get me out of the menu”.</li>
+      <li>Tap “Finish now” whenever you like, then “Save the remote”. Missing buttons can be added later with “Fix a button”.</li>
+      <li>Optional: “Share these codes (anonymous)” helps everyone who owns the same TV.</li>
+    </ol>
+    <h3>Deep search</h3>
+    <p>If the TV reacted to no signal, a “Deep search (longer)” button appears. It tries, with the number keys, addresses that no remote in our catalogue uses. Leave the TV on a channel and answer “Yes” when the channel number changes. It asks more questions than the normal search.</p>
   </details>
-  <details>
+  <details id="en-fix">
     <summary><span class="ico">🔧</span>Fix a button</summary>
-    <p>A button missing or not working? On the remote screen tap “Fix a button”, pick the buttons concerned, then say what the TV does. Buttons that work are left alone. The manual “Expert mode” stays at the bottom of the screen for technicians.</p>
+    <ol>
+      <li>On the remote screen, tap “Fix a button”.</li>
+      <li>Pick the button that is missing or not working, then “Start”.</li>
+      <li>Say what the TV does, as in “Teach my TV”.</li>
+    </ol>
+    <p class="tip">Buttons that work are left alone. The manual “Expert mode” stays at the bottom of the screen for technicians.</p>
   </details>
-  <details>
+  <details id="en-ac">
     <summary><span class="ico">❄️</span>Air conditioner</summary>
-    <p>In “Add device”, choose “Air conditioner”, then its brand, or try the protocols one by one until the unit reacts. On its remote, turn the dial to set the temperature and tap its centre to change mode.</p>
+    <ol>
+      <li>In “＋ Add device”, choose “Air conditioner”.</li>
+      <li>Pick its brand, or try the protocols one by one until the unit reacts.</li>
+      <li>On its remote: turn the dial to set the temperature, tap its centre to change mode.</li>
+    </ol>
   </details>
-  <details>
+  <details id="en-wifi">
     <summary><span class="ico">📶</span>Smart TVs over Wi‑Fi</summary>
-    <p>The phone and the TV must be on the same network. In “Wi-Fi Scan”, search the network, or type the TV’s IP address and tap “Check address”: the app recognises its system by itself. LG and Samsung TVs ask you to accept once on screen. Some TVs only accept opening YouTube and Netflix over Wi‑Fi, and the app tells you so.</p>
+    <ol>
+      <li>Connect the phone and the TV to the same network.</li>
+      <li>In “＋ Add device”, choose “Wi-Fi Scan (Smart TVs)”.</li>
+      <li>Search the network, or type the TV’s IP address and tap “Check address”: the app recognises its system by itself.</li>
+      <li>LG and Samsung TVs ask you to accept on screen, just once.</li>
+    </ol>
+    <p class="tip">Some TVs only accept opening YouTube and Netflix over Wi‑Fi, and the app tells you so.</p>
   </details>
-  <details>
+  <details id="en-atv">
     <summary><span class="ico">🤖</span>Android TV &amp; Google TV</summary>
-    <p>In “Add device”, choose “Android TV”: the TVs appear by themselves; pick yours and type, just once, the 6-character code shown on its screen. On the remote: swipe on the touchpad to move and tap to select; the TV’s state and real volume level are shown, and you can open YouTube, Netflix and more directly.</p>
+    <ol>
+      <li>In “＋ Add device”, choose “Android TV”. The TVs appear by themselves.</li>
+      <li>Pick yours and type the 6-character code shown on its screen, just once.</li>
+      <li>On the remote: swipe on the touchpad to move, tap to select.</li>
+    </ol>
+    <p class="tip">The TV’s state and its real volume level are shown, and you can open YouTube, Netflix and more directly.</p>
   </details>
-  <details>
+  <details id="en-devices">
     <summary><span class="ico">🗂️</span>My Devices</summary>
-    <p>Save several devices and tap “Activate” to switch between them. The ⋮ button on each card lets you “Rename” and “Share” it as a QR code; another phone imports it with “Import via QR”.</p>
+    <ul>
+      <li>Save several devices and tap “Activate” to switch between them.</li>
+      <li>The ⋮ button on each card: “Rename”, and “Share” as a QR code.</li>
+      <li>Another phone imports it with “Import via QR”.</li>
+    </ul>
   </details>
-  <details>
+  <details id="en-widget">
     <summary><span class="ico">📱</span>Widget and Quick Settings tile</summary>
-    <p>Add the REMOTE DNA widget to your home screen, or its tile to Quick Settings, for power and volume on the active device without opening the app.</p>
+    <p>Add the REMOTE DNA widget to your home screen, or its tile to Quick Settings. Both control power and volume on the active device without opening the app.</p>
   </details>
-  <details>
+  <details id="en-help">
+    <summary><span class="ico">🆘</span>The TV doesn’t react?</summary>
+    <ol>
+      <li>Check that the phone has an IR blaster: if not, “No IR emitter detected on this phone” is shown.</li>
+      <li>Point the <b>top</b> of the phone at the TV, move closer and clear anything in between.</li>
+      <li>Try the next set in the list: one brand can use several remotes.</li>
+      <li>If no set works, use “Teach my TV”, then “Deep search (longer)” if needed.</li>
+      <li>Everything works but one button? Use “Fix a button”.</li>
+    </ol>
+  </details>
+  <details id="en-pro">
     <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
-    <p>One-time purchase, no subscription: unlimited saved devices (free: 3), no ads anywhere in the app, and every future feature. Sign in to restore the licence on a new phone.</p>
+    <ul>
+      <li>One-time purchase, no subscription.</li>
+      <li>Unlimited saved devices (free: 3).</li>
+      <li>No ads anywhere in the app, and every future feature.</li>
+      <li>Sign in to restore the licence on a new phone.</li>
+    </ul>
   </details>
-  <details>
+  <details id="en-privacy">
     <summary><span class="ico">🔒</span>Privacy</summary>
-    <p>Your devices and codes stay on your phone. The app asks for no microphone, location or contacts. The account is optional, and code sharing is anonymous and off unless you turn it on. The full policy is under “Me”.</p>
+    <ul>
+      <li>Your devices and codes stay on your phone.</li>
+      <li>The app asks for no microphone, location or contacts.</li>
+      <li>The camera is used only for QR codes and for reading the label, and reading happens on the phone.</li>
+      <li>The account is optional, and code sharing is anonymous and off unless you turn it on.</li>
+      <li>The full policy is under “Me”.</li>
+    </ul>
   </details>
   <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.beinteck.remotedna" target="_blank" rel="noopener">Get it on Google Play</a> <a class="ghost" href="./">Website</a></p>
 </section>
@@ -192,149 +511,455 @@
 <section class="lang" data-lang="zh" lang="zh" dir="ltr" hidden>
   <h1>使用指南</h1>
   <p class="intro">点按任一章节即可展开。在应用中，点按 (i) 图标即可查看当前功能的说明。</p>
-  <details open>
+  <div class="paths">
+    <h2>该选哪种方式？</h2>
+    <ul>
+      <li><span>您知道电视型号</span><a href="#zh-model">🔎 按型号查找</a></li>
+      <li><span>您只知道品牌</span><a href="#zh-tv">📺 添加电视</a></li>
+      <li><span>什么都不知道，或都不管用</span><a href="#zh-teach">🎓 教会我的电视</a></li>
+      <li><span>Android TV 或 Google TV</span><a href="#zh-atv">🤖 Android TV</a></li>
+      <li><span>其他智能电视，或手机没有红外</span><a href="#zh-wifi">📶 Wi‑Fi</a></li>
+      <li><span>空调</span><a href="#zh-ac">❄️ 空调</a></li>
+    </ul>
+  </div>
+  <details id="zh-start" open>
     <summary><span class="ico">🚀</span>入门</summary>
-    <p>红外控制需要带红外发射器的手机（小米、红米、POCO、华为和荣耀常见）。像使用原装遥控器一样，将手机顶部对准电视。没有红外的手机仍可通过 Wi‑Fi 控制智能电视。</p>
+    <ol>
+      <li>红外控制需要带红外发射器的手机，小米、红米、POCO、华为和荣耀常见。如果您的手机没有，应用会告诉您。</li>
+      <li>像使用原装遥控器一样，将手机顶部对准电视。</li>
+      <li>打开“我的设备”，点按“＋ 添加设备”，然后按上表选择方式。</li>
+    </ol>
+    <p class="tip">没有红外发射器？手机仍可通过 Wi‑Fi 控制智能电视。</p>
   </details>
-  <details>
-    <summary><span class="ico">📺</span>添加电视</summary>
-    <p>在"我的设备"中点按"添加设备"，再点按"电视"，选择品牌并测试电源键。如果找不到品牌或都不管用，请使用"教会我的电视"。"手动 / 快速红外"会依次尝试 40 种最常见的遥控器。</p>
+  <details id="zh-model">
+    <summary><span class="ico">🔎</span>按型号查找 <span class="new">新功能</span></summary>
+    <p>最快的方式：拍一张标签照片，即可找到您电视的遥控器。</p>
+    <ol>
+      <li>型号印在电视背面的标签上，或遥控器电池盖下，例如 <b>43G7200</b>。</li>
+      <li>在“＋ 添加设备”中选择“按型号查找”。</li>
+      <li>任选一种方式：
+        <ul>
+          <li>“拍摄标签”：在光线充足处让标签充满画面，然后点按“拍照”。</li>
+          <li>“选择照片”：如果您已经拍过标签。</li>
+          <li>在输入框中输入型号，点按“搜索”。</li>
+        </ul>
+      </li>
+      <li>匹配的遥控器会显示出来。将手机对准电视，点按“测试”。电视有反应时，点按“采用”。</li>
+      <li>为设备命名并点按“保存”。</li>
+    </ol>
+    <h3>小贴士</h3>
+    <ul>
+      <li>输入部分型号即可：“G7200”能找到“43G7200”。</li>
+      <li>“已在真实电视上测试”表示该型号经过实地验证。</li>
+      <li>如果是 Android TV，会出现“添加 Android TV”按钮，可通过 Wi‑Fi 控制。</li>
+      <li>暂时没有该型号？点按“教会我的电视”。读取到的品牌和型号会一并带入；如果最后分享代码，下一位用户只需一张照片就能找到电视。</li>
+      <li>标签在手机上读取，无需联网。拍摄的照片读取后即被删除，任何照片都不会上传。</li>
+    </ul>
   </details>
-  <details>
+  <details id="zh-tv">
+    <summary><span class="ico">📺</span>按品牌添加电视</summary>
+    <ol>
+      <li>在“＋ 添加设备”中选择“电视”。</li>
+      <li>从字母列表中选择品牌。</li>
+      <li>将手机对准电视，在第一组上点按“测试”。电视有反应就点按“采用”，否则试下一组。</li>
+      <li>为设备命名并点按“保存”。</li>
+    </ol>
+    <p class="tip">找不到品牌或每组都不管用？请使用“教会我的电视”。“手动 / 快速红外”会依次尝试 40 种最常见的遥控器。</p>
+  </details>
+  <details id="zh-teach">
     <summary><span class="ico">🎓</span>教会我的电视</summary>
-    <p>适用于不知道品牌的电视。用机身按键开机，并将手机对准电视。应用会发送信号并询问"电视上有变化吗？"：出现音量条或菜单时回答"是"。找到电视后，每次只发送一个信号，您选择电视做了什么（音量、电源、确定……）。每个按键保存前都会发送两次进行确认。</p>
+    <p>适用于不知道品牌的电视，或其他方式都不管用时。您无需了解任何技术，只需告诉应用屏幕上看到了什么。</p>
+    <ol>
+      <li>用机身按键开机，将手机对准电视，点按“开始”。</li>
+      <li><b>搜索：</b>应用发送信号并询问：“电视上是否出现了音量条、菜单或其他变化？”回答“是”“否”或“不确定”。如果电视关机，点按“电视关机了”，这个回答同样有用。</li>
+      <li>找到后会显示：“找到您的电视了！”</li>
+      <li><b>学习：</b>每次只发送一个信号，并询问“电视做了什么？”选择您看到的结果（音量、电源、确定……）或“没反应”。每个按键保存前都会发送两次进行确认。如果打开了菜单，点按“退出菜单”。</li>
+      <li>随时点按“现在完成”，然后点按“保存遥控器”。缺少的按键以后可通过“修复按键”补上。</li>
+      <li>可选：“分享这些代码（匿名）”能帮助拥有同款电视的所有人。</li>
+    </ol>
+    <h3>深度搜索</h3>
+    <p>如果电视对所有信号都没有反应，会出现“深度搜索（较慢）”按钮。它用数字键尝试我们目录中所有遥控器都未使用的地址。请让电视停留在某个频道，频道号变化时回答“是”。它比普通搜索需要更多问题。</p>
   </details>
-  <details>
+  <details id="zh-fix">
     <summary><span class="ico">🔧</span>修复按键</summary>
-    <p>有按键缺失或不管用？在遥控器界面点按"修复按键"，选择相关按键，然后告诉应用电视做了什么。正常工作的按键不受影响。手动的"专家模式"保留在屏幕底部，供技术人员使用。</p>
+    <ol>
+      <li>在遥控器界面点按“修复按键”。</li>
+      <li>选择缺失或不管用的按键，然后点按“开始”。</li>
+      <li>像“教会我的电视”一样，告诉应用电视做了什么。</li>
+    </ol>
+    <p class="tip">正常工作的按键不受影响。手动“专家模式”保留在屏幕底部，供技术人员使用。</p>
   </details>
-  <details>
+  <details id="zh-ac">
     <summary><span class="ico">❄️</span>空调</summary>
-    <p>在"添加设备"中选择"空调"，再选择品牌，或逐个尝试协议直到空调有反应。在空调遥控器上转动旋钮调节温度，点按中心切换模式。</p>
+    <ol>
+      <li>在“＋ 添加设备”中选择“空调”。</li>
+      <li>选择品牌，或逐个尝试协议，直到空调有反应。</li>
+      <li>在空调遥控器上：转动旋钮调节温度，点按中心切换模式。</li>
+    </ol>
   </details>
-  <details>
+  <details id="zh-wifi">
     <summary><span class="ico">📶</span>通过 Wi‑Fi 控制智能电视</summary>
-    <p>手机和电视必须在同一网络。在"Wi-Fi 扫描"中搜索网络，或输入电视的 IP 地址并点按"检查地址"：应用会自动识别其系统。LG 和 Samsung 电视只需在屏幕上同意一次。部分电视通过 Wi‑Fi 只接受打开 YouTube 和 Netflix，应用会如实告知。</p>
+    <ol>
+      <li>让手机和电视连接同一网络。</li>
+      <li>在“＋ 添加设备”中选择“Wi-Fi 扫描（智能电视）”。</li>
+      <li>搜索网络，或输入电视的 IP 地址并点按“检查地址”，应用会自动识别其系统。</li>
+      <li>LG 和 Samsung 电视只需在屏幕上同意一次。</li>
+    </ol>
+    <p class="tip">部分电视通过 Wi‑Fi 只接受打开 YouTube 和 Netflix，应用会如实告知。</p>
   </details>
-  <details>
+  <details id="zh-atv">
     <summary><span class="ico">🤖</span>Android TV 与 Google TV</summary>
-    <p>在"添加设备"中选择"Android TV"：电视会自动出现；选择您的电视，并输入一次屏幕上显示的 6 位代码。在遥控器上：在触控板上滑动移动、轻点选择；可显示电视状态和真实音量，还能直接打开 YouTube、Netflix 等应用。</p>
+    <ol>
+      <li>在“＋ 添加设备”中选择“Android TV”，电视会自动出现。</li>
+      <li>选择您的电视，输入一次屏幕上显示的 6 位代码。</li>
+      <li>在遥控器上：在触控板上滑动移动，轻点选择。</li>
+    </ol>
+    <p class="tip">可显示电视状态和真实音量，还能直接打开 YouTube、Netflix 等应用。</p>
   </details>
-  <details>
+  <details id="zh-devices">
     <summary><span class="ico">🗂️</span>我的设备</summary>
-    <p>保存多台设备，点按"启用"即可切换。每张卡片上的 ⋮ 按钮可"重命名"和以二维码"分享"；另一部手机可通过"扫码导入"导入。</p>
+    <ul>
+      <li>保存多台设备，点按“启用”即可切换。</li>
+      <li>每张卡片上的 ⋮ 按钮：“重命名”，以及以二维码“分享”。</li>
+      <li>另一部手机可通过“扫码导入”导入。</li>
+    </ul>
   </details>
-  <details>
+  <details id="zh-widget">
     <summary><span class="ico">📱</span>小组件与快捷设置磁贴</summary>
-    <p>将 REMOTE DNA 小组件添加到主屏幕，或将其磁贴添加到快捷设置，无需打开应用即可控制当前设备的电源和音量。</p>
+    <p>将 REMOTE DNA 小组件添加到主屏幕，或将其磁贴添加到快捷设置。无需打开应用即可控制当前设备的电源和音量。</p>
   </details>
-  <details>
+  <details id="zh-help">
+    <summary><span class="ico">🆘</span>电视没有反应？</summary>
+    <ol>
+      <li>确认手机有红外发射器：如果没有，会显示“此手机未检测到红外发射器”。</li>
+      <li>将手机<b>顶部</b>对准电视，靠近一些，移开中间的遮挡物。</li>
+      <li>试试列表中的下一组：同一品牌可能使用多种遥控器。</li>
+      <li>如果每组都不管用，请使用“教会我的电视”，必要时再用“深度搜索（较慢）”。</li>
+      <li>只有一个按键不管用？请使用“修复按键”。</li>
+    </ol>
+  </details>
+  <details id="zh-pro">
     <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
-    <p>一次性购买，无需订阅：不限数量的已保存设备（免费版：3 台），整个应用无广告，以及所有未来功能。登录即可在新手机上恢复许可。</p>
+    <ul>
+      <li>一次性购买，无需订阅。</li>
+      <li>不限数量的已保存设备（免费版：3 台）。</li>
+      <li>整个应用无广告，并享有所有未来功能。</li>
+      <li>登录即可在新手机上恢复许可。</li>
+    </ul>
   </details>
-  <details>
+  <details id="zh-privacy">
     <summary><span class="ico">🔒</span>隐私</summary>
-    <p>您的设备和代码保存在手机上。应用不请求麦克风、位置或通讯录权限。账户为可选项，代码分享为匿名且默认关闭。完整政策见"我的"。</p>
+    <ul>
+      <li>您的设备和代码保存在手机上。</li>
+      <li>应用不请求麦克风、位置或通讯录权限。</li>
+      <li>相机仅用于扫描二维码和读取标签，读取在手机上完成。</li>
+      <li>账户为可选项，代码分享为匿名且默认关闭。</li>
+      <li>完整政策见“我的”。</li>
+    </ul>
   </details>
   <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.beinteck.remotedna" target="_blank" rel="noopener">在 Google Play 获取</a> <a class="ghost" href="./">网站</a></p>
 </section>
 
 <section class="lang" data-lang="es" lang="es" dir="ltr" hidden>
   <h1>Guía de uso</h1>
-  <p class="intro">Toca un capítulo para abrirlo. Dentro de la app, el ícono (i) explica la función que tienes enfrente cuando lo tocas.</p>
-  <details open>
+  <p class="intro">Toca un capítulo para abrirlo. Dentro de la app, el ícono (i) explica la función que tienes enfrente.</p>
+  <div class="paths">
+    <h2>¿Qué camino elijo?</h2>
+    <ul>
+      <li><span>Conoces el número de modelo</span><a href="#es-model">🔎 Buscar por modelo</a></li>
+      <li><span>Solo conoces la marca</span><a href="#es-tv">📺 Agregar una TV</a></li>
+      <li><span>No sabes nada, o nada funcionó</span><a href="#es-teach">🎓 Enseñar mi TV</a></li>
+      <li><span>Una Android TV o Google TV</span><a href="#es-atv">🤖 Android TV</a></li>
+      <li><span>Otra Smart TV, o un teléfono sin infrarrojo</span><a href="#es-wifi">📶 Wi‑Fi</a></li>
+      <li><span>Un aire acondicionado</span><a href="#es-ac">❄️ Aire acondicionado</a></li>
+    </ul>
+  </div>
+  <details id="es-start" open>
     <summary><span class="ico">🚀</span>Primeros pasos</summary>
-    <p>El control por infrarrojo necesita un teléfono con emisor infrarrojo (común en Xiaomi, Redmi, POCO, Huawei y Honor). Apunta la parte superior del teléfono a la TV, como harías con el control original. Los teléfonos sin emisor igual pueden controlar Smart TV por Wi‑Fi.</p>
+    <ol>
+      <li>El control por infrarrojo necesita un teléfono con emisor IR, común en Xiaomi, Redmi, POCO, Huawei y Honor. Si el tuyo no tiene, la app te lo indica.</li>
+      <li>Apunta la parte superior del teléfono a la TV, como harías con el control original.</li>
+      <li>Abre “Mis dispositivos”, toca “＋ Agregar dispositivo” y elige tu camino en la tabla de arriba.</li>
+    </ol>
+    <p class="tip">¿Sin emisor IR? El teléfono igual controla Smart TV por Wi‑Fi.</p>
   </details>
-  <details>
-    <summary><span class="ico">📺</span>Agregar una TV</summary>
-    <p>En “Mis dispositivos”, toca “Agregar dispositivo”, luego “TV”, elige tu marca y prueba el botón de encendido. Si tu marca no está o nada funciona, usa “Enseñar mi TV”. “Manual / IR rápido” prueba los 40 controles más comunes uno tras otro.</p>
+  <details id="es-model">
+    <summary><span class="ico">🔎</span>Buscar por modelo <span class="new">Nuevo</span></summary>
+    <p>El camino más rápido: una foto de la etiqueta te lleva al control de tu TV.</p>
+    <ol>
+      <li>El número de modelo está en la etiqueta de atrás de la TV, o bajo la tapa de las pilas del control, por ejemplo <b>43G7200</b>.</li>
+      <li>En “＋ Agregar dispositivo”, elige “Buscar por modelo”.</li>
+      <li>Elige una forma:
+        <ul>
+          <li>“Fotografiar la etiqueta”: llena el cuadro con la etiqueta, con buena luz, y luego “Tomar la foto”.</li>
+          <li>“Elegir una foto”: si ya fotografiaste la etiqueta.</li>
+          <li>Escribe el número en el campo y toca “Buscar”.</li>
+        </ul>
+      </li>
+      <li>Aparecen los controles que coinciden. Apunta el teléfono a la TV y toca “Probar”. Si la TV reacciona, toca “Usar este”.</li>
+      <li>Ponle nombre al dispositivo y toca “Guardar”.</li>
+    </ol>
+    <h3>Para tener en cuenta</h3>
+    <ul>
+      <li>Basta con parte del número: “G7200” encuentra “43G7200”.</li>
+      <li>“Probado en una TV real” significa que ese modelo se verificó en campo.</li>
+      <li>Si tu TV es Android TV, aparece el botón “Agregar una Android TV” para controlarla por Wi‑Fi.</li>
+      <li>¿Modelo aún desconocido? Toca “Enseñar mi TV”. La marca y el modelo leídos van con él, y si compartes los códigos al final, la siguiente persona encontrará su TV con una sola foto.</li>
+      <li>La etiqueta se lee en el teléfono, sin internet. La foto que tomas se borra después de leerla, y nunca se envía ninguna foto.</li>
+    </ul>
   </details>
-  <details>
+  <details id="es-tv">
+    <summary><span class="ico">📺</span>Agregar una TV por marca</summary>
+    <ol>
+      <li>En “＋ Agregar dispositivo”, elige “TV”.</li>
+      <li>Elige tu marca en la lista alfabética.</li>
+      <li>Apunta el teléfono y toca “Probar” en el primer conjunto. Si la TV reacciona, toca “Usar este”; si no, prueba el siguiente.</li>
+      <li>Ponle nombre al dispositivo y toca “Guardar”.</li>
+    </ol>
+    <p class="tip">¿Tu marca no está o ningún conjunto funciona? Usa “Enseñar mi TV”. “Manual / IR rápido” prueba los 40 controles más comunes uno tras otro.</p>
+  </details>
+  <details id="es-teach">
     <summary><span class="ico">🎓</span>Enseñar mi TV</summary>
-    <p>Para una TV cuya marca no conoces. Enciéndela con su propio botón y apunta el teléfono hacia ella. La app envía señales y pregunta “¿pasó algo en la TV?”: responde “Sí” cuando aparezca una barra de volumen o un menú. Cuando encuentra tu TV, envía una señal a la vez y tú eliges qué hizo la TV (volumen, encendido, OK…). Cada botón se envía dos veces para confirmarlo antes de guardarlo.</p>
+    <p>Para una TV cuya marca no conoces, o cuando nada más funcionó. No necesitas saber nada: solo dile a la app lo que ves en la pantalla.</p>
+    <ol>
+      <li>Enciende la TV con su propio botón, apunta el teléfono hacia ella y toca “Comenzar”.</li>
+      <li><b>La búsqueda:</b> la app envía señales y pregunta: “¿Apareció en la TV una barra de volumen, un menú o cualquier otra cosa?”. Responde “Sí”, “No” o “No estoy seguro”. Si la TV se apaga, toca “La TV se apagó”: esa respuesta también ayuda a la búsqueda.</li>
+      <li>Cuando la encuentra: “¡Encontramos tu TV!”.</li>
+      <li><b>El aprendizaje:</b> envía una señal a la vez y pregunta “¿Qué hizo la TV?”. Elige lo que viste (volumen, encendido, OK…) o “Nada”. Cada botón se envía dos veces para confirmarlo antes de guardarlo. Si se abre un menú, toca “Sácame del menú”.</li>
+      <li>Toca “Terminar ahora” cuando quieras y luego “Guardar el control”. Los botones que falten se completan después con “Arreglar un botón”.</li>
+      <li>Opcional: “Compartir estos códigos (anónimo)” ayuda a todos los que tienen la misma TV.</li>
+    </ol>
+    <h3>Búsqueda profunda</h3>
+    <p>Si la TV no reaccionó a ninguna señal, aparece el botón “Búsqueda profunda (más larga)”. Prueba, con las teclas numéricas, direcciones que no usa ningún control de nuestro catálogo. Deja la TV en un canal y responde “Sí” cuando cambie el número del canal. Hace más preguntas que la búsqueda normal.</p>
   </details>
-  <details>
+  <details id="es-fix">
     <summary><span class="ico">🔧</span>Arreglar un botón</summary>
-    <p>¿Falta un botón o no funciona? En la pantalla del control toca “Arreglar un botón”, elige los botones afectados y di qué hace la TV. Los botones que funcionan no se tocan. El “Modo experto” manual sigue al final de la pantalla para técnicos.</p>
+    <ol>
+      <li>En la pantalla del control, toca “Arreglar un botón”.</li>
+      <li>Elige el botón que falta o no funciona, y luego “Comenzar”.</li>
+      <li>Di qué hace la TV, como en “Enseñar mi TV”.</li>
+    </ol>
+    <p class="tip">Los botones que funcionan no se tocan. El “Modo experto” manual sigue al final de la pantalla para técnicos.</p>
   </details>
-  <details>
+  <details id="es-ac">
     <summary><span class="ico">❄️</span>Aire acondicionado</summary>
-    <p>En “Agregar dispositivo”, elige “Aire acondicionado” y luego su marca, o prueba los protocolos uno por uno hasta que el equipo reaccione. En su control, gira el dial para fijar la temperatura y toca el centro para cambiar de modo.</p>
+    <ol>
+      <li>En “＋ Agregar dispositivo”, elige “Aire acondicionado”.</li>
+      <li>Elige su marca, o prueba los protocolos uno por uno hasta que el equipo reaccione.</li>
+      <li>En su control: gira el dial para fijar la temperatura y toca el centro para cambiar de modo.</li>
+    </ol>
   </details>
-  <details>
+  <details id="es-wifi">
     <summary><span class="ico">📶</span>Smart TV por Wi‑Fi</summary>
-    <p>El teléfono y la TV deben estar en la misma red. En “Búsqueda Wi‑Fi”, busca en la red o escribe la dirección IP de la TV y toca “Revisar dirección”: la app reconoce su sistema por sí sola. Las TV LG y Samsung te piden aceptar una vez en pantalla. Algunas TV solo permiten abrir YouTube y Netflix por Wi‑Fi, y la app te lo indica.</p>
+    <ol>
+      <li>Conecta el teléfono y la TV a la misma red.</li>
+      <li>En “＋ Agregar dispositivo”, elige “Búsqueda Wi‑Fi (Smart TV)”.</li>
+      <li>Busca en la red, o escribe la dirección IP de la TV y toca “Revisar dirección”: la app reconoce su sistema por sí sola.</li>
+      <li>Las TV LG y Samsung te piden aceptar en pantalla, una sola vez.</li>
+    </ol>
+    <p class="tip">Algunas TV solo permiten abrir YouTube y Netflix por Wi‑Fi, y la app te lo indica.</p>
   </details>
-  <details>
+  <details id="es-atv">
     <summary><span class="ico">🤖</span>Android TV y Google TV</summary>
-    <p>En “Agregar dispositivo”, elige “Android TV”: las TV aparecen solas; elige la tuya y escribe, una sola vez, el código de 6 caracteres que muestra su pantalla. En el control: desliza en el panel táctil para moverte y toca para seleccionar; verás el estado de la TV y su nivel de volumen real, y podrás abrir YouTube, Netflix y más directamente.</p>
+    <ol>
+      <li>En “＋ Agregar dispositivo”, elige “Android TV”. Las TV aparecen solas.</li>
+      <li>Elige la tuya y escribe el código de 6 caracteres que muestra su pantalla, una sola vez.</li>
+      <li>En el control: desliza en el panel táctil para moverte y toca para seleccionar.</li>
+    </ol>
+    <p class="tip">Verás el estado de la TV y su nivel de volumen real, y podrás abrir YouTube, Netflix y más directamente.</p>
   </details>
-  <details>
+  <details id="es-devices">
     <summary><span class="ico">🗂️</span>Mis dispositivos</summary>
-    <p>Guarda varios dispositivos y toca “Activar” para cambiar entre ellos. El botón ⋮ de cada tarjeta te permite “Renombrar” y “Compartir” como código QR; otro teléfono lo importa con “Importar con QR”.</p>
+    <ul>
+      <li>Guarda varios dispositivos y toca “Activar” para cambiar entre ellos.</li>
+      <li>El botón ⋮ de cada tarjeta: “Renombrar” y “Compartir” como código QR.</li>
+      <li>Otro teléfono lo importa con “Importar con QR”.</li>
+    </ul>
   </details>
-  <details>
+  <details id="es-widget">
     <summary><span class="ico">📱</span>Widget y acceso en Ajustes rápidos</summary>
-    <p>Agrega el widget de REMOTE DNA a tu pantalla de inicio, o su acceso a los Ajustes rápidos, para encender y subir o bajar el volumen del dispositivo activo sin abrir la app.</p>
+    <p>Agrega el widget de REMOTE DNA a tu pantalla de inicio, o su acceso a los Ajustes rápidos. Ambos controlan el encendido y el volumen del dispositivo activo sin abrir la app.</p>
   </details>
-  <details>
+  <details id="es-help">
+    <summary><span class="ico">🆘</span>¿La TV no reacciona?</summary>
+    <ol>
+      <li>Revisa que el teléfono tenga emisor IR: si no, aparece “No se detectó emisor infrarrojo en este teléfono”.</li>
+      <li>Apunta la parte <b>superior</b> del teléfono a la TV, acércate y quita cualquier obstáculo.</li>
+      <li>Prueba el siguiente conjunto de la lista: una marca puede usar varios controles.</li>
+      <li>Si ningún conjunto funciona, usa “Enseñar mi TV” y luego “Búsqueda profunda (más larga)” si hace falta.</li>
+      <li>¿Todo funciona menos un botón? Usa “Arreglar un botón”.</li>
+    </ol>
+  </details>
+  <details id="es-pro">
     <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
-    <p>Un solo pago, sin suscripción: dispositivos guardados ilimitados (gratis: 3), sin anuncios en toda la app y todas las funciones futuras. Inicia sesión para recuperar la licencia en un teléfono nuevo.</p>
+    <ul>
+      <li>Un solo pago, sin suscripción.</li>
+      <li>Dispositivos guardados ilimitados (gratis: 3).</li>
+      <li>Sin anuncios en toda la app, y todas las funciones futuras.</li>
+      <li>Inicia sesión para recuperar la licencia en un teléfono nuevo.</li>
+    </ul>
   </details>
-  <details>
+  <details id="es-privacy">
     <summary><span class="ico">🔒</span>Privacidad</summary>
-    <p>Tus dispositivos y códigos se quedan en tu teléfono. La app no pide micrófono, ubicación ni contactos. La cuenta es opcional, y compartir códigos es anónimo y está desactivado salvo que lo actives. La política completa está en “Yo”.</p>
+    <ul>
+      <li>Tus dispositivos y códigos se quedan en tu teléfono.</li>
+      <li>La app no pide micrófono, ubicación ni contactos.</li>
+      <li>La cámara solo se usa para códigos QR y para leer la etiqueta, y la lectura se hace en el teléfono.</li>
+      <li>La cuenta es opcional, y compartir códigos es anónimo y está desactivado salvo que lo actives.</li>
+      <li>La política completa está en “Yo”.</li>
+    </ul>
   </details>
   <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.beinteck.remotedna" target="_blank" rel="noopener">Descárgalo en Google Play</a> <a class="ghost" href="./">Sitio web</a></p>
 </section>
 
 <section class="lang" data-lang="pt" lang="pt-BR" dir="ltr" hidden>
   <h1>Guia de uso</h1>
-  <p class="intro">Toque em um capítulo para abri-lo. Dentro do app, o ícone (i) explica a função que está na sua frente quando você toca nele.</p>
-  <details open>
+  <p class="intro">Toque em um capítulo para abri-lo. Dentro do app, o ícone (i) explica a função que está na sua frente.</p>
+  <div class="paths">
+    <h2>Qual caminho escolher?</h2>
+    <ul>
+      <li><span>Você sabe o número do modelo</span><a href="#pt-model">🔎 Buscar pelo modelo</a></li>
+      <li><span>Você só sabe a marca</span><a href="#pt-tv">📺 Adicionar uma TV</a></li>
+      <li><span>Você não sabe nada, ou nada funcionou</span><a href="#pt-teach">🎓 Ensinar minha TV</a></li>
+      <li><span>Uma Android TV ou Google TV</span><a href="#pt-atv">🤖 Android TV</a></li>
+      <li><span>Outra Smart TV, ou um celular sem infravermelho</span><a href="#pt-wifi">📶 Wi‑Fi</a></li>
+      <li><span>Um ar-condicionado</span><a href="#pt-ac">❄️ Ar-condicionado</a></li>
+    </ul>
+  </div>
+  <details id="pt-start" open>
     <summary><span class="ico">🚀</span>Primeiros passos</summary>
-    <p>O controle por infravermelho precisa de um celular com emissor infravermelho (comum em Xiaomi, Redmi, POCO, Huawei e Honor). Aponte a parte de cima do celular para a TV, como faria com o controle original. Celulares sem emissor ainda podem controlar Smart TVs por Wi‑Fi.</p>
+    <ol>
+      <li>O controle por infravermelho precisa de um celular com emissor IR, comum em Xiaomi, Redmi, POCO, Huawei e Honor. Se o seu não tiver, o app avisa.</li>
+      <li>Aponte a parte de cima do celular para a TV, como faria com o controle original.</li>
+      <li>Abra “Meus aparelhos”, toque em “＋ Adicionar aparelho” e escolha seu caminho na tabela acima.</li>
+    </ol>
+    <p class="tip">Sem emissor IR? O celular ainda controla Smart TVs por Wi‑Fi.</p>
   </details>
-  <details>
-    <summary><span class="ico">📺</span>Adicionar uma TV</summary>
-    <p>Em “Meus aparelhos”, toque em “Adicionar aparelho”, depois em “TV”, escolha sua marca e teste o botão liga/desliga. Se sua marca não estiver lá ou nada funcionar, use “Ensinar minha TV”. “Manual / IR rápido” testa os 40 controles mais comuns, um após o outro.</p>
+  <details id="pt-model">
+    <summary><span class="ico">🔎</span>Buscar pelo modelo <span class="new">Novo</span></summary>
+    <p>O caminho mais rápido: uma foto da etiqueta leva ao controle da sua TV.</p>
+    <ol>
+      <li>O número do modelo está na etiqueta atrás da TV, ou sob a tampa das pilhas do controle, por exemplo <b>43G7200</b>.</li>
+      <li>Em “＋ Adicionar aparelho”, escolha “Buscar pelo modelo”.</li>
+      <li>Escolha uma forma:
+        <ul>
+          <li>“Fotografar a etiqueta”: preencha o quadro com a etiqueta, com boa luz, e depois “Tirar a foto”.</li>
+          <li>“Escolher uma foto”: se você já fotografou a etiqueta.</li>
+          <li>Digite o número no campo e toque em “Buscar”.</li>
+        </ul>
+      </li>
+      <li>Aparecem os controles correspondentes. Aponte o celular para a TV e toque em “Testar”. Se a TV reagir, toque em “Usar este”.</li>
+      <li>Dê um nome ao aparelho e toque em “Salvar”.</li>
+    </ol>
+    <h3>Bom saber</h3>
+    <ul>
+      <li>Basta parte do número: “G7200” encontra “43G7200”.</li>
+      <li>“Testado em uma TV real” significa que esse modelo foi verificado em campo.</li>
+      <li>Se sua TV for Android TV, aparece o botão “Adicionar uma Android TV” para controlá-la por Wi‑Fi.</li>
+      <li>Modelo ainda desconhecido? Toque em “Ensinar minha TV”. A marca e o modelo lidos vão junto, e se você compartilhar os códigos no fim, a próxima pessoa encontra a TV dela com uma só foto.</li>
+      <li>A etiqueta é lida no celular, sem internet. A foto que você tira é apagada depois da leitura, e nenhuma foto é enviada.</li>
+    </ul>
   </details>
-  <details>
+  <details id="pt-tv">
+    <summary><span class="ico">📺</span>Adicionar uma TV pela marca</summary>
+    <ol>
+      <li>Em “＋ Adicionar aparelho”, escolha “TV”.</li>
+      <li>Escolha sua marca na lista em ordem alfabética.</li>
+      <li>Aponte o celular e toque em “Testar” no primeiro conjunto. Se a TV reagir, toque em “Usar este”; se não, teste o próximo.</li>
+      <li>Dê um nome ao aparelho e toque em “Salvar”.</li>
+    </ol>
+    <p class="tip">Sua marca não está lá ou nenhum conjunto funciona? Use “Ensinar minha TV”. “Manual / IR rápido” testa os 40 controles mais comuns, um após o outro.</p>
+  </details>
+  <details id="pt-teach">
     <summary><span class="ico">🎓</span>Ensinar minha TV</summary>
-    <p>Para uma TV cuja marca você não conhece. Ligue-a pelo próprio botão e aponte o celular para ela. O app envia sinais e pergunta “aconteceu algo na TV?”: responda “Sim” quando aparecer uma barra de volume ou um menu. Quando ele encontra sua TV, envia um sinal de cada vez e você escolhe o que a TV fez (volume, liga/desliga, OK…). Cada botão é enviado duas vezes para confirmar antes de ser salvo.</p>
+    <p>Para uma TV cuja marca você não conhece, ou quando nada mais funcionou. Você não precisa saber nada: só diga ao app o que vê na tela.</p>
+    <ol>
+      <li>Ligue a TV pelo próprio botão, aponte o celular para ela e toque em “Começar”.</li>
+      <li><b>A busca:</b> o app envia sinais e pergunta: “Apareceu na TV uma barra de volume, um menu ou qualquer outra coisa?”. Responda “Sim”, “Não” ou “Não tenho certeza”. Se a TV desligar, toque em “A TV desligou”: essa resposta também ajuda a busca.</li>
+      <li>Quando encontra: “Encontramos sua TV!”.</li>
+      <li><b>O aprendizado:</b> envia um sinal de cada vez e pergunta “O que a TV fez?”. Escolha o que você viu (volume, liga/desliga, OK…) ou “Nada”. Cada botão é enviado duas vezes para confirmar antes de ser salvo. Se um menu abrir, toque em “Me tire do menu”.</li>
+      <li>Toque em “Terminar agora” quando quiser e depois em “Salvar o controle”. Os botões que faltarem podem ser completados depois com “Consertar um botão”.</li>
+      <li>Opcional: “Compartilhar estes códigos (anônimo)” ajuda todo mundo que tem a mesma TV.</li>
+    </ol>
+    <h3>Busca profunda</h3>
+    <p>Se a TV não reagiu a nenhum sinal, aparece o botão “Busca profunda (mais longa)”. Ela testa, com as teclas numéricas, endereços que nenhum controle do nosso catálogo usa. Deixe a TV em um canal e responda “Sim” quando o número do canal mudar. Ela faz mais perguntas que a busca normal.</p>
   </details>
-  <details>
+  <details id="pt-fix">
     <summary><span class="ico">🔧</span>Consertar um botão</summary>
-    <p>Falta um botão ou ele não funciona? Na tela do controle, toque em “Consertar um botão”, escolha os botões com problema e diga o que a TV faz. Os botões que funcionam não são alterados. O “Modo especialista” manual continua no fim da tela para técnicos.</p>
+    <ol>
+      <li>Na tela do controle, toque em “Consertar um botão”.</li>
+      <li>Escolha o botão que falta ou não funciona e depois “Começar”.</li>
+      <li>Diga o que a TV faz, como em “Ensinar minha TV”.</li>
+    </ol>
+    <p class="tip">Os botões que funcionam não são alterados. O “Modo especialista” manual continua no fim da tela para técnicos.</p>
   </details>
-  <details>
+  <details id="pt-ac">
     <summary><span class="ico">❄️</span>Ar-condicionado</summary>
-    <p>Em “Adicionar aparelho”, escolha “Ar-condicionado” e depois a marca, ou teste os protocolos um por um até o aparelho reagir. No controle dele, gire o botão giratório para ajustar a temperatura e toque no centro para mudar de modo.</p>
+    <ol>
+      <li>Em “＋ Adicionar aparelho”, escolha “Ar-condicionado”.</li>
+      <li>Escolha a marca, ou teste os protocolos um por um até o aparelho reagir.</li>
+      <li>No controle dele: gire o botão giratório para ajustar a temperatura e toque no centro para mudar de modo.</li>
+    </ol>
   </details>
-  <details>
+  <details id="pt-wifi">
     <summary><span class="ico">📶</span>Smart TV por Wi‑Fi</summary>
-    <p>O celular e a TV precisam estar na mesma rede. Em “Busca Wi‑Fi”, procure na rede ou digite o endereço IP da TV e toque em “Verificar endereço”: o app reconhece o sistema sozinho. TVs LG e Samsung pedem uma aceitação na tela uma única vez. Algumas TVs só permitem abrir YouTube e Netflix por Wi‑Fi, e o app avisa você.</p>
+    <ol>
+      <li>Conecte o celular e a TV à mesma rede.</li>
+      <li>Em “＋ Adicionar aparelho”, escolha “Busca Wi‑Fi (Smart TV)”.</li>
+      <li>Procure na rede, ou digite o endereço IP da TV e toque em “Verificar endereço”: o app reconhece o sistema sozinho.</li>
+      <li>TVs LG e Samsung pedem uma aceitação na tela, uma única vez.</li>
+    </ol>
+    <p class="tip">Algumas TVs só permitem abrir YouTube e Netflix por Wi‑Fi, e o app avisa você.</p>
   </details>
-  <details>
+  <details id="pt-atv">
     <summary><span class="ico">🤖</span>Android TV e Google TV</summary>
-    <p>Em “Adicionar aparelho”, escolha “Android TV”: as TVs aparecem sozinhas; escolha a sua e digite, uma única vez, o código de 6 caracteres que aparece na tela dela. No controle: deslize no touchpad para mover e toque para selecionar; você vê o estado da TV e o nível real do volume, e pode abrir YouTube, Netflix e mais diretamente.</p>
+    <ol>
+      <li>Em “＋ Adicionar aparelho”, escolha “Android TV”. As TVs aparecem sozinhas.</li>
+      <li>Escolha a sua e digite o código de 6 caracteres que aparece na tela dela, uma única vez.</li>
+      <li>No controle: deslize no touchpad para mover e toque para selecionar.</li>
+    </ol>
+    <p class="tip">Você vê o estado da TV e o nível real do volume, e pode abrir YouTube, Netflix e mais diretamente.</p>
   </details>
-  <details>
+  <details id="pt-devices">
     <summary><span class="ico">🗂️</span>Meus aparelhos</summary>
-    <p>Salve vários aparelhos e toque em “Ativar” para alternar entre eles. O botão ⋮ de cada cartão permite “Renomear” e “Compartilhar” como QR code; outro celular importa com “Importar por QR”.</p>
+    <ul>
+      <li>Salve vários aparelhos e toque em “Ativar” para alternar entre eles.</li>
+      <li>O botão ⋮ de cada cartão: “Renomear” e “Compartilhar” como QR code.</li>
+      <li>Outro celular importa com “Importar por QR”.</li>
+    </ul>
   </details>
-  <details>
+  <details id="pt-widget">
     <summary><span class="ico">📱</span>Widget e atalho nas Configurações rápidas</summary>
-    <p>Adicione o widget do REMOTE DNA à tela inicial, ou o atalho dele às Configurações rápidas, para ligar e mudar o volume do aparelho ativo sem abrir o app.</p>
+    <p>Adicione o widget do REMOTE DNA à tela inicial, ou o atalho dele às Configurações rápidas. Os dois controlam o liga/desliga e o volume do aparelho ativo sem abrir o app.</p>
   </details>
-  <details>
+  <details id="pt-help">
+    <summary><span class="ico">🆘</span>A TV não reage?</summary>
+    <ol>
+      <li>Confira se o celular tem emissor IR: se não tiver, aparece “Nenhum emissor infravermelho detectado neste celular”.</li>
+      <li>Aponte a parte de <b>cima</b> do celular para a TV, chegue mais perto e tire qualquer obstáculo.</li>
+      <li>Teste o próximo conjunto da lista: uma marca pode usar vários controles.</li>
+      <li>Se nenhum conjunto funcionar, use “Ensinar minha TV” e depois “Busca profunda (mais longa)” se precisar.</li>
+      <li>Tudo funciona menos um botão? Use “Consertar um botão”.</li>
+    </ol>
+  </details>
+  <details id="pt-pro">
     <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
-    <p>Pagamento único, sem assinatura: aparelhos salvos ilimitados (grátis: 3), nenhum anúncio no app e todas as funções futuras. Entre na sua conta para recuperar a licença em um celular novo.</p>
+    <ul>
+      <li>Pagamento único, sem assinatura.</li>
+      <li>Aparelhos salvos ilimitados (grátis: 3).</li>
+      <li>Nenhum anúncio no app, e todas as funções futuras.</li>
+      <li>Entre na sua conta para recuperar a licença em um celular novo.</li>
+    </ul>
   </details>
-  <details>
+  <details id="pt-privacy">
     <summary><span class="ico">🔒</span>Privacidade</summary>
-    <p>Seus aparelhos e códigos ficam no seu celular. O app não pede microfone, localização nem contatos. A conta é opcional, e o compartilhamento de códigos é anônimo e fica desligado até você ativar. A política completa está em “Eu”.</p>
+    <ul>
+      <li>Seus aparelhos e códigos ficam no seu celular.</li>
+      <li>O app não pede microfone, localização nem contatos.</li>
+      <li>A câmera serve só para QR codes e para ler a etiqueta, e a leitura acontece no celular.</li>
+      <li>A conta é opcional, e o compartilhamento de códigos é anônimo e fica desligado até você ativar.</li>
+      <li>A política completa está em “Eu”.</li>
+    </ul>
   </details>
   <p class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.beinteck.remotedna" target="_blank" rel="noopener">Baixe no Google Play</a> <a class="ghost" href="./">Site</a></p>
 </section>
@@ -349,12 +974,28 @@ function setLang(l){
   try { localStorage.setItem('rdna-lang', l); } catch(e){}
 }
 document.querySelectorAll('.switch button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+// A link in "Which way?" opens its chapter, closes the others, and scrolls to it.
+function openChapter(id){
+  var d = document.getElementById(id);
+  if (!d || d.tagName !== 'DETAILS') return;
+  d.parentNode.querySelectorAll('details').forEach(function(x){ x.open = x === d; });
+  d.scrollIntoView({behavior:'smooth', block:'start'});
+}
+document.querySelectorAll('.paths a').forEach(function(a){
+  a.addEventListener('click', function(e){ e.preventDefault(); openChapter(a.getAttribute('href').slice(1)); history.replaceState(null, '', a.getAttribute('href')); });
+});
 (function(){
   var saved = null;
   try { saved = localStorage.getItem('rdna-lang'); } catch(e){}
   var nav = (navigator.language || 'ar').slice(0,2).toLowerCase();
-  var l = saved || (['ar','fr','en','zh','es','pt'].indexOf(nav) >= 0 ? nav : 'en');
+  // A chapter link picks its own language (#fr-model), or opens the chapter in
+  // the reader's language (#model, from the landing page).
+  var hash = location.hash.slice(1), fromHash = hash.split('-')[0];
+  var langs = ['ar','fr','en','zh','es','pt'];
+  var tagged = hash.indexOf('-') > 0 && langs.indexOf(fromHash) >= 0;
+  var l = tagged ? fromHash : (saved || (langs.indexOf(nav) >= 0 ? nav : 'en'));
   setLang(l);
+  if (hash) openChapter(tagged ? hash : l + '-' + hash);
 })();
 </script>
 </body>

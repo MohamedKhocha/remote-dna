@@ -141,6 +141,9 @@ header{
 .card:hover{border-color:rgba(59,130,246,.55);transform:translateY(-3px)}
 .card h3{font-size:1.12rem;margin-bottom:8px}
 .card p{color:var(--dim);font-size:.94rem}
+.card-new{grid-column:1/-1;border-color:rgba(34,197,94,.45)}
+.badge-new{display:inline-block;vertical-align:middle;margin-inline-start:6px;background:#22C55E;color:#06210F;font-size:.72rem;font-weight:800;padding:2px 9px;border-radius:999px}
+.card .more{display:inline-block;margin-top:10px;color:var(--blue);font-weight:700;text-decoration:none}
 .ico{
   width:46px;height:46px;border-radius:13px;display:grid;place-items:center;margin-bottom:16px;
   background:rgba(59,130,246,.14);border:1px solid rgba(59,130,246,.32);font-size:1.35rem
@@ -324,6 +327,11 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
       <p class="lead" data-i18n="feat.lead">بُني من الصفر: مشفّرات بروتوكولات مكتوبة يدوياً، لا مجرد قوائم شيفرات جاهزة.</p>
     </div>
     <div class="grid-3">
+      <div class="card card-new rv"><div class="ico">🔎</div>
+        <h3><span data-i18n="f7.t">ابحث بالموديل</span> <span class="badge-new" data-i18n="f7.new">جديد</span></h3>
+        <p data-i18n="f7.d">صوّر الملصق خلف تلفازك أو اختر صورته، أو اكتب رقم الموديل، فيقترح التطبيق ريموته فوراً. القراءة تتم على الهاتف، بلا إنترنت، ولا تُرسل أي صورة.</p>
+        <a class="more" href="guide.html#model" data-i18n="f7.more">كيف تستعملها ←</a>
+      </div>
       <div class="card rv"><div class="ico">📺</div>
         <h3 data-i18n="f1.t">تلفاز عبر الأشعة</h3>
         <p data-i18n="f1.d">بروتوكولات Samsung32 و NEC و RC5 و RC6 و Sony SIRC و RCA و Panasonic — تغطي أغلب التلفزيونات، وتعمل فوراً بلا إنترنت.</p>
@@ -437,7 +445,7 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
       <details><summary data-i18n="q2">هل يعمل التطبيق بدون إنترنت؟</summary>
         <p data-i18n="a2">نعم. كل الشيفرات والبروتوكولات مدمجة داخل التطبيق. الإنترنت مطلوب فقط للشراء أو استرجاعه أو تحديث القاعدة المجتمعية.</p></details>
       <details><summary data-i18n="q3">جهازي غير موجود في القائمة، ماذا أفعل؟</summary>
-        <p data-i18n="a3">استعمل «علّم تلفازك»: وجّه الهاتف نحو التلفاز وأجب عن الأسئلة، فيجده التطبيق ويتعلّم أزراره. ما تعلّمه يمكنك مشاركته ليستفيد منه غيرك.</p></details>
+        <p data-i18n="a3">جرّب أولاً «ابحث بالموديل»: صوّر الملصق خلف التلفاز أو اكتب رقمه. وإن لم نعرف الموديل بعد، استعمل «علّم تلفازك»: وجّه الهاتف نحو التلفاز وأجب عن الأسئلة، فيجده التطبيق ويتعلّم أزراره. ما تعلّمه يمكنك مشاركته ليستفيد منه غيرك.</p></details>
       <details><summary data-i18n="q4">ما الفرق بين المجاني و Pro؟</summary>
         <p data-i18n="a4">المجاني كامل الوظائف حتى 3 أجهزة، ويعرض إعلانات: عند فتح التطبيق، وبين الشاشات بين حين وآخر، وقبل «أصلح زراً». أما Pro فيرفع الحد ويزيل كل الإعلانات — بدفعة واحدة مدى الحياة.</p></details>
       <details><summary data-i18n="q5">هل تجمعون بياناتي؟</summary>
@@ -506,6 +514,7 @@ const I18N = {
     "f4.t":"Agent DNA intelligent","f4.d":"Identifie votre appareil en un minimum de questions grâce à un élagage fondé sur la théorie de l’information.",
     "f5.t":"Contrôle par Wi‑Fi","f5.d":"Pas d’émetteur infrarouge ? Pilotez Android TV, Google TV, LG, Samsung et Roku directement via le réseau local.",
     "f6.t":"Réseau génétique","f6.d":"Partagez vos codes anonymement : la base s’améliore pour tous — chaque utilisateur rend l’app plus intelligente.",
+    "f7.t":"Trouver par modèle","f7.new":"Nouveau","f7.d":"Photographiez l’étiquette au dos de la télé, choisissez sa photo ou tapez le numéro de modèle : l’app propose aussitôt sa télécommande. La lecture se fait sur le téléphone, hors ligne, et aucune photo n’est envoyée.","f7.more":"Comment l’utiliser →",
     "how.eyebrow":"Démarrage","how.title":"Trois étapes et c’est prêt",
     "s1.t":"Ajoutez l’appareil","s1.d":"Choisissez le type — TV ou climatiseur — puis votre marque dans la liste alphabétique.",
     "s2.t":"Testez l’alimentation","s2.d":"Pointez le téléphone et appuyez sur power. L’appareil réagit ? Enregistrez le jeu.",
@@ -522,7 +531,7 @@ const I18N = {
     "faq.eyebrow":"FAQ","faq.title":"Les questions fréquentes",
     "q1":"Mon téléphone doit-il avoir un émetteur infrarouge ?","a1":"Pour l’infrarouge, oui — présent sur beaucoup de Xiaomi et autres. Sinon, pilotez les TV connectées par Wi‑Fi sans matériel supplémentaire.",
     "q2":"L’application fonctionne-t-elle hors ligne ?","a2":"Oui. Tous les codes et protocoles sont intégrés. Internet ne sert qu’à l’achat, à sa restauration ou à la mise à jour de la base communautaire.",
-    "q3":"Mon appareil n’est pas dans la liste, que faire ?","a3":"Utilisez « Apprendre ma télé » : visez la télé et répondez aux questions, l’app la trouve et apprend ses touches. Ce que vous lui apprenez peut être partagé pour aider les autres.",
+    "q3":"Mon appareil n’est pas dans la liste, que faire ?","a3":"Essayez d’abord « Trouver par modèle » : photographiez l’étiquette au dos de la télé ou tapez son numéro. Si le modèle n’est pas encore connu, utilisez « Apprendre ma télé » : visez la télé et répondez aux questions, l’app la trouve et apprend ses touches. Ce que vous lui apprenez peut être partagé pour aider les autres.",
     "q4":"Quelle différence entre Gratuit et Pro ?","a4":"Le gratuit est complet jusqu’à 3 appareils et affiche des publicités : à l’ouverture de l’app, de temps en temps entre les écrans, et avant « Réparer une touche ». Pro supprime la limite et toutes les publicités — paiement unique à vie.",
     "q5":"Collectez-vous mes données ?","a5":"Ni nom, ni contacts, ni position. Vos appareils restent sur votre téléphone. Le partage de codes est facultatif et totalement anonyme.",
     "q6":"J’ai acheté Pro et changé de téléphone — je le perds ?","a6":"Non. L’achat est lié à votre compte Google : sur le nouveau téléphone, ouvrez l’écran Pro et touchez « Restaurer les achats ».",
@@ -546,6 +555,7 @@ const I18N = {
     "f4.t":"Smart DNA Agent","f4.d":"Identifies your device in the fewest questions using information-theory pruning — not random guessing.",
     "f5.t":"Wi‑Fi control","f5.d":"No IR blaster on your phone? Control Android TV, Google TV, LG, Samsung and Roku straight over your local network.",
     "f6.t":"Genetic network","f6.d":"Share your codes anonymously and the catalogue improves for everyone — each user makes the app smarter.",
+    "f7.t":"Find by model","f7.new":"New","f7.d":"Photograph the label on the back of your TV, pick its photo, or type the model number, and the app suggests its remote right away. Reading happens on the phone, offline, and no photo is ever sent.","f7.more":"How to use it →",
     "how.eyebrow":"Getting started","how.title":"Three steps and it works",
     "s1.t":"Add your device","s1.d":"Pick the type — TV or air conditioner — then your brand from the A–Z list.",
     "s2.t":"Test power","s2.d":"Point the phone and press power. Device reacted? Save that code set.",
@@ -562,7 +572,7 @@ const I18N = {
     "faq.eyebrow":"FAQ","faq.title":"What everyone asks",
     "q1":"Does my phone need an IR blaster?","a1":"For infrared, yes — many Xiaomi and other phones have one. If yours doesn’t, you can still control smart TVs over Wi‑Fi with no extra hardware.",
     "q2":"Does the app work offline?","a2":"Yes. Every code and protocol ships inside the app. Internet is only needed to buy or restore Pro, or to update the community catalogue.",
-    "q3":"My device isn’t listed — what now?","a3":"Use “Teach my TV”: point the phone at the TV and answer the questions, and the app finds it and learns its buttons. What you teach can be shared to help others.",
+    "q3":"My device isn’t listed — what now?","a3":"Try “Find by model” first: photograph the label on the back of the TV or type its number. If the model isn’t known yet, use “Teach my TV”: point the phone at the TV and answer the questions, and the app finds it and learns its buttons. What you teach can be shared to help others.",
     "q4":"What’s the difference between Free and Pro?","a4":"Free is fully functional for up to 3 devices and shows ads: when the app opens, now and then between screens, and before “Fix a button”. Pro removes the limit and every ad — one payment, for life.",
     "q5":"Do you collect my data?","a5":"No name, no contacts, no location. Your saved devices stay on your phone. Code sharing is entirely optional and fully anonymous.",
     "q6":"I bought Pro and changed phones — do I lose it?","a6":"No. The purchase is tied to your Google account: on the new phone, open the Pro screen and tap “Restore purchases”.",
@@ -605,6 +615,7 @@ const I18N = {
     "f5.d":"手机没有红外发射器？通过本地网络直接控制 Android TV、Google TV、LG、Samsung 和 Roku。",
     "f6.t":"基因网络",
     "f6.d":"匿名分享你的代码，码库为所有人变得更好，每位用户都让应用更聪明。",
+    "f7.t":"按型号查找","f7.new":"新功能","f7.d":"拍摄电视背面的标签、选择标签照片或输入型号，应用即刻推荐对应的遥控器。识别在手机上离线完成，任何照片都不会上传。","f7.more":"使用方法 →",
     "how.eyebrow":"快速开始",
     "how.title":"三步即可使用",
     "s1.t":"添加设备",
@@ -648,7 +659,7 @@ const I18N = {
     "q2":"应用可以离线使用吗？",
     "a2":"可以。所有代码和协议都内置在应用中。只有购买或恢复 Pro、或更新社区码库时才需要联网。",
     "q3":"我的设备不在列表里怎么办？",
-    "a3":"使用“教会我的电视”：把手机对准电视并回答问题，应用就能找到它并学会按键。你教给它的内容可以分享出来帮助他人。",
+    "a3":"先试试“按型号查找”：拍摄电视背面的标签或输入型号。如果暂时没有该型号，使用“教会我的电视”：把手机对准电视并回答问题，应用就能找到它并学会按键。你教给它的内容可以分享出来帮助他人。",
     "q4":"免费版和 Pro 版有什么区别？",
     "a4":"免费版功能完整，最多保存 3 台设备，并会显示广告：打开应用时、偶尔在切换界面时，以及“修复按键”之前。Pro 取消数量限制并去除所有广告，一次付款，终身使用。",
     "q5":"你们会收集我的数据吗？",
@@ -698,6 +709,7 @@ const I18N = {
     "f5.d":"¿Tu celular no tiene emisor infrarrojo? Controla Android TV, Google TV, LG, Samsung y Roku directo por tu red local.",
     "f6.t":"Red genética",
     "f6.d":"Comparte tus códigos de forma anónima y el catálogo mejora para todos: cada usuario hace la app más inteligente.",
+    "f7.t":"Buscar por modelo","f7.new":"Nuevo","f7.d":"Fotografía la etiqueta de atrás de tu TV, elige su foto o escribe el número de modelo, y la app te sugiere su control al instante. La lectura se hace en el teléfono, sin internet, y nunca se envía ninguna foto.","f7.more":"Cómo usarla →",
     "how.eyebrow":"Primeros pasos",
     "how.title":"Tres pasos y listo",
     "s1.t":"Agrega tu equipo",
@@ -741,7 +753,7 @@ const I18N = {
     "q2":"¿La app funciona sin internet?",
     "a2":"Sí. Todos los códigos y protocolos vienen dentro de la app. Internet solo se necesita para comprar o recuperar Pro, o para actualizar el catálogo de la comunidad.",
     "q3":"Mi equipo no está en la lista: ¿qué hago?",
-    "a3":"Usa “Enseñar mi TV”: apunta el celular a la TV y responde las preguntas; la app la encuentra y aprende sus botones. Lo que le enseñes se puede compartir para ayudar a otros.",
+    "a3":"Prueba primero “Buscar por modelo”: fotografía la etiqueta de atrás de la TV o escribe su número. Si aún no conocemos el modelo, usa “Enseñar mi TV”: apunta el celular a la TV y responde las preguntas; la app la encuentra y aprende sus botones. Lo que le enseñes se puede compartir para ayudar a otros.",
     "q4":"¿Qué diferencia hay entre Gratis y Pro?",
     "a4":"La versión gratuita funciona por completo con hasta 3 dispositivos y muestra anuncios: al abrir la app, de vez en cuando entre pantallas y antes de “Arreglar un botón”. Pro quita el límite y todos los anuncios: un solo pago, de por vida.",
     "q5":"¿Recopilan mis datos?",
@@ -791,6 +803,7 @@ const I18N = {
     "f5.d":"Seu celular não tem emissor infravermelho? Controle Android TV, Google TV, LG, Samsung e Roku direto pela sua rede local.",
     "f6.t":"Rede genética",
     "f6.d":"Compartilhe seus códigos de forma anônima e o catálogo melhora para todos: cada usuário deixa o app mais inteligente.",
+    "f7.t":"Buscar pelo modelo","f7.new":"Novo","f7.d":"Fotografe a etiqueta atrás da sua TV, escolha a foto dela ou digite o número do modelo, e o app sugere o controle na hora. A leitura acontece no celular, sem internet, e nenhuma foto é enviada.","f7.more":"Como usar →",
     "how.eyebrow":"Primeiros passos",
     "how.title":"Três passos e pronto",
     "s1.t":"Adicione seu aparelho",
@@ -834,7 +847,7 @@ const I18N = {
     "q2":"O app funciona sem internet?",
     "a2":"Sim. Todos os códigos e protocolos vêm dentro do app. A internet só é necessária para comprar ou recuperar o Pro, ou para atualizar o catálogo da comunidade.",
     "q3":"Meu aparelho não está na lista: e agora?",
-    "a3":"Use “Ensinar minha TV”: aponte o celular para a TV e responda as perguntas; o app a encontra e aprende os botões. O que você ensina pode ser compartilhado para ajudar outras pessoas.",
+    "a3":"Tente primeiro “Buscar pelo modelo”: fotografe a etiqueta atrás da TV ou digite o número. Se ainda não conhecemos o modelo, use “Ensinar minha TV”: aponte o celular para a TV e responda as perguntas; o app a encontra e aprende os botões. O que você ensina pode ser compartilhado para ajudar outras pessoas.",
     "q4":"Qual a diferença entre Grátis e Pro?",
     "a4":"A versão gratuita funciona por completo com até 3 aparelhos e mostra anúncios: ao abrir o app, de vez em quando entre telas e antes de “Consertar um botão”. O Pro remove o limite e todos os anúncios: um único pagamento, para a vida toda.",
     "q5":"Vocês coletam meus dados?",
