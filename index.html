@@ -13,6 +13,7 @@
 <meta property="og:image" content="assets/feature-graphic.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/brand.css">
+<script src="assets/theme.js"></script>
 <style>
 /* ============================================================
    REMOTE DNA — marketing site
@@ -72,6 +73,8 @@ header{
 }
 .lang button.on{background:var(--rd-action);color:#fff}
 @media(max-width:860px){.nav-links{display:none}}
+@media(max-width:640px){.nav{gap:8px}.lang{gap:2px}.lang button{padding:5px 7px}}
+@media(max-width:560px){.brand span{display:none}}
 
 /* ---------- buttons ---------- */
 .btn{
@@ -278,6 +281,7 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
       <button data-lang="es">ES</button>
       <button data-lang="pt">PT</button>
     </div>
+    <button class="rd-theme" type="button" aria-label="الوضع الليلي / النهاري · Night / Day mode" title="Night / Day"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#sun"/></svg></button>
   </div>
 </header>
 

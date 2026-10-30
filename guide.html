@@ -9,6 +9,7 @@
 <meta name="theme-color" content="#EEF1F8" media="(prefers-color-scheme: light)">
 <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/brand.css">
+<script src="assets/theme.js"></script>
 <style>
   /* Colours and type: assets/brand.css (brand identity v1.0.3), Night or Day with the system. */
   :root{--bg:var(--rd-bg);--card:var(--rd-surface);--line:var(--rd-line);--text:var(--rd-ink);--dim:var(--rd-dim);--blue:var(--rd-blue);--green:var(--rd-green)}
@@ -16,6 +17,7 @@
   body{margin:0;background:var(--bg);position:relative;color:var(--text);font:16px/1.7 var(--rd-font)}
   .wrap{max-width:760px;margin:0 auto;padding:20px 16px 56px}
   header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+  header .switch{margin-inline-start:auto}
   .brand{display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:.5px}
   .brand img{width:26px;height:26px}
   .brand i{font-style:normal;background:var(--rd-grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -59,6 +61,7 @@
 <header>
   <a class="brand" href="./"><img src="assets/logo-mark.svg" alt=""><span>REMOTE <i>DNA</i></span></a>
   <div class="switch"><button data-lang="ar" class="on">ع</button><button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="zh">中</button><button data-lang="es">ES</button><button data-lang="pt">PT</button></div>
+  <button class="rd-theme" type="button" aria-label="الوضع الليلي / النهاري · Night / Day mode" title="Night / Day"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#sun"/></svg></button>
 </header>
 
 <section class="lang" data-lang="ar" lang="ar" dir="rtl">

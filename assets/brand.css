@@ -97,3 +97,12 @@
   border:1px solid color-mix(in srgb,var(--c) 40%,transparent);
   box-shadow:0 0 20px color-mix(in srgb,var(--c) 24%,transparent),inset 0 1px 0 rgba(255,255,255,.14)}
 .rd-ico .i{width:24px;height:24px}
+
+/* Night / Day switch (assets/theme.js): the sun at night, the moon by day */
+.rd-theme{display:inline-grid;place-items:center;flex:none;width:38px;height:38px;padding:0;border-radius:12px;cursor:pointer;
+  color:var(--rd-ink);background:var(--rd-surface);border:1px solid var(--rd-line);
+  -webkit-backdrop-filter:var(--rd-blur);backdrop-filter:var(--rd-blur);box-shadow:var(--rd-glass-shadow);transition:color .2s,box-shadow .2s}
+.rd-theme:hover{color:var(--rd-blue);box-shadow:var(--rd-glass-hover)}
+.rd-theme:focus-visible{outline:2px solid var(--rd-blue);outline-offset:2px}
+.rd-theme .i{width:20px;height:20px}
+
