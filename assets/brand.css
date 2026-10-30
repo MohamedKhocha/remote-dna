@@ -38,6 +38,11 @@
   --rd-glow-2:rgba(139,92,246,.12);
   --rd-shadow:0 18px 44px rgba(0,0,0,.45);
   --rd-a:#22C55E; --rd-t:#EF4444; --rd-g:#FACC15; --rd-c:#38BDF8;  /* DNA bases */
+  /* The app's GlassBackdrop: three soft glows (blue, violet, cyan) at the same spots and strengths */
+  --rd-backdrop:radial-gradient(46% 46% at 82% 14%,rgba(79,139,255,.5) 0%,rgba(79,139,255,.175) 55%,transparent 100%),radial-gradient(42% 42% at 10% 58%,rgba(139,92,246,.42) 0%,rgba(139,92,246,.147) 55%,transparent 100%),radial-gradient(36% 36% at 88% 92%,rgba(34,211,238,.22) 0%,rgba(34,211,238,.077) 55%,transparent 100%);
+  --rd-blur:blur(18px) saturate(150%);
+  --rd-glass-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 12px 32px rgba(0,0,0,.30);
+  --rd-glass-hover:0 0 0 1px rgba(79,139,255,.55),0 16px 40px rgba(79,139,255,.22);
 }
 
 /* Day: every coloured text token holds 4.5:1 or more on --rd-bg and on white */
@@ -53,6 +58,9 @@
     --rd-header:rgba(238,241,248,.82); --rd-band:rgba(228,233,244,.75);
     --rd-glow-1:rgba(47,95,214,.10); --rd-glow-2:rgba(116,68,224,.08);
     --rd-shadow:0 14px 34px rgba(15,23,42,.12);
+    --rd-backdrop:radial-gradient(46% 46% at 82% 14%,rgba(79,139,255,.28) 0%,rgba(79,139,255,.098) 55%,transparent 100%),radial-gradient(42% 42% at 10% 58%,rgba(139,92,246,.22) 0%,rgba(139,92,246,.077) 55%,transparent 100%),radial-gradient(36% 36% at 88% 92%,rgba(34,211,238,.16) 0%,rgba(34,211,238,.056) 55%,transparent 100%);
+    --rd-glass-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 10px 30px rgba(15,23,42,.07);
+    --rd-glass-hover:0 0 0 1px rgba(47,95,214,.45),0 14px 36px rgba(47,95,214,.16);
   }
 }
 :root[data-theme="light"]{
@@ -66,8 +74,26 @@
   --rd-header:rgba(238,241,248,.82); --rd-band:rgba(228,233,244,.75);
   --rd-glow-1:rgba(47,95,214,.10); --rd-glow-2:rgba(116,68,224,.08);
   --rd-shadow:0 14px 34px rgba(15,23,42,.12);
+  --rd-backdrop:radial-gradient(46% 46% at 82% 14%,rgba(79,139,255,.28) 0%,rgba(79,139,255,.098) 55%,transparent 100%),radial-gradient(42% 42% at 10% 58%,rgba(139,92,246,.22) 0%,rgba(139,92,246,.077) 55%,transparent 100%),radial-gradient(36% 36% at 88% 92%,rgba(34,211,238,.16) 0%,rgba(34,211,238,.056) 55%,transparent 100%);
+  --rd-glass-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 10px 30px rgba(15,23,42,.07);
+  --rd-glass-hover:0 0 0 1px rgba(47,95,214,.45),0 14px 36px rgba(47,95,214,.16);
 }
 
 /* The wordmark: "REMOTE" in ink, "DNA" in the brand gradient, Cairo ExtraBold */
 .rd-word{font-family:var(--rd-font);font-weight:800;letter-spacing:.5px;color:var(--rd-ink)}
 .rd-word i,.rd-grad-text{font-style:normal;background:var(--rd-grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Glowing backdrop behind every page (add class "rd-glow" to <body>) */
+.rd-glow::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--rd-backdrop)}
+
+/* Glass surface: translucent, blurred, lit top edge */
+.rd-glass{background:var(--rd-surface);border:1px solid var(--rd-line);-webkit-backdrop-filter:var(--rd-blur);backdrop-filter:var(--rd-blur);box-shadow:var(--rd-glass-shadow)}
+
+/* Original line icons: <svg class="i"><use href="assets/icons.svg#dna"/></svg> */
+.i{width:1.2em;height:1.2em;display:inline-block;vertical-align:-.22em;flex:none}
+/* Icon chip in a link colour: style="--c:var(--rd-orange)" (IR), blue (Wi-Fi), violet (Bluetooth, AI), cyan (AC) */
+.rd-ico{--c:var(--rd-blue);display:inline-grid;place-items:center;flex:none;width:44px;height:44px;border-radius:14px;color:var(--c);
+  background:linear-gradient(145deg,color-mix(in srgb,var(--c) 24%,transparent),color-mix(in srgb,var(--c) 6%,transparent));
+  border:1px solid color-mix(in srgb,var(--c) 40%,transparent);
+  box-shadow:0 0 20px color-mix(in srgb,var(--c) 24%,transparent),inset 0 1px 0 rgba(255,255,255,.14)}
+.rd-ico .i{width:24px;height:24px}

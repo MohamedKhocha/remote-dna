@@ -13,7 +13,7 @@
   /* Colours and type: assets/brand.css (brand identity v1.0.3), Night or Day with the system. */
   :root{--bg:var(--rd-bg);--card:var(--rd-surface);--line:var(--rd-line);--text:var(--rd-ink);--dim:var(--rd-dim);--blue:var(--rd-blue);--green:var(--rd-green)}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 var(--rd-font)}
+  body{margin:0;background:var(--bg);position:relative;color:var(--text);font:16px/1.7 var(--rd-font)}
   .wrap{max-width:760px;margin:0 auto;padding:20px 16px 56px}
   header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
   .brand{display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:.5px}
@@ -36,7 +36,8 @@
   details[open]{border-color:var(--blue)}
   summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;align-items:center;gap:10px}
   summary::-webkit-details-marker{display:none}
-  .ico{font-size:20px}
+  .ico.rd-ico{width:34px;height:34px;border-radius:11px}
+  .ico .i{width:18px;height:18px}
   .new{background:var(--green);color:var(--rd-on-green);font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px}
   details p{margin:0 0 12px}
   details h3{font-size:15px;margin:16px 0 6px}
@@ -47,9 +48,13 @@
   .btn{background:var(--rd-grad-action);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:999px}
   .ghost{color:var(--text);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:999px;border:1px solid var(--line)}
   footer{color:var(--dim);font-size:13px;margin-top:32px}
+  /* glass surfaces (brand v1.0.4) */
+  .paths,details,.switch,.ghost{-webkit-backdrop-filter:var(--rd-blur);backdrop-filter:var(--rd-blur);box-shadow:var(--rd-glass-shadow)}
+  details[open]{box-shadow:var(--rd-glass-hover)}
+  .paths a .i{width:18px;height:18px;margin-inline-end:4px}
 </style>
 </head>
-<body>
+<body class="rd-glow">
 <div class="wrap">
 <header>
   <a class="brand" href="./"><img src="assets/logo-mark.svg" alt=""><span>REMOTE <i>DNA</i></span></a>
@@ -62,19 +67,19 @@
   <div class="paths">
     <h2>أي طريق أختار؟</h2>
     <ul>
-      <li><span>تعرف رقم موديل التلفاز</span><a href="#ar-model">🔎 ابحث بالموديل</a></li>
-      <li><span>تعرف العلامة فقط</span><a href="#ar-tv">📺 أضف تلفازاً</a></li>
-      <li><span>لا تعرف شيئاً، أو لم يعمل شيء</span><a href="#ar-teach">🎓 علّم تلفازك</a></li>
-      <li><span>تفضّل أن يرشدك أحد بالمحادثة</span><a href="#ar-agent">🧬 وكيل Remote DNA</a></li>
-      <li><span>تلفاز Android TV أو Google TV</span><a href="#ar-atv">🤖 Google TV / Android TV</a></li>
-      <li><span>ريسيفر أو صندوق IPTV</span><a href="#ar-stb">📦 الريسيفر</a></li>
-      <li><span>Fire TV أو صندوق Android أو Apple TV</span><a href="#ar-bt">🔵 بلوتوث</a></li>
-      <li><span>تلفاز ذكي آخر، أو هاتف بلا أشعة</span><a href="#ar-wifi">📶 الواي‑فاي</a></li>
-      <li><span>مكيّف هواء</span><a href="#ar-ac">❄️ المكيّف</a></li>
+      <li><span>تعرف رقم موديل التلفاز</span><a href="#ar-model"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#scan"/></svg> ابحث بالموديل</a></li>
+      <li><span>تعرف العلامة فقط</span><a href="#ar-tv"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv"/></svg> أضف تلفازاً</a></li>
+      <li><span>لا تعرف شيئاً، أو لم يعمل شيء</span><a href="#ar-teach"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv-spark"/></svg> علّم تلفازك</a></li>
+      <li><span>تفضّل أن يرشدك أحد بالمحادثة</span><a href="#ar-agent"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#agent"/></svg> وكيل Remote DNA</a></li>
+      <li><span>تلفاز Android TV أو Google TV</span><a href="#ar-atv"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#smart-tv"/></svg> Google TV / Android TV</a></li>
+      <li><span>ريسيفر أو صندوق IPTV</span><a href="#ar-stb"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#receiver"/></svg> الريسيفر</a></li>
+      <li><span>Fire TV أو صندوق Android أو Apple TV</span><a href="#ar-bt"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#bluetooth"/></svg> بلوتوث</a></li>
+      <li><span>تلفاز ذكي آخر، أو هاتف بلا أشعة</span><a href="#ar-wifi"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#wifi"/></svg> الواي‑فاي</a></li>
+      <li><span>مكيّف هواء</span><a href="#ar-ac"><svg class="i" aria-hidden="true" style="color:var(--rd-cyan)"><use href="assets/icons.svg#snow"/></svg> المكيّف</a></li>
     </ul>
   </div>
   <details id="ar-start" open>
-    <summary><span class="ico">🚀</span>أول خطوة</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#rocket"/></svg></span>أول خطوة</summary>
     <ol>
       <li>افتح «أجهزتي». في الأعلى ثلاثة تبويبات بحسب طريقة وصول الهاتف إلى الجهاز: <b>واي‑فاي</b> و<b>بلوتوث</b> و<b>أشعة IR</b>.</li>
       <li>اختر التبويب واضغط «＋ إضافة جهاز»، ثم نوع الجهاز (تلفاز، صندوق TV، ريسيفر، مكيّف…)، ثم الطريقة. الأسرع تأتي أولاً.</li>
@@ -83,7 +88,7 @@
     <p class="tip">هاتف بلا أشعة؟ تبويبا الواي‑فاي والبلوتوث يكفيان للتلفزيونات الذكية والصناديق. والشرح في كل شاشة خلف أيقونة (i)، وزر الأسهم بجانب الكرة الأرضية يصغّر الواجهة أو يكبّرها.</p>
   </details>
   <details id="ar-model">
-    <summary><span class="ico">🔎</span>ابحث بالموديل <span class="new">جديد</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#scan"/></svg></span>ابحث بالموديل <span class="new">جديد</span></summary>
     <p>أسرع طريق: صورة واحدة للملصق تقودك إلى ريموت تلفازك.</p>
     <ol>
       <li>رقم الموديل مكتوب على الملصق خلف التلفاز، أو تحت غطاء بطاريات الريموت، مثلاً <b>43G7200</b>.</li>
@@ -107,7 +112,7 @@
     </ul>
   </details>
   <details id="ar-tv">
-    <summary><span class="ico">📺</span>أضف تلفازاً بالعلامة</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv"/></svg></span>أضف تلفازاً بالعلامة</summary>
     <ol>
       <li>من «＋ إضافة جهاز» ← «أشعة IR» ← «تلفاز» اختر «تلفاز».</li>
       <li>اختر علامتك من القائمة الأبجدية.</li>
@@ -117,7 +122,7 @@
     <p class="tip">لم تجد علامتك أو لم تعمل أي مجموعة؟ استعمل «علّم تلفازك». و«يدوي / أشعة سريع» يجرّب أشهر 40 ريموتاً واحداً بعد الآخر. العلامات الجزائرية في أعلى القائمة 🇩🇿: Iris وCondor وEnie وStarlight وBrandt، وفي المكيّفات Condor وMaxtor وBrandt وMajor Cara وThomson. يقترح التطبيق أولاً ريموتات الشركة التي تصنعها عادةً.</p>
   </details>
   <details id="ar-teach">
-    <summary><span class="ico">🎓</span>علّم تلفازك</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv-spark"/></svg></span>علّم تلفازك</summary>
     <p>لتلفاز لا تعرف علامته، أو لم تنجح معه طريقة أخرى. أنت لا تحتاج أن تعرف شيئاً: تخبر التطبيق فقط بما تراه على الشاشة.</p>
     <ol>
       <li>شغّل التلفاز من زرّه، ووجّه الهاتف نحوه، واضغط «ابدأ».</li>
@@ -138,7 +143,7 @@
     <p class="tip">ضغطت بالخطأ؟ لا بأس: سؤال واحد يكشف ذلك، ويكمل البثّ من حيث توقّف. وإن جرّبت البحث العادي من قبل دون نتيجة، زر «بحث أعمق (أطول)» تحت «ابدأ» يأخذك إليه مباشرة.</p>
   </details>
   <details id="ar-agent">
-    <summary><span class="ico">🧬</span>وكيل Remote DNA <span class="new">تجريبي</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#agent"/></svg></span>وكيل Remote DNA <span class="new">تجريبي</span></summary>
     <p>محادثة تعيد بناء ريموت تلفازك: تصف التلفاز أو تكتب رقم الموديل، فيجد الوكيل الشيفرة ويجرّبها معك زرّاً زرّاً.</p>
     <ol>
       <li>اضغط الزرّ العائم (فقاعة فيها حلزون) أسفل الشاشة، في أيّ تبويب. اسحبه إلى أيّ جانب إن غطّى شيئاً.</li>
@@ -150,7 +155,7 @@
     <p class="tip">يحتاج الإنترنت: ما تكتبه يُرسل إلى خادمنا وإلى خدمة ذكاء اصطناعي ليُجاب عنه، فلا تكتب بيانات شخصية. قد يخطئ الذكاء الاصطناعي، فتحقّق بنفسك. الإشارة يرسلها باعث الأشعة في هاتفك. لم تجد الزرّ العائم؟ حدّث التطبيق.</p>
   </details>
   <details id="ar-fix">
-    <summary><span class="ico">🔧</span>أصلح زراً</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#fix"/></svg></span>أصلح زراً</summary>
     <ol>
       <li>في شاشة الريموت اضغط «أصلح زراً».</li>
       <li>اختر الزر الذي لا يعمل أو الناقص، ثم «ابدأ».</li>
@@ -159,7 +164,7 @@
     <p class="tip">الأزرار التي تعمل لا تُمسّ. و«وضع الخبراء» اليدوي متاح أسفل الشاشة للفنيين.</p>
   </details>
   <details id="ar-ac">
-    <summary><span class="ico">❄️</span>المكيّف</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-cyan)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#snow"/></svg></span>المكيّف</summary>
     <ol>
       <li>من «＋ إضافة جهاز» ← «أشعة IR» ← «مكيّف» اختر «مكيّف هواء».</li>
       <li>اختر علامته، أو جرّب البروتوكولات واحداً واحداً حتى يستجيب المكيّف.</li>
@@ -174,7 +179,7 @@
     <p class="tip">لا يحتاج باعث أشعة، ويعمل من أي غرفة في البيت.</p>
   </details>
   <details id="ar-stb">
-    <summary><span class="ico">📦</span>الريسيفر وصندوق IPTV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#receiver"/></svg></span>الريسيفر وصندوق IPTV</summary>
     <ol>
       <li>من «＋ إضافة جهاز» ← «أشعة IR» ← «ريسيفر» اختر «ريسيفر / صندوق IPTV».</li>
       <li>اختر العلامة: Starsat، Strong، Humax، TechniSat، Formuler، MAG…</li>
@@ -184,7 +189,7 @@
     <p class="tip">لم تجد علامتك؟ «علّم تلفازك» يعمل مع الريسيفر أيضاً.</p>
   </details>
   <details id="ar-wifi">
-    <summary><span class="ico">📶</span>التلفزيونات الذكية عبر الواي‑فاي</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#wifi"/></svg></span>التلفزيونات الذكية عبر الواي‑فاي</summary>
     <ol>
       <li>صِل الهاتف والتلفاز بالشبكة نفسها.</li>
       <li>من «＋ إضافة جهاز» ← «واي‑فاي» ← «تلفاز / صندوق TV» اختر «مسح واي‑فاي (التلفزيونات الذكية)».</li>
@@ -194,7 +199,7 @@
     <p class="tip">بعض التلفزيونات لا تقبل عبر الواي‑فاي إلا فتح YouTube وNetflix، والتطبيق يخبرك بذلك.</p>
   </details>
   <details id="ar-atv">
-    <summary><span class="ico">🤖</span>Google TV و Android TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smart-tv"/></svg></span>Google TV و Android TV</summary>
     <ol>
       <li>من «＋ إضافة جهاز» ← «واي‑فاي» ← «تلفاز / صندوق TV» اختر «Google TV / Android TV».</li>
       <li>اختر تلفازك، واكتب الرمز المكوّن من 6 خانات الظاهر على شاشته، مرة واحدة فقط.</li>
@@ -219,7 +224,7 @@
     <p class="tip">اختياري، ويتذكّره التطبيق لهذا التلفاز. أوقفه بـ«أوقف الرابط». يتطلّب أندرويد 8 فما فوق على الهاتف. لم تجده؟ حدّث التطبيق.</p>
   </details>
   <details id="ar-bt">
-    <summary><span class="ico">🔵</span>ريموت بلوتوث: Fire TV وصناديق Android وApple TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#bluetooth"/></svg></span>ريموت بلوتوث: Fire TV وصناديق Android وApple TV</summary>
     <p>هذه الأجهزة لا تستقبل الأشعة، فيصير هاتفك ريموت بلوتوث لها.</p>
     <ol>
       <li>من «＋ إضافة جهاز» ← «بلوتوث» اختر «ريموت بلوتوث».</li>
@@ -229,7 +234,7 @@
     <p class="tip">لم يظهر في البحث؟ اضغط «اجعل الهاتف مرئياً» ثم اختر اسم هاتفك من إعدادات التلفاز. جهاز مقترن من قبل؟ اختره من القائمة مباشرة. يتطلّب أندرويد 9 فما فوق، وبعض الشركات تعطّل هذه الميزة. وفي «المؤشّر» تحرّك مؤشّراً وتنقر وتكتب في الخانات.</p>
   </details>
   <details id="ar-devices">
-    <summary><span class="ico">🗂️</span>أجهزتي</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#devices"/></svg></span>أجهزتي</summary>
     <ul>
       <li>ثلاثة تبويبات في الأعلى: واي‑فاي، وبلوتوث، وأشعة IR، وعلى كل منها عدد أجهزته. وداخل التبويب تُرتَّب الأجهزة بحسب نوعها.</li>
       <li>احفظ عدة أجهزة، واضغط «تفعيل» للتبديل بينها.</li>
@@ -238,11 +243,11 @@
     </ul>
   </details>
   <details id="ar-widget">
-    <summary><span class="ico">📱</span>الودجت وزر الإعدادات السريعة</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#widget"/></svg></span>الودجت وزر الإعدادات السريعة</summary>
     <p>أضف ودجت REMOTE DNA إلى الشاشة الرئيسية، أو زرّه إلى الإعدادات السريعة في شريط الإشعارات. تتحكم بهما في التشغيل والصوت للجهاز المفعَّل، دون فتح التطبيق.</p>
   </details>
   <details id="ar-help">
-    <summary><span class="ico">🆘</span>التلفاز لا يستجيب؟</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-red)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#help"/></svg></span>التلفاز لا يستجيب؟</summary>
     <ol>
       <li>تأكّد أن هاتفك فيه باعث أشعة: إن لم يكن، يظهر «لم يُكتشف باعث أشعة في هذا الهاتف».</li>
       <li>وجّه <b>أعلى</b> الهاتف نحو التلفاز، واقترب، وأزل أي حاجز بينهما.</li>
@@ -252,7 +257,7 @@
     </ol>
   </details>
   <details id="ar-pro">
-    <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#pro"/></svg></span>REMOTE DNA Pro</summary>
     <ul>
       <li>شراء لمرة واحدة، دون اشتراك.</li>
       <li>أجهزة محفوظة بلا حدود (المجاني: 3).</li>
@@ -261,7 +266,7 @@
     </ul>
   </details>
   <details id="ar-privacy">
-    <summary><span class="ico">🔒</span>الخصوصية</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-green)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#shield"/></svg></span>الخصوصية</summary>
     <ul>
       <li>أجهزتك وشيفراتك تبقى على هاتفك.</li>
       <li>التطبيق لا يطلب الميكروفون ولا جهات الاتصال.</li>
@@ -282,19 +287,19 @@
   <div class="paths">
     <h2>Quel chemin choisir ?</h2>
     <ul>
-      <li><span>Vous connaissez le numéro de modèle</span><a href="#fr-model">🔎 Trouver par modèle</a></li>
-      <li><span>Vous connaissez seulement la marque</span><a href="#fr-tv">📺 Ajouter un téléviseur</a></li>
-      <li><span>Vous ne savez rien, ou rien n’a marché</span><a href="#fr-teach">🎓 Apprendre ma télé</a></li>
-      <li><span>Vous préférez être guidé en discutant</span><a href="#fr-agent">🧬 Agent Remote DNA</a></li>
-      <li><span>Télé Android TV ou Google TV</span><a href="#fr-atv">🤖 Google TV / Android TV</a></li>
-      <li><span>Récepteur ou box IPTV</span><a href="#fr-stb">📦 Récepteur</a></li>
-      <li><span>Fire TV, box Android ou Apple TV</span><a href="#fr-bt">🔵 Bluetooth</a></li>
-      <li><span>Autre télé connectée, ou téléphone sans infrarouge</span><a href="#fr-wifi">📶 Wi‑Fi</a></li>
-      <li><span>Climatiseur</span><a href="#fr-ac">❄️ Climatiseur</a></li>
+      <li><span>Vous connaissez le numéro de modèle</span><a href="#fr-model"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#scan"/></svg> Trouver par modèle</a></li>
+      <li><span>Vous connaissez seulement la marque</span><a href="#fr-tv"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv"/></svg> Ajouter un téléviseur</a></li>
+      <li><span>Vous ne savez rien, ou rien n’a marché</span><a href="#fr-teach"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv-spark"/></svg> Apprendre ma télé</a></li>
+      <li><span>Vous préférez être guidé en discutant</span><a href="#fr-agent"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#agent"/></svg> Agent Remote DNA</a></li>
+      <li><span>Télé Android TV ou Google TV</span><a href="#fr-atv"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#smart-tv"/></svg> Google TV / Android TV</a></li>
+      <li><span>Récepteur ou box IPTV</span><a href="#fr-stb"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#receiver"/></svg> Récepteur</a></li>
+      <li><span>Fire TV, box Android ou Apple TV</span><a href="#fr-bt"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#bluetooth"/></svg> Bluetooth</a></li>
+      <li><span>Autre télé connectée, ou téléphone sans infrarouge</span><a href="#fr-wifi"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#wifi"/></svg> Wi‑Fi</a></li>
+      <li><span>Climatiseur</span><a href="#fr-ac"><svg class="i" aria-hidden="true" style="color:var(--rd-cyan)"><use href="assets/icons.svg#snow"/></svg> Climatiseur</a></li>
     </ul>
   </div>
   <details id="fr-start" open>
-    <summary><span class="ico">🚀</span>Premiers pas</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#rocket"/></svg></span>Premiers pas</summary>
     <ol>
       <li>Ouvrez « Mes appareils ». En haut, trois onglets selon la façon dont le téléphone joint l’appareil : <b>Wi‑Fi</b>, <b>Bluetooth</b> et <b>Infrarouge</b>.</li>
       <li>Choisissez l’onglet, touchez « ＋ Ajouter un appareil », puis le type d’appareil (télé, box TV, récepteur, clim…), puis le moyen. Le plus rapide vient en premier.</li>
@@ -303,7 +308,7 @@
     <p class="tip">Pas d’infrarouge ? Les onglets Wi‑Fi et Bluetooth suffisent pour les télés connectées et les box. Chaque écran garde ses explications derrière l’icône (i), et le bouton flèches à côté du globe réduit ou agrandit l’interface.</p>
   </details>
   <details id="fr-model">
-    <summary><span class="ico">🔎</span>Trouver par modèle <span class="new">Nouveau</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#scan"/></svg></span>Trouver par modèle <span class="new">Nouveau</span></summary>
     <p>Le chemin le plus rapide : une photo de l’étiquette mène à la télécommande de votre télé.</p>
     <ol>
       <li>Le numéro de modèle est sur l’étiquette au dos de la télé, ou sous le couvercle des piles de la télécommande, par exemple <b>43G7200</b>.</li>
@@ -327,7 +332,7 @@
     </ul>
   </details>
   <details id="fr-tv">
-    <summary><span class="ico">📺</span>Ajouter un téléviseur par marque</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv"/></svg></span>Ajouter un téléviseur par marque</summary>
     <ol>
       <li>Dans « ＋ Ajouter un appareil », ouvrez « Infrarouge » → « Télé » et choisissez « Téléviseur ».</li>
       <li>Choisissez votre marque dans la liste alphabétique.</li>
@@ -337,7 +342,7 @@
     <p class="tip">Marque absente ou aucun jeu ne marche ? Utilisez « Apprendre ma télé ». « Manuel / infrarouge rapide » essaie les 40 télécommandes les plus courantes l’une après l’autre. Les marques algériennes sont en tête de liste 🇩🇿 : Iris, Condor, Enie, Starlight et Brandt, et pour les clims Condor, Maxtor, Brandt, Major Cara et Thomson. L’application propose d’abord les télécommandes de leur fabricant habituel.</p>
   </details>
   <details id="fr-teach">
-    <summary><span class="ico">🎓</span>Apprendre ma télé</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv-spark"/></svg></span>Apprendre ma télé</summary>
     <p>Pour une télé de marque inconnue, ou quand rien d’autre n’a marché. Vous n’avez rien à savoir : dites seulement à l’application ce que vous voyez à l’écran.</p>
     <ol>
       <li>Allumez la télé avec son bouton, visez-la et touchez « Commencer ».</li>
@@ -358,7 +363,7 @@
     <p class="tip">Touché par erreur ? Aucun souci : une question suffit à le voir, et l’émission reprend là où elle s’était arrêtée. Recherche normale déjà faite sans résultat ? Le bouton « Recherche approfondie (plus longue) » sous « Commencer » y mène directement.</p>
   </details>
   <details id="fr-agent">
-    <summary><span class="ico">🧬</span>Agent Remote DNA <span class="new">Bêta</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#agent"/></svg></span>Agent Remote DNA <span class="new">Bêta</span></summary>
     <p>Une conversation qui reconstruit la télécommande de votre TV : décrivez la TV ou tapez son numéro de modèle, l’agent trouve le code et l’essaie avec vous, touche par touche.</p>
     <ol>
       <li>Touchez le bouton flottant (une bulle avec une hélice) en bas de l’écran, depuis n’importe quel onglet. Faites-le glisser sur un côté s’il cache quelque chose.</li>
@@ -370,7 +375,7 @@
     <p class="tip">Il faut Internet : ce que vous écrivez est envoyé à notre serveur et à un service d’IA pour y répondre, alors n’écrivez pas de données personnelles. L’IA peut se tromper : vérifiez vous-même. Le signal part de l’émetteur infrarouge de votre téléphone. Pas de bouton flottant ? Mettez l’application à jour.</p>
   </details>
   <details id="fr-fix">
-    <summary><span class="ico">🔧</span>Réparer une touche</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#fix"/></svg></span>Réparer une touche</summary>
     <ol>
       <li>Sur l’écran de la télécommande, touchez « Réparer une touche ».</li>
       <li>Choisissez la touche qui manque ou ne marche pas, puis « Commencer ».</li>
@@ -379,7 +384,7 @@
     <p class="tip">Les touches qui marchent ne sont pas modifiées. Le « Mode expert » manuel reste en bas de l’écran pour les techniciens.</p>
   </details>
   <details id="fr-ac">
-    <summary><span class="ico">❄️</span>Climatiseur</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-cyan)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#snow"/></svg></span>Climatiseur</summary>
     <ol>
       <li>Dans « ＋ Ajouter un appareil », ouvrez « Infrarouge » → « Clim » et choisissez « Climatiseur ».</li>
       <li>Choisissez sa marque, ou testez les protocoles un par un jusqu’à ce que l’appareil réagisse.</li>
@@ -394,7 +399,7 @@
     <p class="tip">Aucun émetteur infrarouge nécessaire, et ça marche depuis n’importe quelle pièce.</p>
   </details>
   <details id="fr-stb">
-    <summary><span class="ico">📦</span>Récepteur et box IPTV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#receiver"/></svg></span>Récepteur et box IPTV</summary>
     <ol>
       <li>Dans « ＋ Ajouter un appareil », ouvrez « Infrarouge » → « Récepteur » et choisissez « Récepteur / box IPTV ».</li>
       <li>Choisissez la marque : Starsat, Strong, Humax, TechniSat, Formuler, MAG…</li>
@@ -404,7 +409,7 @@
     <p class="tip">Marque absente ? « Apprendre ma télé » marche aussi avec un récepteur.</p>
   </details>
   <details id="fr-wifi">
-    <summary><span class="ico">📶</span>Téléviseurs connectés en Wi‑Fi</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#wifi"/></svg></span>Téléviseurs connectés en Wi‑Fi</summary>
     <ol>
       <li>Connectez le téléphone et la télé au même réseau.</li>
       <li>Dans « ＋ Ajouter un appareil », ouvrez « Wi‑Fi » → « Télé / box TV » et choisissez « Recherche Wi-Fi (TV connectées) ».</li>
@@ -414,7 +419,7 @@
     <p class="tip">Certaines télés n’acceptent en Wi‑Fi que l’ouverture de YouTube et Netflix, et l’application vous le dit.</p>
   </details>
   <details id="fr-atv">
-    <summary><span class="ico">🤖</span>Google TV et Android TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smart-tv"/></svg></span>Google TV et Android TV</summary>
     <ol>
       <li>Dans « ＋ Ajouter un appareil », ouvrez « Wi‑Fi » → « Télé / box TV » et choisissez « Google TV / Android TV ».</li>
       <li>Choisissez la vôtre et saisissez le code à 6 caractères affiché à l’écran, une seule fois.</li>
@@ -439,7 +444,7 @@
     <p class="tip">Facultatif, et retenu pour cette TV. Arrêtez-le avec « Couper le lien ». Nécessite Android 8 ou plus récent sur le téléphone. Introuvable ? Mettez l’application à jour.</p>
   </details>
   <details id="fr-bt">
-    <summary><span class="ico">🔵</span>Télécommande Bluetooth : Fire TV, box Android, Apple TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#bluetooth"/></svg></span>Télécommande Bluetooth : Fire TV, box Android, Apple TV</summary>
     <p>Ces appareils ne reçoivent pas l’infrarouge : votre téléphone devient leur télécommande Bluetooth.</p>
     <ol>
       <li>Dans « ＋ Ajouter un appareil », ouvrez « Bluetooth » et choisissez « Télécommande Bluetooth ».</li>
@@ -449,7 +454,7 @@
     <p class="tip">Introuvable ? Touchez « Rendre le téléphone visible », puis choisissez le nom du téléphone dans les réglages de la télé. Déjà associé ? Choisissez‑le directement dans la liste. Il faut Android 9 ou plus, et certains fabricants désactivent la fonction. En mode « Curseur », vous déplacez un pointeur, cliquez et tapez dans les champs.</p>
   </details>
   <details id="fr-devices">
-    <summary><span class="ico">🗂️</span>Mes appareils</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#devices"/></svg></span>Mes appareils</summary>
     <ul>
       <li>Trois onglets en haut : Wi‑Fi, Bluetooth et Infrarouge, chacun avec son nombre d’appareils. Dans un onglet, les appareils sont rangés par type.</li>
       <li>Enregistrez plusieurs appareils et touchez « Activer » pour passer de l’un à l’autre.</li>
@@ -458,11 +463,11 @@
     </ul>
   </details>
   <details id="fr-widget">
-    <summary><span class="ico">📱</span>Widget et réglages rapides</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#widget"/></svg></span>Widget et réglages rapides</summary>
     <p>Ajoutez le widget REMOTE DNA à l’écran d’accueil, ou sa tuile aux réglages rapides. Ils commandent la marche et le volume de l’appareil actif sans ouvrir l’application.</p>
   </details>
   <details id="fr-help">
-    <summary><span class="ico">🆘</span>La télé ne réagit pas ?</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-red)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#help"/></svg></span>La télé ne réagit pas ?</summary>
     <ol>
       <li>Vérifiez que le téléphone a un émetteur IR : sinon, « Aucun émetteur IR détecté sur ce téléphone » s’affiche.</li>
       <li>Pointez le <b>haut</b> du téléphone vers la télé, rapprochez-vous et retirez tout obstacle.</li>
@@ -472,7 +477,7 @@
     </ol>
   </details>
   <details id="fr-pro">
-    <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#pro"/></svg></span>REMOTE DNA Pro</summary>
     <ul>
       <li>Achat unique, sans abonnement.</li>
       <li>Appareils enregistrés illimités (gratuit : 3).</li>
@@ -481,7 +486,7 @@
     </ul>
   </details>
   <details id="fr-privacy">
-    <summary><span class="ico">🔒</span>Confidentialité</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-green)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#shield"/></svg></span>Confidentialité</summary>
     <ul>
       <li>Vos appareils et vos codes restent sur votre téléphone.</li>
       <li>L’application ne demande ni le micro ni les contacts.</li>
@@ -502,19 +507,19 @@
   <div class="paths">
     <h2>Which way should I choose?</h2>
     <ul>
-      <li><span>You know the TV’s model number</span><a href="#en-model">🔎 Find by model</a></li>
-      <li><span>You only know the brand</span><a href="#en-tv">📺 Add a TV</a></li>
-      <li><span>You know nothing, or nothing worked</span><a href="#en-teach">🎓 Teach my TV</a></li>
-      <li><span>You’d rather be guided in a chat</span><a href="#en-agent">🧬 Remote DNA agent</a></li>
-      <li><span>An Android TV or Google TV</span><a href="#en-atv">🤖 Google TV / Android TV</a></li>
-      <li><span>A receiver or IPTV box</span><a href="#en-stb">📦 Receiver</a></li>
-      <li><span>A Fire TV, Android box or Apple TV</span><a href="#en-bt">🔵 Bluetooth</a></li>
-      <li><span>Another smart TV, or a phone without IR</span><a href="#en-wifi">📶 Wi‑Fi</a></li>
-      <li><span>An air conditioner</span><a href="#en-ac">❄️ Air conditioner</a></li>
+      <li><span>You know the TV’s model number</span><a href="#en-model"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#scan"/></svg> Find by model</a></li>
+      <li><span>You only know the brand</span><a href="#en-tv"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv"/></svg> Add a TV</a></li>
+      <li><span>You know nothing, or nothing worked</span><a href="#en-teach"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv-spark"/></svg> Teach my TV</a></li>
+      <li><span>You’d rather be guided in a chat</span><a href="#en-agent"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#agent"/></svg> Remote DNA agent</a></li>
+      <li><span>An Android TV or Google TV</span><a href="#en-atv"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#smart-tv"/></svg> Google TV / Android TV</a></li>
+      <li><span>A receiver or IPTV box</span><a href="#en-stb"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#receiver"/></svg> Receiver</a></li>
+      <li><span>A Fire TV, Android box or Apple TV</span><a href="#en-bt"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#bluetooth"/></svg> Bluetooth</a></li>
+      <li><span>Another smart TV, or a phone without IR</span><a href="#en-wifi"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#wifi"/></svg> Wi‑Fi</a></li>
+      <li><span>An air conditioner</span><a href="#en-ac"><svg class="i" aria-hidden="true" style="color:var(--rd-cyan)"><use href="assets/icons.svg#snow"/></svg> Air conditioner</a></li>
     </ul>
   </div>
   <details id="en-start" open>
-    <summary><span class="ico">🚀</span>Getting started</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#rocket"/></svg></span>Getting started</summary>
     <ol>
       <li>Open “My Devices”. At the top, three tabs by how the phone reaches the device: <b>Wi‑Fi</b>, <b>Bluetooth</b> and <b>IR</b>.</li>
       <li>Pick the tab, tap “＋ Add device”, then the type of device (TV, TV box, receiver, AC…), then the way. The fastest comes first.</li>
@@ -523,7 +528,7 @@
     <p class="tip">No IR blaster? The Wi‑Fi and Bluetooth tabs cover smart TVs and boxes. Each screen keeps its explanations behind the (i) icon, and the arrows button next to the globe shrinks or enlarges the interface.</p>
   </details>
   <details id="en-model">
-    <summary><span class="ico">🔎</span>Find by model <span class="new">New</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#scan"/></svg></span>Find by model <span class="new">New</span></summary>
     <p>The fastest way: one photo of the label leads to your TV’s remote.</p>
     <ol>
       <li>The model number is on the label on the back of the TV, or under the remote’s battery cover, for example <b>43G7200</b>.</li>
@@ -547,7 +552,7 @@
     </ul>
   </details>
   <details id="en-tv">
-    <summary><span class="ico">📺</span>Add a TV by brand</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv"/></svg></span>Add a TV by brand</summary>
     <ol>
       <li>In “＋ Add device”, open “IR” → “TV” and choose “TV”.</li>
       <li>Pick your brand from the alphabetical list.</li>
@@ -557,7 +562,7 @@
     <p class="tip">Brand missing, or no set works? Use “Teach my TV”. “Manual / Quick IR” tries the 40 most common remotes one after another. Algerian brands come first in the list 🇩🇿: Iris, Condor, Enie, Starlight and Brandt, and for ACs Condor, Maxtor, Brandt, Major Cara and Thomson. The app offers their usual maker’s remotes first.</p>
   </details>
   <details id="en-teach">
-    <summary><span class="ico">🎓</span>Teach my TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv-spark"/></svg></span>Teach my TV</summary>
     <p>For a TV whose brand you don’t know, or when nothing else worked. You don’t need to know anything: just tell the app what you see on the screen.</p>
     <ol>
       <li>Turn the TV on with its own button, point the phone at it and tap “Start”.</li>
@@ -578,7 +583,7 @@
     <p class="tip">Tapped by mistake? No harm: one question shows it, and the sending carries on where it stopped. Already searched with no result? The “Deep search (longer)” button under “Start” goes straight to it.</p>
   </details>
   <details id="en-agent">
-    <summary><span class="ico">🧬</span>Remote DNA agent <span class="new">Beta</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#agent"/></svg></span>Remote DNA agent <span class="new">Beta</span></summary>
     <p>A conversation that rebuilds your TV’s remote: describe the TV or type its model number, and the agent finds the code and tries it with you, one button at a time.</p>
     <ol>
       <li>Tap the floating button (a bubble with a helix) at the bottom of the screen, on any tab. Drag it to one side if it covers something.</li>
@@ -590,7 +595,7 @@
     <p class="tip">It needs the internet: what you write goes to our server and to an AI service to be answered, so don’t type personal data. The AI can make mistakes, so check for yourself. The signal comes from your phone’s infrared emitter. No floating button? Update the app.</p>
   </details>
   <details id="en-fix">
-    <summary><span class="ico">🔧</span>Fix a button</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#fix"/></svg></span>Fix a button</summary>
     <ol>
       <li>On the remote screen, tap “Fix a button”.</li>
       <li>Pick the button that is missing or not working, then “Start”.</li>
@@ -599,7 +604,7 @@
     <p class="tip">Buttons that work are left alone. The manual “Expert mode” stays at the bottom of the screen for technicians.</p>
   </details>
   <details id="en-ac">
-    <summary><span class="ico">❄️</span>Air conditioner</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-cyan)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#snow"/></svg></span>Air conditioner</summary>
     <ol>
       <li>In “＋ Add device”, open “IR” → “AC” and choose “Air conditioner”.</li>
       <li>Pick its brand, or try the protocols one by one until the unit reacts.</li>
@@ -614,7 +619,7 @@
     <p class="tip">No IR blaster needed, and it works from any room of the house.</p>
   </details>
   <details id="en-stb">
-    <summary><span class="ico">📦</span>Receiver and IPTV box</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#receiver"/></svg></span>Receiver and IPTV box</summary>
     <ol>
       <li>In “＋ Add device”, open “IR” → “Receiver” and choose “Receiver / IPTV box”.</li>
       <li>Pick the brand: Starsat, Strong, Humax, TechniSat, Formuler, MAG…</li>
@@ -624,7 +629,7 @@
     <p class="tip">Brand missing? “Teach my TV” works with a receiver too.</p>
   </details>
   <details id="en-wifi">
-    <summary><span class="ico">📶</span>Smart TVs over Wi‑Fi</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#wifi"/></svg></span>Smart TVs over Wi‑Fi</summary>
     <ol>
       <li>Connect the phone and the TV to the same network.</li>
       <li>In “＋ Add device”, open “Wi‑Fi” → “TV / TV box” and choose “Wi-Fi Scan (Smart TVs)”.</li>
@@ -634,7 +639,7 @@
     <p class="tip">Some TVs only accept opening YouTube and Netflix over Wi‑Fi, and the app tells you so.</p>
   </details>
   <details id="en-atv">
-    <summary><span class="ico">🤖</span>Google TV &amp; Android TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smart-tv"/></svg></span>Google TV &amp; Android TV</summary>
     <ol>
       <li>In “＋ Add device”, open “Wi‑Fi” → “TV / TV box” and choose “Google TV / Android TV”.</li>
       <li>Pick yours and type the 6-character code shown on its screen, just once.</li>
@@ -659,7 +664,7 @@
     <p class="tip">Optional, and remembered for this TV. Stop it with “Turn off the link”. Needs Android 8 or later on the phone. Can’t find it? Update the app.</p>
   </details>
   <details id="en-bt">
-    <summary><span class="ico">🔵</span>Bluetooth remote: Fire TV, Android boxes, Apple TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#bluetooth"/></svg></span>Bluetooth remote: Fire TV, Android boxes, Apple TV</summary>
     <p>These devices take no infrared, so your phone becomes their Bluetooth remote.</p>
     <ol>
       <li>In “＋ Add device”, open “Bluetooth” and choose “Bluetooth remote”.</li>
@@ -669,7 +674,7 @@
     <p class="tip">Not found? Tap “Make the phone visible”, then pick the phone’s name in the TV’s settings. Already paired? Pick it straight from the list. It needs Android 9 or later, and some phone makers turn the feature off. In “Cursor” mode you move a pointer, click and type into fields.</p>
   </details>
   <details id="en-devices">
-    <summary><span class="ico">🗂️</span>My Devices</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#devices"/></svg></span>My Devices</summary>
     <ul>
       <li>Three tabs at the top: Wi‑Fi, Bluetooth and IR, each with its number of devices. Inside a tab, devices are grouped by type.</li>
       <li>Save several devices and tap “Activate” to switch between them.</li>
@@ -678,11 +683,11 @@
     </ul>
   </details>
   <details id="en-widget">
-    <summary><span class="ico">📱</span>Widget and Quick Settings tile</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#widget"/></svg></span>Widget and Quick Settings tile</summary>
     <p>Add the REMOTE DNA widget to your home screen, or its tile to Quick Settings. Both control power and volume on the active device without opening the app.</p>
   </details>
   <details id="en-help">
-    <summary><span class="ico">🆘</span>The TV doesn’t react?</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-red)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#help"/></svg></span>The TV doesn’t react?</summary>
     <ol>
       <li>Check that the phone has an IR blaster: if not, “No IR emitter detected on this phone” is shown.</li>
       <li>Point the <b>top</b> of the phone at the TV, move closer and clear anything in between.</li>
@@ -692,7 +697,7 @@
     </ol>
   </details>
   <details id="en-pro">
-    <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#pro"/></svg></span>REMOTE DNA Pro</summary>
     <ul>
       <li>One-time purchase, no subscription.</li>
       <li>Unlimited saved devices (free: 3).</li>
@@ -701,7 +706,7 @@
     </ul>
   </details>
   <details id="en-privacy">
-    <summary><span class="ico">🔒</span>Privacy</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-green)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#shield"/></svg></span>Privacy</summary>
     <ul>
       <li>Your devices and codes stay on your phone.</li>
       <li>The app asks for no microphone and no contacts.</li>
@@ -722,19 +727,19 @@
   <div class="paths">
     <h2>该选哪种方式？</h2>
     <ul>
-      <li><span>您知道电视型号</span><a href="#zh-model">🔎 按型号查找</a></li>
-      <li><span>您只知道品牌</span><a href="#zh-tv">📺 添加电视</a></li>
-      <li><span>什么都不知道，或都不管用</span><a href="#zh-teach">🎓 教会我的电视</a></li>
-      <li><span>想在聊天中一步步获得指导</span><a href="#zh-agent">🧬 Remote DNA 智能体</a></li>
-      <li><span>Android TV 或 Google TV</span><a href="#zh-atv">🤖 Google TV / Android TV</a></li>
-      <li><span>卫星接收器或 IPTV 盒子</span><a href="#zh-stb">📦 接收器</a></li>
-      <li><span>Fire TV、Android 盒子或 Apple TV</span><a href="#zh-bt">🔵 蓝牙</a></li>
-      <li><span>其他智能电视，或手机没有红外</span><a href="#zh-wifi">📶 Wi‑Fi</a></li>
-      <li><span>空调</span><a href="#zh-ac">❄️ 空调</a></li>
+      <li><span>您知道电视型号</span><a href="#zh-model"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#scan"/></svg> 按型号查找</a></li>
+      <li><span>您只知道品牌</span><a href="#zh-tv"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv"/></svg> 添加电视</a></li>
+      <li><span>什么都不知道，或都不管用</span><a href="#zh-teach"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv-spark"/></svg> 教会我的电视</a></li>
+      <li><span>想在聊天中一步步获得指导</span><a href="#zh-agent"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#agent"/></svg> Remote DNA 智能体</a></li>
+      <li><span>Android TV 或 Google TV</span><a href="#zh-atv"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#smart-tv"/></svg> Google TV / Android TV</a></li>
+      <li><span>卫星接收器或 IPTV 盒子</span><a href="#zh-stb"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#receiver"/></svg> 接收器</a></li>
+      <li><span>Fire TV、Android 盒子或 Apple TV</span><a href="#zh-bt"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#bluetooth"/></svg> 蓝牙</a></li>
+      <li><span>其他智能电视，或手机没有红外</span><a href="#zh-wifi"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#wifi"/></svg> Wi‑Fi</a></li>
+      <li><span>空调</span><a href="#zh-ac"><svg class="i" aria-hidden="true" style="color:var(--rd-cyan)"><use href="assets/icons.svg#snow"/></svg> 空调</a></li>
     </ul>
   </div>
   <details id="zh-start" open>
-    <summary><span class="ico">🚀</span>第一步</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#rocket"/></svg></span>第一步</summary>
     <ol>
       <li>打开“我的设备”。顶部有三个标签，按手机连接设备的方式区分：<b>Wi‑Fi</b>、<b>蓝牙</b>和<b>红外</b>。</li>
       <li>选择标签，点按“＋ 添加设备”，再选择设备类型（电视、电视盒子、接收器、空调…），然后选择方式。最快的方式排在最前。</li>
@@ -743,7 +748,7 @@
     <p class="tip">手机没有红外？Wi‑Fi 和蓝牙标签可控制智能电视和盒子。每个界面的说明都在 (i) 图标后面，地球图标旁的箭头按钮可一键缩小或放大界面。</p>
   </details>
   <details id="zh-model">
-    <summary><span class="ico">🔎</span>按型号查找 <span class="new">新功能</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#scan"/></svg></span>按型号查找 <span class="new">新功能</span></summary>
     <p>最快的方式：拍一张标签照片，即可找到您电视的遥控器。</p>
     <ol>
       <li>型号印在电视背面的标签上，或遥控器电池盖下，例如 <b>43G7200</b>。</li>
@@ -767,7 +772,7 @@
     </ul>
   </details>
   <details id="zh-tv">
-    <summary><span class="ico">📺</span>按品牌添加电视</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv"/></svg></span>按品牌添加电视</summary>
     <ol>
       <li>在“＋ 添加设备”中打开“红外”→“电视”，选择“电视”。</li>
       <li>从字母列表中选择品牌。</li>
@@ -777,7 +782,7 @@
     <p class="tip">找不到品牌或每组都不管用？请使用“教会我的电视”。“手动 / 快速红外”会依次尝试 40 种最常见的遥控器。阿尔及利亚品牌排在列表最前 🇩🇿：Iris、Condor、Enie、Starlight 和 Brandt；空调有 Condor、Maxtor、Brandt、Major Cara 和 Thomson。应用会优先提供其常见制造商的遥控器。</p>
   </details>
   <details id="zh-teach">
-    <summary><span class="ico">🎓</span>教会我的电视</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv-spark"/></svg></span>教会我的电视</summary>
     <p>适用于不知道品牌的电视，或其他方式都不管用时。您无需了解任何技术，只需告诉应用屏幕上看到了什么。</p>
     <ol>
       <li>用机身按键开机，将手机对准电视，点按“开始”。</li>
@@ -798,7 +803,7 @@
     <p class="tip">误点了？没关系：一个问题就能发现，发送会从停下的地方继续。普通搜索已试过但没有结果？“开始”下方的“深度搜索（较慢）”按钮可直接进入。</p>
   </details>
   <details id="zh-agent">
-    <summary><span class="ico">🧬</span>Remote DNA 智能体 <span class="new">测试版</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#agent"/></svg></span>Remote DNA 智能体 <span class="new">测试版</span></summary>
     <p>通过对话重建电视遥控器：描述你的电视或输入型号，智能体会找到代码，并和你一起逐个按键测试。</p>
     <ol>
       <li>点按屏幕底部的悬浮按钮（带螺旋的气泡），任何标签页都可以。如果它挡住了内容，可以拖到一侧。</li>
@@ -810,7 +815,7 @@
     <p class="tip">需要联网：你输入的内容会发送到我们的服务器和一个 AI 服务以获得回答，请不要输入个人信息。AI 可能出错，请自行核实。信号由你手机的红外发射器发出。找不到悬浮按钮？请更新应用。</p>
   </details>
   <details id="zh-fix">
-    <summary><span class="ico">🔧</span>修复按键</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#fix"/></svg></span>修复按键</summary>
     <ol>
       <li>在遥控器界面点按“修复按键”。</li>
       <li>选择缺失或不管用的按键，然后点按“开始”。</li>
@@ -819,7 +824,7 @@
     <p class="tip">正常工作的按键不受影响。手动“专家模式”保留在屏幕底部，供技术人员使用。</p>
   </details>
   <details id="zh-ac">
-    <summary><span class="ico">❄️</span>空调</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-cyan)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#snow"/></svg></span>空调</summary>
     <ol>
       <li>在“＋ 添加设备”中打开“红外”→“空调”，选择“空调”。</li>
       <li>选择品牌，或逐个尝试协议，直到空调有反应。</li>
@@ -834,7 +839,7 @@
     <p class="tip">无需红外发射器，在家中任何房间都能使用。</p>
   </details>
   <details id="zh-stb">
-    <summary><span class="ico">📦</span>卫星接收器与 IPTV 盒子</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#receiver"/></svg></span>卫星接收器与 IPTV 盒子</summary>
     <ol>
       <li>在“＋ 添加设备”中打开“红外”→“接收器”，选择“卫星接收器 / IPTV 盒子”。</li>
       <li>选择品牌：Starsat、Strong、Humax、TechniSat、Formuler、MAG…</li>
@@ -844,7 +849,7 @@
     <p class="tip">找不到品牌？“教会我的电视”同样适用于接收器。</p>
   </details>
   <details id="zh-wifi">
-    <summary><span class="ico">📶</span>通过 Wi‑Fi 控制智能电视</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#wifi"/></svg></span>通过 Wi‑Fi 控制智能电视</summary>
     <ol>
       <li>让手机和电视连接同一网络。</li>
       <li>在“＋ 添加设备”中打开“Wi‑Fi”→“电视 / 电视盒子”，选择“Wi-Fi 扫描（智能电视）”。</li>
@@ -854,7 +859,7 @@
     <p class="tip">部分电视通过 Wi‑Fi 只接受打开 YouTube 和 Netflix，应用会如实告知。</p>
   </details>
   <details id="zh-atv">
-    <summary><span class="ico">🤖</span>Google TV 和 Android TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smart-tv"/></svg></span>Google TV 和 Android TV</summary>
     <ol>
       <li>在“＋ 添加设备”中打开“Wi‑Fi”→“电视 / 电视盒子”，选择“Google TV / Android TV”。</li>
       <li>选择您的电视，输入一次屏幕上显示的 6 位代码。</li>
@@ -879,7 +884,7 @@
     <p class="tip">可选功能，应用会为这台电视记住它。点按“关闭连接”即可停止。手机需要 Android 8 或更高版本。找不到？请更新应用。</p>
   </details>
   <details id="zh-bt">
-    <summary><span class="ico">🔵</span>蓝牙遥控器：Fire TV、Android 盒子、Apple TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#bluetooth"/></svg></span>蓝牙遥控器：Fire TV、Android 盒子、Apple TV</summary>
     <p>这些设备不接收红外，您的手机可作为它们的蓝牙遥控器。</p>
     <ol>
       <li>在“＋ 添加设备”中打开“蓝牙”，选择“蓝牙遥控器”。</li>
@@ -889,7 +894,7 @@
     <p class="tip">搜不到？点按“让手机可见”，再在电视设置中选择手机名称。已经配对过？直接从列表中选择。需要 Android 9 或更高版本，部分手机厂商会关闭此功能。在“光标”模式中可移动光标、点击并在输入框中输入。</p>
   </details>
   <details id="zh-devices">
-    <summary><span class="ico">🗂️</span>我的设备</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#devices"/></svg></span>我的设备</summary>
     <ul>
       <li>顶部三个标签：Wi‑Fi、蓝牙和红外，每个标签显示设备数量。标签内的设备按类型分组。</li>
       <li>保存多个设备，点按“启用”即可切换。</li>
@@ -898,11 +903,11 @@
     </ul>
   </details>
   <details id="zh-widget">
-    <summary><span class="ico">📱</span>小组件与快捷设置磁贴</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#widget"/></svg></span>小组件与快捷设置磁贴</summary>
     <p>将 REMOTE DNA 小组件添加到主屏幕，或将其磁贴添加到快捷设置。无需打开应用即可控制当前设备的电源和音量。</p>
   </details>
   <details id="zh-help">
-    <summary><span class="ico">🆘</span>电视没有反应？</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-red)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#help"/></svg></span>电视没有反应？</summary>
     <ol>
       <li>确认手机有红外发射器：如果没有，会显示“此手机未检测到红外发射器”。</li>
       <li>将手机<b>顶部</b>对准电视，靠近一些，移开中间的遮挡物。</li>
@@ -912,7 +917,7 @@
     </ol>
   </details>
   <details id="zh-pro">
-    <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#pro"/></svg></span>REMOTE DNA Pro</summary>
     <ul>
       <li>一次性购买，无需订阅。</li>
       <li>不限数量的已保存设备（免费版：3 台）。</li>
@@ -921,7 +926,7 @@
     </ul>
   </details>
   <details id="zh-privacy">
-    <summary><span class="ico">🔒</span>隐私</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-green)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#shield"/></svg></span>隐私</summary>
     <ul>
       <li>你的设备和代码保存在手机上。</li>
       <li>应用不请求麦克风和通讯录权限。</li>
@@ -942,19 +947,19 @@
   <div class="paths">
     <h2>¿Qué camino elijo?</h2>
     <ul>
-      <li><span>Conoces el número de modelo</span><a href="#es-model">🔎 Buscar por modelo</a></li>
-      <li><span>Solo conoces la marca</span><a href="#es-tv">📺 Agregar una TV</a></li>
-      <li><span>No sabes nada, o nada funcionó</span><a href="#es-teach">🎓 Enseñar mi TV</a></li>
-      <li><span>Prefieres que te guíen en un chat</span><a href="#es-agent">🧬 Agente Remote DNA</a></li>
-      <li><span>Una Android TV o Google TV</span><a href="#es-atv">🤖 Google TV / Android TV</a></li>
-      <li><span>Un receptor o caja IPTV</span><a href="#es-stb">📦 Receptor</a></li>
-      <li><span>Un Fire TV, caja Android o Apple TV</span><a href="#es-bt">🔵 Bluetooth</a></li>
-      <li><span>Otra Smart TV, o un teléfono sin infrarrojo</span><a href="#es-wifi">📶 Wi‑Fi</a></li>
-      <li><span>Un aire acondicionado</span><a href="#es-ac">❄️ Aire acondicionado</a></li>
+      <li><span>Conoces el número de modelo</span><a href="#es-model"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#scan"/></svg> Buscar por modelo</a></li>
+      <li><span>Solo conoces la marca</span><a href="#es-tv"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv"/></svg> Agregar una TV</a></li>
+      <li><span>No sabes nada, o nada funcionó</span><a href="#es-teach"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv-spark"/></svg> Enseñar mi TV</a></li>
+      <li><span>Prefieres que te guíen en un chat</span><a href="#es-agent"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#agent"/></svg> Agente Remote DNA</a></li>
+      <li><span>Una Android TV o Google TV</span><a href="#es-atv"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#smart-tv"/></svg> Google TV / Android TV</a></li>
+      <li><span>Un receptor o caja IPTV</span><a href="#es-stb"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#receiver"/></svg> Receptor</a></li>
+      <li><span>Un Fire TV, caja Android o Apple TV</span><a href="#es-bt"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#bluetooth"/></svg> Bluetooth</a></li>
+      <li><span>Otra Smart TV, o un teléfono sin infrarrojo</span><a href="#es-wifi"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#wifi"/></svg> Wi‑Fi</a></li>
+      <li><span>Un aire acondicionado</span><a href="#es-ac"><svg class="i" aria-hidden="true" style="color:var(--rd-cyan)"><use href="assets/icons.svg#snow"/></svg> Aire acondicionado</a></li>
     </ul>
   </div>
   <details id="es-start" open>
-    <summary><span class="ico">🚀</span>Primer paso</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#rocket"/></svg></span>Primer paso</summary>
     <ol>
       <li>Abre “Mis dispositivos”. Arriba hay tres pestañas según cómo llega el teléfono al dispositivo: <b>Wi‑Fi</b>, <b>Bluetooth</b> e <b>Infrarrojo</b>.</li>
       <li>Elige la pestaña, toca “＋ Agregar dispositivo”, luego el tipo de dispositivo (TV, caja TV, receptor, aire…) y después la forma. La más rápida va primero.</li>
@@ -963,7 +968,7 @@
     <p class="tip">¿Sin infrarrojo? Las pestañas Wi‑Fi y Bluetooth cubren Smart TV y cajas. Cada pantalla guarda sus explicaciones detrás del icono (i), y el botón de flechas junto al globo reduce o agranda la interfaz.</p>
   </details>
   <details id="es-model">
-    <summary><span class="ico">🔎</span>Buscar por modelo <span class="new">Nuevo</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#scan"/></svg></span>Buscar por modelo <span class="new">Nuevo</span></summary>
     <p>El camino más rápido: una foto de la etiqueta te lleva al control de tu TV.</p>
     <ol>
       <li>El número de modelo está en la etiqueta de atrás de la TV, o bajo la tapa de las pilas del control, por ejemplo <b>43G7200</b>.</li>
@@ -987,7 +992,7 @@
     </ul>
   </details>
   <details id="es-tv">
-    <summary><span class="ico">📺</span>Agregar una TV por marca</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv"/></svg></span>Agregar una TV por marca</summary>
     <ol>
       <li>En “＋ Agregar dispositivo”, abre “Infrarrojo” → “TV” y elige “TV”.</li>
       <li>Elige tu marca en la lista alfabética.</li>
@@ -997,7 +1002,7 @@
     <p class="tip">¿Tu marca no está o ningún conjunto funciona? Usa “Enseñar mi TV”. “Manual / IR rápido” prueba los 40 controles más comunes uno tras otro. Las marcas argelinas van primero en la lista 🇩🇿: Iris, Condor, Enie, Starlight y Brandt, y en aires Condor, Maxtor, Brandt, Major Cara y Thomson. La app ofrece primero los controles de su fabricante habitual.</p>
   </details>
   <details id="es-teach">
-    <summary><span class="ico">🎓</span>Enseñar mi TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv-spark"/></svg></span>Enseñar mi TV</summary>
     <p>Para una TV cuya marca no conoces, o cuando nada más funcionó. No necesitas saber nada: solo dile a la app lo que ves en la pantalla.</p>
     <ol>
       <li>Enciende la TV con su propio botón, apunta el teléfono hacia ella y toca “Comenzar”.</li>
@@ -1018,7 +1023,7 @@
     <p class="tip">¿Lo tocaste por error? No pasa nada: una pregunta lo muestra y el envío sigue donde se detuvo. ¿Ya buscaste sin resultado? El botón “Búsqueda profunda (más larga)” bajo “Comenzar” lleva directo a ella.</p>
   </details>
   <details id="es-agent">
-    <summary><span class="ico">🧬</span>Agente Remote DNA <span class="new">Beta</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#agent"/></svg></span>Agente Remote DNA <span class="new">Beta</span></summary>
     <p>Una conversación que reconstruye el control de tu TV: describe la TV o escribe su número de modelo, y el agente encuentra el código y lo prueba contigo, botón por botón.</p>
     <ol>
       <li>Toca el botón flotante (una burbuja con una hélice) abajo en la pantalla, en cualquier pestaña. Arrástralo a un lado si tapa algo.</li>
@@ -1030,7 +1035,7 @@
     <p class="tip">Necesita internet: lo que escribes se envía a nuestro servidor y a un servicio de IA para responderte, así que no escribas datos personales. La IA puede equivocarse: compruébalo tú. La señal sale del emisor infrarrojo de tu teléfono. ¿No ves el botón flotante? Actualiza la app.</p>
   </details>
   <details id="es-fix">
-    <summary><span class="ico">🔧</span>Arreglar un botón</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#fix"/></svg></span>Arreglar un botón</summary>
     <ol>
       <li>En la pantalla del control, toca “Arreglar un botón”.</li>
       <li>Elige el botón que falta o no funciona, y luego “Comenzar”.</li>
@@ -1039,7 +1044,7 @@
     <p class="tip">Los botones que funcionan no se tocan. El “Modo experto” manual sigue al final de la pantalla para técnicos.</p>
   </details>
   <details id="es-ac">
-    <summary><span class="ico">❄️</span>Aire acondicionado</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-cyan)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#snow"/></svg></span>Aire acondicionado</summary>
     <ol>
       <li>En “＋ Agregar dispositivo”, abre “Infrarrojo” → “Aire” y elige “Aire acondicionado”.</li>
       <li>Elige su marca, o prueba los protocolos uno por uno hasta que el equipo reaccione.</li>
@@ -1054,7 +1059,7 @@
     <p class="tip">No hace falta emisor infrarrojo, y funciona desde cualquier cuarto de la casa.</p>
   </details>
   <details id="es-stb">
-    <summary><span class="ico">📦</span>Receptor y caja IPTV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#receiver"/></svg></span>Receptor y caja IPTV</summary>
     <ol>
       <li>En “＋ Agregar dispositivo”, abre “Infrarrojo” → “Receptor” y elige “Receptor / caja IPTV”.</li>
       <li>Elige la marca: Starsat, Strong, Humax, TechniSat, Formuler, MAG…</li>
@@ -1064,7 +1069,7 @@
     <p class="tip">¿No está tu marca? “Enseñar mi TV” también funciona con un receptor.</p>
   </details>
   <details id="es-wifi">
-    <summary><span class="ico">📶</span>Smart TV por Wi‑Fi</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#wifi"/></svg></span>Smart TV por Wi‑Fi</summary>
     <ol>
       <li>Conecta el teléfono y la TV a la misma red.</li>
       <li>En “＋ Agregar dispositivo”, abre “Wi‑Fi” → “TV / caja TV” y elige “Búsqueda Wi‑Fi (Smart TV)”.</li>
@@ -1074,7 +1079,7 @@
     <p class="tip">Algunas TV solo permiten abrir YouTube y Netflix por Wi‑Fi, y la app te lo indica.</p>
   </details>
   <details id="es-atv">
-    <summary><span class="ico">🤖</span>Google TV y Android TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smart-tv"/></svg></span>Google TV y Android TV</summary>
     <ol>
       <li>En “＋ Agregar dispositivo”, abre “Wi‑Fi” → “TV / caja TV” y elige “Google TV / Android TV”.</li>
       <li>Elige la tuya y escribe el código de 6 caracteres que muestra su pantalla, una sola vez.</li>
@@ -1099,7 +1104,7 @@
     <p class="tip">Opcional, y se recuerda para esta TV. Detenlo con “Apagar el enlace”. Requiere Android 8 o posterior en el teléfono. ¿No lo encuentras? Actualiza la app.</p>
   </details>
   <details id="es-bt">
-    <summary><span class="ico">🔵</span>Control Bluetooth: Fire TV, cajas Android, Apple TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#bluetooth"/></svg></span>Control Bluetooth: Fire TV, cajas Android, Apple TV</summary>
     <p>Estos equipos no reciben infrarrojo, así que tu teléfono se vuelve su control Bluetooth.</p>
     <ol>
       <li>En “＋ Agregar dispositivo”, abre “Bluetooth” y elige “Control Bluetooth”.</li>
@@ -1109,7 +1114,7 @@
     <p class="tip">¿No aparece? Toca “Hacer visible el teléfono” y elige el nombre del teléfono en los ajustes de la TV. ¿Ya emparejado? Elígelo directamente de la lista. Necesita Android 9 o superior, y algunos fabricantes desactivan la función. En el modo “Cursor” mueves un puntero, haces clic y escribes en los campos.</p>
   </details>
   <details id="es-devices">
-    <summary><span class="ico">🗂️</span>Mis dispositivos</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#devices"/></svg></span>Mis dispositivos</summary>
     <ul>
       <li>Tres pestañas arriba: Wi‑Fi, Bluetooth e Infrarrojo, cada una con su número de dispositivos. Dentro de una pestaña, los dispositivos se agrupan por tipo.</li>
       <li>Guarda varios dispositivos y toca “Activar” para cambiar entre ellos.</li>
@@ -1118,11 +1123,11 @@
     </ul>
   </details>
   <details id="es-widget">
-    <summary><span class="ico">📱</span>Widget y acceso en Ajustes rápidos</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#widget"/></svg></span>Widget y acceso en Ajustes rápidos</summary>
     <p>Agrega el widget de REMOTE DNA a tu pantalla de inicio, o su acceso a los Ajustes rápidos. Ambos controlan el encendido y el volumen del dispositivo activo sin abrir la app.</p>
   </details>
   <details id="es-help">
-    <summary><span class="ico">🆘</span>¿La TV no reacciona?</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-red)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#help"/></svg></span>¿La TV no reacciona?</summary>
     <ol>
       <li>Revisa que el teléfono tenga emisor IR: si no, aparece “No se detectó emisor infrarrojo en este teléfono”.</li>
       <li>Apunta la parte <b>superior</b> del teléfono a la TV, acércate y quita cualquier obstáculo.</li>
@@ -1132,7 +1137,7 @@
     </ol>
   </details>
   <details id="es-pro">
-    <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#pro"/></svg></span>REMOTE DNA Pro</summary>
     <ul>
       <li>Un solo pago, sin suscripción.</li>
       <li>Dispositivos guardados ilimitados (gratis: 3).</li>
@@ -1141,7 +1146,7 @@
     </ul>
   </details>
   <details id="es-privacy">
-    <summary><span class="ico">🔒</span>Privacidad</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-green)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#shield"/></svg></span>Privacidad</summary>
     <ul>
       <li>Tus dispositivos y códigos se quedan en tu teléfono.</li>
       <li>La app no pide micrófono ni contactos.</li>
@@ -1162,19 +1167,19 @@
   <div class="paths">
     <h2>Qual caminho escolher?</h2>
     <ul>
-      <li><span>Você sabe o número do modelo</span><a href="#pt-model">🔎 Buscar pelo modelo</a></li>
-      <li><span>Você só sabe a marca</span><a href="#pt-tv">📺 Adicionar uma TV</a></li>
-      <li><span>Você não sabe nada, ou nada funcionou</span><a href="#pt-teach">🎓 Ensinar minha TV</a></li>
-      <li><span>Prefere ser guiado em uma conversa</span><a href="#pt-agent">🧬 Agente Remote DNA</a></li>
-      <li><span>Uma Android TV ou Google TV</span><a href="#pt-atv">🤖 Google TV / Android TV</a></li>
-      <li><span>Um receptor ou TV box IPTV</span><a href="#pt-stb">📦 Receptor</a></li>
-      <li><span>Um Fire TV, TV box Android ou Apple TV</span><a href="#pt-bt">🔵 Bluetooth</a></li>
-      <li><span>Outra Smart TV, ou um celular sem infravermelho</span><a href="#pt-wifi">📶 Wi‑Fi</a></li>
-      <li><span>Um ar-condicionado</span><a href="#pt-ac">❄️ Ar-condicionado</a></li>
+      <li><span>Você sabe o número do modelo</span><a href="#pt-model"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#scan"/></svg> Buscar pelo modelo</a></li>
+      <li><span>Você só sabe a marca</span><a href="#pt-tv"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv"/></svg> Adicionar uma TV</a></li>
+      <li><span>Você não sabe nada, ou nada funcionou</span><a href="#pt-teach"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#tv-spark"/></svg> Ensinar minha TV</a></li>
+      <li><span>Prefere ser guiado em uma conversa</span><a href="#pt-agent"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#agent"/></svg> Agente Remote DNA</a></li>
+      <li><span>Uma Android TV ou Google TV</span><a href="#pt-atv"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#smart-tv"/></svg> Google TV / Android TV</a></li>
+      <li><span>Um receptor ou TV box IPTV</span><a href="#pt-stb"><svg class="i" aria-hidden="true" style="color:var(--rd-orange)"><use href="assets/icons.svg#receiver"/></svg> Receptor</a></li>
+      <li><span>Um Fire TV, TV box Android ou Apple TV</span><a href="#pt-bt"><svg class="i" aria-hidden="true" style="color:var(--rd-violet)"><use href="assets/icons.svg#bluetooth"/></svg> Bluetooth</a></li>
+      <li><span>Outra Smart TV, ou um celular sem infravermelho</span><a href="#pt-wifi"><svg class="i" aria-hidden="true" style="color:var(--rd-blue)"><use href="assets/icons.svg#wifi"/></svg> Wi‑Fi</a></li>
+      <li><span>Um ar-condicionado</span><a href="#pt-ac"><svg class="i" aria-hidden="true" style="color:var(--rd-cyan)"><use href="assets/icons.svg#snow"/></svg> Ar-condicionado</a></li>
     </ul>
   </div>
   <details id="pt-start" open>
-    <summary><span class="ico">🚀</span>Primeiro passo</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#rocket"/></svg></span>Primeiro passo</summary>
     <ol>
       <li>Abra “Meus aparelhos”. No topo, três abas conforme o celular chega ao aparelho: <b>Wi‑Fi</b>, <b>Bluetooth</b> e <b>Infravermelho</b>.</li>
       <li>Escolha a aba, toque em “＋ Adicionar aparelho”, depois o tipo de aparelho (TV, TV box, receptor, ar-condicionado…) e então a forma. A mais rápida vem primeiro.</li>
@@ -1183,7 +1188,7 @@
     <p class="tip">Sem infravermelho? As abas Wi‑Fi e Bluetooth cobrem Smart TVs e caixas. Cada tela guarda as explicações atrás do ícone (i), e o botão de setas ao lado do globo reduz ou amplia a interface.</p>
   </details>
   <details id="pt-model">
-    <summary><span class="ico">🔎</span>Buscar pelo modelo <span class="new">Novo</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#scan"/></svg></span>Buscar pelo modelo <span class="new">Novo</span></summary>
     <p>O caminho mais rápido: uma foto da etiqueta leva ao controle da sua TV.</p>
     <ol>
       <li>O número do modelo está na etiqueta atrás da TV, ou sob a tampa das pilhas do controle, por exemplo <b>43G7200</b>.</li>
@@ -1207,7 +1212,7 @@
     </ul>
   </details>
   <details id="pt-tv">
-    <summary><span class="ico">📺</span>Adicionar uma TV pela marca</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv"/></svg></span>Adicionar uma TV pela marca</summary>
     <ol>
       <li>Em “＋ Adicionar aparelho”, abra “Infravermelho” → “TV” e escolha “TV”.</li>
       <li>Escolha sua marca na lista em ordem alfabética.</li>
@@ -1217,7 +1222,7 @@
     <p class="tip">Sua marca não está lá ou nenhum conjunto funciona? Use “Ensinar minha TV”. “Manual / IR rápido” testa os 40 controles mais comuns, um após o outro. As marcas argelinas vêm primeiro na lista 🇩🇿: Iris, Condor, Enie, Starlight e Brandt, e nos ares-condicionados Condor, Maxtor, Brandt, Major Cara e Thomson. O app oferece primeiro os controles do fabricante habitual.</p>
   </details>
   <details id="pt-teach">
-    <summary><span class="ico">🎓</span>Ensinar minha TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#tv-spark"/></svg></span>Ensinar minha TV</summary>
     <p>Para uma TV cuja marca você não conhece, ou quando nada mais funcionou. Você não precisa saber nada: só diga ao app o que vê na tela.</p>
     <ol>
       <li>Ligue a TV pelo próprio botão, aponte o celular para ela e toque em “Começar”.</li>
@@ -1238,7 +1243,7 @@
     <p class="tip">Tocou sem querer? Sem problema: uma pergunta mostra isso, e o envio continua de onde parou. Já buscou sem resultado? O botão “Busca profunda (mais longa)” abaixo de “Começar” leva direto a ela.</p>
   </details>
   <details id="pt-agent">
-    <summary><span class="ico">🧬</span>Agente Remote DNA <span class="new">Beta</span></summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#agent"/></svg></span>Agente Remote DNA <span class="new">Beta</span></summary>
     <p>Uma conversa que reconstrói o controle da sua TV: descreva a TV ou digite o número do modelo, e o agente encontra o código e testa com você, botão por botão.</p>
     <ol>
       <li>Toque no botão flutuante (uma bolha com uma hélice) na parte de baixo da tela, em qualquer aba. Arraste-o para um lado se cobrir algo.</li>
@@ -1250,7 +1255,7 @@
     <p class="tip">Precisa de internet: o que você escreve vai para o nosso servidor e para um serviço de IA para ser respondido, então não digite dados pessoais. A IA pode errar: confira você mesmo. O sinal sai do emissor infravermelho do seu telefone. Não vê o botão flutuante? Atualize o app.</p>
   </details>
   <details id="pt-fix">
-    <summary><span class="ico">🔧</span>Consertar um botão</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#fix"/></svg></span>Consertar um botão</summary>
     <ol>
       <li>Na tela do controle, toque em “Consertar um botão”.</li>
       <li>Escolha o botão que falta ou não funciona e depois “Começar”.</li>
@@ -1259,7 +1264,7 @@
     <p class="tip">Os botões que funcionam não são alterados. O “Modo especialista” manual continua no fim da tela para técnicos.</p>
   </details>
   <details id="pt-ac">
-    <summary><span class="ico">❄️</span>Ar-condicionado</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-cyan)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#snow"/></svg></span>Ar-condicionado</summary>
     <ol>
       <li>Em “＋ Adicionar aparelho”, abra “Infravermelho” → “Ar-cond.” e escolha “Ar-condicionado”.</li>
       <li>Escolha a marca, ou teste os protocolos um por um até o aparelho reagir.</li>
@@ -1274,7 +1279,7 @@
     <p class="tip">Não precisa de emissor infravermelho, e funciona de qualquer cômodo da casa.</p>
   </details>
   <details id="pt-stb">
-    <summary><span class="ico">📦</span>Receptor e TV box IPTV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-orange)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#receiver"/></svg></span>Receptor e TV box IPTV</summary>
     <ol>
       <li>Em “＋ Adicionar aparelho”, abra “Infravermelho” → “Receptor” e escolha “Receptor / TV box IPTV”.</li>
       <li>Escolha a marca: Starsat, Strong, Humax, TechniSat, Formuler, MAG…</li>
@@ -1284,7 +1289,7 @@
     <p class="tip">Marca não aparece? “Ensinar minha TV” também funciona com um receptor.</p>
   </details>
   <details id="pt-wifi">
-    <summary><span class="ico">📶</span>Smart TV por Wi‑Fi</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#wifi"/></svg></span>Smart TV por Wi‑Fi</summary>
     <ol>
       <li>Conecte o celular e a TV à mesma rede.</li>
       <li>Em “＋ Adicionar aparelho”, abra “Wi‑Fi” → “TV / TV box” e escolha “Busca Wi‑Fi (Smart TV)”.</li>
@@ -1294,7 +1299,7 @@
     <p class="tip">Algumas TVs só permitem abrir YouTube e Netflix por Wi‑Fi, e o app avisa você.</p>
   </details>
   <details id="pt-atv">
-    <summary><span class="ico">🤖</span>Google TV e Android TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#smart-tv"/></svg></span>Google TV e Android TV</summary>
     <ol>
       <li>Em “＋ Adicionar aparelho”, abra “Wi‑Fi” → “TV / TV box” e escolha “Google TV / Android TV”.</li>
       <li>Escolha a sua e digite o código de 6 caracteres que aparece na tela dela, uma única vez.</li>
@@ -1319,7 +1324,7 @@
     <p class="tip">Opcional, e lembrado para esta TV. Pare com “Desligar a ligação”. Requer Android 8 ou superior no telefone. Não encontrou? Atualize o app.</p>
   </details>
   <details id="pt-bt">
-    <summary><span class="ico">🔵</span>Controle Bluetooth: Fire TV, TV boxes Android, Apple TV</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#bluetooth"/></svg></span>Controle Bluetooth: Fire TV, TV boxes Android, Apple TV</summary>
     <p>Esses aparelhos não recebem infravermelho, então seu celular vira o controle Bluetooth deles.</p>
     <ol>
       <li>Em “＋ Adicionar aparelho”, abra “Bluetooth” e escolha “Controle Bluetooth”.</li>
@@ -1329,7 +1334,7 @@
     <p class="tip">Não apareceu? Toque em “Deixar o celular visível” e escolha o nome do celular nas configurações da TV. Já pareado? Escolha-o direto na lista. Precisa do Android 9 ou superior, e alguns fabricantes desativam o recurso. No modo “Cursor” você move um ponteiro, clica e digita nos campos.</p>
   </details>
   <details id="pt-devices">
-    <summary><span class="ico">🗂️</span>Meus aparelhos</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#devices"/></svg></span>Meus aparelhos</summary>
     <ul>
       <li>Três abas no topo: Wi‑Fi, Bluetooth e Infravermelho, cada uma com seu número de aparelhos. Dentro de uma aba, os aparelhos ficam agrupados por tipo.</li>
       <li>Salve vários aparelhos e toque em “Ativar” para alternar entre eles.</li>
@@ -1338,11 +1343,11 @@
     </ul>
   </details>
   <details id="pt-widget">
-    <summary><span class="ico">📱</span>Widget e atalho nas Configurações rápidas</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-blue)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#widget"/></svg></span>Widget e atalho nas Configurações rápidas</summary>
     <p>Adicione o widget do REMOTE DNA à tela inicial, ou o atalho dele às Configurações rápidas. Os dois controlam o liga/desliga e o volume do aparelho ativo sem abrir o app.</p>
   </details>
   <details id="pt-help">
-    <summary><span class="ico">🆘</span>A TV não reage?</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-red)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#help"/></svg></span>A TV não reage?</summary>
     <ol>
       <li>Confira se o celular tem emissor IR: se não tiver, aparece “Nenhum emissor infravermelho detectado neste celular”.</li>
       <li>Aponte a parte de <b>cima</b> do celular para a TV, chegue mais perto e tire qualquer obstáculo.</li>
@@ -1352,7 +1357,7 @@
     </ol>
   </details>
   <details id="pt-pro">
-    <summary><span class="ico">⭐</span>REMOTE DNA Pro</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-violet)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#pro"/></svg></span>REMOTE DNA Pro</summary>
     <ul>
       <li>Pagamento único, sem assinatura.</li>
       <li>Aparelhos salvos ilimitados (grátis: 3).</li>
@@ -1361,7 +1366,7 @@
     </ul>
   </details>
   <details id="pt-privacy">
-    <summary><span class="ico">🔒</span>Privacidade</summary>
+    <summary><span class="ico rd-ico" style="--c:var(--rd-green)"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#shield"/></svg></span>Privacidade</summary>
     <ul>
       <li>Seus aparelhos e códigos ficam no seu celular.</li>
       <li>O app não pede microfone nem contatos.</li>
