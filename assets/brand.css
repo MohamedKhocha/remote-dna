@@ -1,0 +1,73 @@
+/* REMOTE DNA web brand layer: fonts and colour tokens shared by every page
+   (landing page, guide, demo, privacy and terms).
+   Source of truth: the brand identity file (brand/README.md, sections 3, 4 and 8,
+   and brand/color/tokens.css in the app repository). Night (dark) is the brand's
+   base; Day (light) follows the visitor's system setting, or is forced with
+   <html data-theme="light"> / <html data-theme="dark">. */
+
+@font-face{font-family:"Cairo";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/Cairo_400Regular.ttf") format("truetype")}
+@font-face{font-family:"Cairo";font-weight:600;font-style:normal;font-display:swap;src:url("fonts/Cairo_600SemiBold.ttf") format("truetype")}
+@font-face{font-family:"Cairo";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/Cairo_700Bold.ttf") format("truetype")}
+@font-face{font-family:"Cairo";font-weight:800 900;font-style:normal;font-display:swap;src:url("fonts/Cairo_800ExtraBold.ttf") format("truetype")}
+
+:root{
+  color-scheme:dark;
+  --rd-font:"Cairo",system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic",sans-serif;
+  /* Night: the brand's base */
+  --rd-bg:#05070D;            /* Night 950 */
+  --rd-bg-2:#0E1322;          /* Night 900: menus, solid fields */
+  --rd-surface:rgba(255,255,255,.06);       /* glass */
+  --rd-surface-2:rgba(255,255,255,.10);     /* stronger glass */
+  --rd-line:rgba(255,255,255,.12);          /* glass stroke */
+  --rd-ink:#F5F7FB;
+  --rd-dim:#9AA6BF;
+  --rd-blue:#4F8BFF;          /* Signal Blue: text, icons, glow */
+  --rd-violet:#8B5CF6;        /* Helix Violet */
+  --rd-cyan:#22D3EE;          /* Pulse Cyan */
+  --rd-orange:#FB923C;        /* IR Orange */
+  --rd-green:#34D399;         /* Go Green */
+  --rd-red:#F43F5E;           /* Stop Red */
+  --rd-action:#3366E6;        /* Action Fill: solid fill under white text (5.0:1) */
+  --rd-violet-fill:#7444E0;   /* Violet Fill: solid fill under white text (5.8:1) */
+  --rd-on-green:#05070D;      /* text on green fills (never white) */
+  --rd-grad-action:linear-gradient(135deg,#7444E0,#3366E6);
+  --rd-grad-brand:linear-gradient(90deg,#8B5CF6,#4F8BFF,#22D3EE);
+  --rd-header:rgba(5,7,13,.78);
+  --rd-band:rgba(14,19,34,.6);
+  --rd-glow-1:rgba(79,139,255,.16);
+  --rd-glow-2:rgba(139,92,246,.12);
+  --rd-shadow:0 18px 44px rgba(0,0,0,.45);
+  --rd-a:#22C55E; --rd-t:#EF4444; --rd-g:#FACC15; --rd-c:#38BDF8;  /* DNA bases */
+}
+
+/* Day: every coloured text token holds 4.5:1 or more on --rd-bg and on white */
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    color-scheme:light;
+    --rd-bg:#EEF1F8; --rd-bg-2:#FFFFFF;
+    --rd-surface:rgba(255,255,255,.78); --rd-surface-2:#E4E9F4; --rd-line:rgba(15,23,42,.12);
+    --rd-ink:#0F172A; --rd-dim:#4B5670;
+    --rd-blue:#2F5FD6; --rd-violet:#7444E0; --rd-cyan:#0E7490; --rd-orange:#C2410C; --rd-green:#047857; --rd-red:#BE123C;
+    --rd-on-green:#FFFFFF;
+    --rd-grad-brand:linear-gradient(90deg,#7444E0,#2F5FD6,#0E7490);
+    --rd-header:rgba(238,241,248,.82); --rd-band:rgba(228,233,244,.75);
+    --rd-glow-1:rgba(47,95,214,.10); --rd-glow-2:rgba(116,68,224,.08);
+    --rd-shadow:0 14px 34px rgba(15,23,42,.12);
+  }
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --rd-bg:#EEF1F8; --rd-bg-2:#FFFFFF;
+  --rd-surface:rgba(255,255,255,.78); --rd-surface-2:#E4E9F4; --rd-line:rgba(15,23,42,.12);
+  --rd-ink:#0F172A; --rd-dim:#4B5670;
+  --rd-blue:#2F5FD6; --rd-violet:#7444E0; --rd-cyan:#0E7490; --rd-orange:#C2410C; --rd-green:#047857; --rd-red:#BE123C;
+  --rd-on-green:#FFFFFF;
+  --rd-grad-brand:linear-gradient(90deg,#7444E0,#2F5FD6,#0E7490);
+  --rd-header:rgba(238,241,248,.82); --rd-band:rgba(228,233,244,.75);
+  --rd-glow-1:rgba(47,95,214,.10); --rd-glow-2:rgba(116,68,224,.08);
+  --rd-shadow:0 14px 34px rgba(15,23,42,.12);
+}
+
+/* The wordmark: "REMOTE" in ink, "DNA" in the brand gradient, Cairo ExtraBold */
+.rd-word{font-family:var(--rd-font);font-weight:800;letter-spacing:.5px;color:var(--rd-ink)}
+.rd-word i,.rd-grad-text{font-style:normal;background:var(--rd-grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}

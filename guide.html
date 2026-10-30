@@ -5,19 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>REMOTE DNA — دليل الاستخدام · User guide</title>
 <meta name="description" content="REMOTE DNA user guide, step by step: find by model, add a TV, Teach my TV and deep search, Fix a button, air conditioners, Wi-Fi and Android TV, troubleshooting, Pro, privacy.">
-<meta name="theme-color" content="#0B101D">
+<meta name="theme-color" content="#05070D" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEF1F8" media="(prefers-color-scheme: light)">
 <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/brand.css">
 <style>
-  :root{--bg:#0B101D;--card:#131A2B;--line:#243049;--text:#E8EDF7;--dim:#93A1BC;--blue:#3B82F6;--green:#22C55E}
+  /* Colours and type: assets/brand.css (brand identity v1.0.3), Night or Day with the system. */
+  :root{--bg:var(--rd-bg);--card:var(--rd-surface);--line:var(--rd-line);--text:var(--rd-ink);--dim:var(--rd-dim);--blue:var(--rd-blue);--green:var(--rd-green)}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic",sans-serif}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 var(--rd-font)}
   .wrap{max-width:760px;margin:0 auto;padding:20px 16px 56px}
   header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
   .brand{display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:.5px}
   .brand img{width:26px;height:26px}
+  .brand i{font-style:normal;background:var(--rd-grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
   .switch{display:flex;gap:4px;border:1px solid var(--line);border-radius:10px;padding:3px;flex-wrap:wrap}
   .switch button{background:none;border:0;color:var(--dim);font:inherit;font-weight:700;font-size:13px;padding:5px 10px;border-radius:7px;cursor:pointer}
-  .switch button.on{background:var(--blue);color:#fff}
+  .switch button.on{background:var(--rd-action);color:#fff}
   h1{font-size:28px;margin:18px 0 6px}
   .intro{color:var(--dim);margin:0 0 18px}
   .paths{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 18px}
@@ -33,14 +37,14 @@
   summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;align-items:center;gap:10px}
   summary::-webkit-details-marker{display:none}
   .ico{font-size:20px}
-  .new{background:var(--green);color:#06210F;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px}
+  .new{background:var(--green);color:var(--rd-on-green);font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px}
   details p{margin:0 0 12px}
   details h3{font-size:15px;margin:16px 0 6px}
   details ol,details ul{margin:0 0 14px;padding-inline-start:22px}
   details li{margin:4px 0}
   .tip{color:var(--dim);border-inline-start:3px solid var(--blue);padding-inline-start:10px}
   .cta{margin-top:24px;display:flex;gap:10px;flex-wrap:wrap}
-  .btn{background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:999px}
+  .btn{background:var(--rd-grad-action);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:999px}
   .ghost{color:var(--text);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:999px;border:1px solid var(--line)}
   footer{color:var(--dim);font-size:13px;margin-top:32px}
 </style>
@@ -48,7 +52,7 @@
 <body>
 <div class="wrap">
 <header>
-  <a class="brand" href="./"><img src="assets/logo-mark.svg" alt="">REMOTE DNA</a>
+  <a class="brand" href="./"><img src="assets/logo-mark.svg" alt=""><span>REMOTE <i>DNA</i></span></a>
   <div class="switch"><button data-lang="ar" class="on">ع</button><button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="zh">中</button><button data-lang="es">ES</button><button data-lang="pt">PT</button></div>
 </header>
 
@@ -61,6 +65,7 @@
       <li><span>تعرف رقم موديل التلفاز</span><a href="#ar-model">🔎 ابحث بالموديل</a></li>
       <li><span>تعرف العلامة فقط</span><a href="#ar-tv">📺 أضف تلفازاً</a></li>
       <li><span>لا تعرف شيئاً، أو لم يعمل شيء</span><a href="#ar-teach">🎓 علّم تلفازك</a></li>
+      <li><span>تفضّل أن يرشدك أحد بالمحادثة</span><a href="#ar-agent">🧬 وكيل Remote DNA</a></li>
       <li><span>تلفاز Android TV أو Google TV</span><a href="#ar-atv">🤖 Google TV / Android TV</a></li>
       <li><span>ريسيفر أو صندوق IPTV</span><a href="#ar-stb">📦 الريسيفر</a></li>
       <li><span>Fire TV أو صندوق Android أو Apple TV</span><a href="#ar-bt">🔵 بلوتوث</a></li>
@@ -132,6 +137,18 @@
     </ol>
     <p class="tip">ضغطت بالخطأ؟ لا بأس: سؤال واحد يكشف ذلك، ويكمل البثّ من حيث توقّف. وإن جرّبت البحث العادي من قبل دون نتيجة، زر «بحث أعمق (أطول)» تحت «ابدأ» يأخذك إليه مباشرة.</p>
   </details>
+  <details id="ar-agent">
+    <summary><span class="ico">🧬</span>وكيل Remote DNA <span class="new">تجريبي</span></summary>
+    <p>محادثة تعيد بناء ريموت تلفازك: تصف التلفاز أو تكتب رقم الموديل، فيجد الوكيل الشيفرة ويجرّبها معك زرّاً زرّاً.</p>
+    <ol>
+      <li>اضغط الزرّ العائم (فقاعة فيها حلزون) أسفل الشاشة، في أيّ تبويب. اسحبه إلى أيّ جانب إن غطّى شيئاً.</li>
+      <li>اكتب بلغتك، مثلاً: «تلفازي Iris ضاع ريموته، الملصق 43G7200»، أو اسم العلامة فقط.</li>
+      <li>حين يريد الوكيل تجربة زرّ يسألك أولاً: «أرسل» أو «لا ترسل» أو «أرسل زرّاً آخر». لا يصل شيء إلى التلفاز دون موافقتك.</li>
+      <li>وجّه الهاتف نحو التلفاز، ثم أجب بلمسة: «نعم، استجاب التلفاز» أو «لا، لم يحدث شيء». كان التلفاز مطفأً؟ اكتب ذلك فيعيد الإرسال.</li>
+      <li>بعد زرّين أو ثلاثة يتوقّع الوكيل بقيّة الأزرار. اضغط «احفظ هذا الريموت»، فيظهر في تبويب الريموت جهازاً مفعَّلاً.</li>
+    </ol>
+    <p class="tip">يحتاج الإنترنت: ما تكتبه يُرسل إلى خادمنا وإلى خدمة ذكاء اصطناعي ليُجاب عنه، فلا تكتب بيانات شخصية. قد يخطئ الذكاء الاصطناعي، فتحقّق بنفسك. الإشارة يرسلها باعث الأشعة في هاتفك. لم تجد الزرّ العائم؟ حدّث التطبيق.</p>
+  </details>
   <details id="ar-fix">
     <summary><span class="ico">🔧</span>أصلح زراً</summary>
     <ol>
@@ -192,6 +209,14 @@
       <li>لوحة مفاتيح التلفاز على الشاشة تتبع الأسهم لا المؤشّر: تنقّل فيها بالأسهم واضغط OK.</li>
     </ol>
     <p class="tip">تظهر حالة التلفاز ومستوى الصوت الحقيقي، وتفتح YouTube وNetflix وغيرهما مباشرة. Google TV هو الواجهة الحديثة لـ Android TV، والتحكم فيهما واحد.</p>
+    <h3>رابط التصحيح (متقدّم)</h3>
+    <p>بعض تلفزيونات Android TV القديمة لا تستجيب لزرّي «المصدر» و«الإعدادات» عبر الواي‑فاي. «رابط التصحيح» يرسلهما عبر منفذ المطوّرين في التلفاز (ADB).</p>
+    <ol>
+      <li>في التلفاز: الإعدادات ← تفضيلات الجهاز ← حول، واضغط «الإصدار» 7 مرّات.</li>
+      <li>في «خيارات المطوّر» فعّل «تصحيح USB» أو «التصحيح عبر الشبكة».</li>
+      <li>في ريموت Android TV بالتطبيق، أسفل الشاشة: «وصّل الرابط»، ثم اختر «السماح» على شاشة التلفاز.</li>
+    </ol>
+    <p class="tip">اختياري، ويتذكّره التطبيق لهذا التلفاز. أوقفه بـ«أوقف الرابط». يتطلّب أندرويد 8 فما فوق على الهاتف. لم تجده؟ حدّث التطبيق.</p>
   </details>
   <details id="ar-bt">
     <summary><span class="ico">🔵</span>ريموت بلوتوث: Fire TV وصناديق Android وApple TV</summary>
@@ -244,6 +269,7 @@
       <li>البلوتوث («الأجهزة المجاورة») لريموت البلوتوث والمؤشّر فقط: للبحث عن التلفاز والاقتران به وإرسال الأزرار. في أندرويد 11 وما قبله يشترط النظام إذن «الموقع» للبحث عن أجهزة البلوتوث؛ لا نقرأ موقعك ولا نحفظه.</li>
       <li>الشبكة المحلية للتحكم في التلفزيونات الذكية ومكيّفات Gree داخل بيتك مباشرة، دون المرور بأي خادم.</li>
       <li>الحساب اختياري، ومشاركة الشيفرات مجهولة ومعطّلة ما لم تفعّلها.</li>
+      <li>وكيل Remote DNA وحده يرسل ما تكتبه فيه إلى خادمنا وإلى خدمة ذكاء اصطناعي ليُجاب عنه. لا تكتب فيه بيانات شخصية.</li>
       <li>نص السياسة كاملاً في «حسابي».</li>
     </ul>
   </details>
@@ -259,6 +285,7 @@
       <li><span>Vous connaissez le numéro de modèle</span><a href="#fr-model">🔎 Trouver par modèle</a></li>
       <li><span>Vous connaissez seulement la marque</span><a href="#fr-tv">📺 Ajouter un téléviseur</a></li>
       <li><span>Vous ne savez rien, ou rien n’a marché</span><a href="#fr-teach">🎓 Apprendre ma télé</a></li>
+      <li><span>Vous préférez être guidé en discutant</span><a href="#fr-agent">🧬 Agent Remote DNA</a></li>
       <li><span>Télé Android TV ou Google TV</span><a href="#fr-atv">🤖 Google TV / Android TV</a></li>
       <li><span>Récepteur ou box IPTV</span><a href="#fr-stb">📦 Récepteur</a></li>
       <li><span>Fire TV, box Android ou Apple TV</span><a href="#fr-bt">🔵 Bluetooth</a></li>
@@ -330,6 +357,18 @@
     </ol>
     <p class="tip">Touché par erreur ? Aucun souci : une question suffit à le voir, et l’émission reprend là où elle s’était arrêtée. Recherche normale déjà faite sans résultat ? Le bouton « Recherche approfondie (plus longue) » sous « Commencer » y mène directement.</p>
   </details>
+  <details id="fr-agent">
+    <summary><span class="ico">🧬</span>Agent Remote DNA <span class="new">Bêta</span></summary>
+    <p>Une conversation qui reconstruit la télécommande de votre TV : décrivez la TV ou tapez son numéro de modèle, l’agent trouve le code et l’essaie avec vous, touche par touche.</p>
+    <ol>
+      <li>Touchez le bouton flottant (une bulle avec une hélice) en bas de l’écran, depuis n’importe quel onglet. Faites-le glisser sur un côté s’il cache quelque chose.</li>
+      <li>Écrivez dans votre langue, par exemple « Ma TV Iris a perdu sa télécommande, l’étiquette indique 43G7200 », ou juste la marque.</li>
+      <li>Avant d’essayer une touche, l’agent vous demande : « Envoyer », « Ne pas envoyer » ou « Envoyer une autre touche ». Rien n’arrive à la TV sans votre accord.</li>
+      <li>Pointez le téléphone vers la TV, puis répondez d’un geste : « Oui, la TV a réagi » ou « Non, rien ne s’est passé ». La TV était éteinte ? Écrivez-le et il renvoie le code.</li>
+      <li>Après deux ou trois touches, l’agent prédit les autres. Touchez « Enregistrer cette télécommande » : elle apparaît dans l’onglet télécommande, comme appareil actif.</li>
+    </ol>
+    <p class="tip">Il faut Internet : ce que vous écrivez est envoyé à notre serveur et à un service d’IA pour y répondre, alors n’écrivez pas de données personnelles. L’IA peut se tromper : vérifiez vous-même. Le signal part de l’émetteur infrarouge de votre téléphone. Pas de bouton flottant ? Mettez l’application à jour.</p>
+  </details>
   <details id="fr-fix">
     <summary><span class="ico">🔧</span>Réparer une touche</summary>
     <ol>
@@ -390,6 +429,14 @@
       <li>Le clavier affiché par la télé suit les flèches, pas le pointeur : déplacez‑vous avec les flèches et appuyez sur OK.</li>
     </ol>
     <p class="tip">L’état de la télé et son vrai niveau de volume s’affichent, et vous ouvrez YouTube, Netflix et d’autres directement. Google TV est l’interface récente d’Android TV : on les pilote de la même façon.</p>
+    <h3>Lien de débogage (avancé)</h3>
+    <p>Certaines anciennes Android TV ignorent « Source » et « Réglages » en Wi‑Fi. Le lien de débogage les envoie par le port développeur de la TV (ADB).</p>
+    <ol>
+      <li>Sur la TV : Paramètres → Préférences de l’appareil → À propos, puis appuyez 7 fois sur « Build ».</li>
+      <li>Dans « Options pour les développeurs », activez « Débogage USB » ou « Débogage réseau ».</li>
+      <li>Dans la télécommande Android TV de l’application, en bas de l’écran : « Connecter le lien », puis choisissez « Autoriser » sur l’écran de la TV.</li>
+    </ol>
+    <p class="tip">Facultatif, et retenu pour cette TV. Arrêtez-le avec « Couper le lien ». Nécessite Android 8 ou plus récent sur le téléphone. Introuvable ? Mettez l’application à jour.</p>
   </details>
   <details id="fr-bt">
     <summary><span class="ico">🔵</span>Télécommande Bluetooth : Fire TV, box Android, Apple TV</summary>
@@ -442,6 +489,7 @@
       <li>Le Bluetooth (« Appareils à proximité ») sert uniquement à la télécommande Bluetooth et au curseur : trouver la télé, s’y associer et envoyer les touches. Sous Android 11 et antérieur, le système exige l’autorisation « Position » pour chercher des appareils Bluetooth ; nous ne lisons ni n’enregistrons votre position.</li>
       <li>Le réseau local sert à piloter les télés connectées et les clims Gree directement chez vous, sans passer par un serveur.</li>
       <li>Le compte est facultatif, et le partage des codes est anonyme et désactivé sauf si vous l’activez.</li>
+      <li>Seul l’agent Remote DNA envoie ce que vous y écrivez à notre serveur et à un service d’IA pour y répondre. N’y écrivez pas de données personnelles.</li>
       <li>La politique complète est dans « Moi ».</li>
     </ul>
   </details>
@@ -457,6 +505,7 @@
       <li><span>You know the TV’s model number</span><a href="#en-model">🔎 Find by model</a></li>
       <li><span>You only know the brand</span><a href="#en-tv">📺 Add a TV</a></li>
       <li><span>You know nothing, or nothing worked</span><a href="#en-teach">🎓 Teach my TV</a></li>
+      <li><span>You’d rather be guided in a chat</span><a href="#en-agent">🧬 Remote DNA agent</a></li>
       <li><span>An Android TV or Google TV</span><a href="#en-atv">🤖 Google TV / Android TV</a></li>
       <li><span>A receiver or IPTV box</span><a href="#en-stb">📦 Receiver</a></li>
       <li><span>A Fire TV, Android box or Apple TV</span><a href="#en-bt">🔵 Bluetooth</a></li>
@@ -528,6 +577,18 @@
     </ol>
     <p class="tip">Tapped by mistake? No harm: one question shows it, and the sending carries on where it stopped. Already searched with no result? The “Deep search (longer)” button under “Start” goes straight to it.</p>
   </details>
+  <details id="en-agent">
+    <summary><span class="ico">🧬</span>Remote DNA agent <span class="new">Beta</span></summary>
+    <p>A conversation that rebuilds your TV’s remote: describe the TV or type its model number, and the agent finds the code and tries it with you, one button at a time.</p>
+    <ol>
+      <li>Tap the floating button (a bubble with a helix) at the bottom of the screen, on any tab. Drag it to one side if it covers something.</li>
+      <li>Write in your language, for example “My Iris TV lost its remote, the label says 43G7200”, or just the brand.</li>
+      <li>Before trying a button, the agent asks you: “Send”, “Don’t send” or “Send another button”. Nothing reaches the TV without your OK.</li>
+      <li>Point the phone at the TV, then answer with one tap: “Yes, the TV responded” or “No, nothing happened”. Was the TV off? Say so and it sends again.</li>
+      <li>After two or three buttons, the agent predicts the rest. Tap “Save this remote”: it appears in the remote tab as the active device.</li>
+    </ol>
+    <p class="tip">It needs the internet: what you write goes to our server and to an AI service to be answered, so don’t type personal data. The AI can make mistakes, so check for yourself. The signal comes from your phone’s infrared emitter. No floating button? Update the app.</p>
+  </details>
   <details id="en-fix">
     <summary><span class="ico">🔧</span>Fix a button</summary>
     <ol>
@@ -588,6 +649,14 @@
       <li>The TV’s on-screen keyboard follows the arrows, not the pointer: move on it with the arrows and press OK.</li>
     </ol>
     <p class="tip">The TV’s state and its real volume level are shown, and you can open YouTube, Netflix and more directly. Google TV is Android TV’s newer interface: both are controlled the same way.</p>
+    <h3>Debugging link (advanced)</h3>
+    <p>Some older Android TVs ignore Source and Settings over Wi‑Fi. The debugging link sends them through the TV’s developer port (ADB).</p>
+    <ol>
+      <li>On the TV: Settings → Device preferences → About, then press Build 7 times.</li>
+      <li>In Developer options, turn on USB debugging or Network debugging.</li>
+      <li>In the app’s Android TV remote, at the bottom of the screen: “Connect the link”, then choose “Allow” on the TV screen.</li>
+    </ol>
+    <p class="tip">Optional, and remembered for this TV. Stop it with “Turn off the link”. Needs Android 8 or later on the phone. Can’t find it? Update the app.</p>
   </details>
   <details id="en-bt">
     <summary><span class="ico">🔵</span>Bluetooth remote: Fire TV, Android boxes, Apple TV</summary>
@@ -640,6 +709,7 @@
       <li>Bluetooth (“Nearby devices”) is used only for the Bluetooth remote and the cursor: to find the TV, pair with it and send keys. On Android 11 and older, the system requires the “Location” permission to search for Bluetooth devices; we neither read nor store your location.</li>
       <li>The local network is used to control smart TVs and Gree ACs directly in your home, through no server.</li>
       <li>The account is optional, and code sharing is anonymous and off unless you turn it on.</li>
+      <li>Only the Remote DNA agent sends what you write in it to our server and to an AI service to be answered. Don’t type personal data in it.</li>
       <li>The full policy is under “Me”.</li>
     </ul>
   </details>
@@ -655,6 +725,7 @@
       <li><span>您知道电视型号</span><a href="#zh-model">🔎 按型号查找</a></li>
       <li><span>您只知道品牌</span><a href="#zh-tv">📺 添加电视</a></li>
       <li><span>什么都不知道，或都不管用</span><a href="#zh-teach">🎓 教会我的电视</a></li>
+      <li><span>想在聊天中一步步获得指导</span><a href="#zh-agent">🧬 Remote DNA 智能体</a></li>
       <li><span>Android TV 或 Google TV</span><a href="#zh-atv">🤖 Google TV / Android TV</a></li>
       <li><span>卫星接收器或 IPTV 盒子</span><a href="#zh-stb">📦 接收器</a></li>
       <li><span>Fire TV、Android 盒子或 Apple TV</span><a href="#zh-bt">🔵 蓝牙</a></li>
@@ -726,6 +797,18 @@
     </ol>
     <p class="tip">误点了？没关系：一个问题就能发现，发送会从停下的地方继续。普通搜索已试过但没有结果？“开始”下方的“深度搜索（较慢）”按钮可直接进入。</p>
   </details>
+  <details id="zh-agent">
+    <summary><span class="ico">🧬</span>Remote DNA 智能体 <span class="new">测试版</span></summary>
+    <p>通过对话重建电视遥控器：描述你的电视或输入型号，智能体会找到代码，并和你一起逐个按键测试。</p>
+    <ol>
+      <li>点按屏幕底部的悬浮按钮（带螺旋的气泡），任何标签页都可以。如果它挡住了内容，可以拖到一侧。</li>
+      <li>用你的语言输入，例如“我的 Iris 电视遥控器丢了，标签上写着 43G7200”，或者只写品牌。</li>
+      <li>测试按键前，智能体会先问你：“发送”“不发送”或“发送其他按键”。未经你同意，不会向电视发送任何信号。</li>
+      <li>把手机对准电视，然后一键回答：“是的，电视有反应”或“没有，电视没反应”。电视当时关着？告诉它，它会重新发送。</li>
+      <li>测试两三个按键后，智能体会预测其余按键。点按“保存此遥控器”，它会作为当前设备出现在遥控器标签页。</li>
+    </ol>
+    <p class="tip">需要联网：你输入的内容会发送到我们的服务器和一个 AI 服务以获得回答，请不要输入个人信息。AI 可能出错，请自行核实。信号由你手机的红外发射器发出。找不到悬浮按钮？请更新应用。</p>
+  </details>
   <details id="zh-fix">
     <summary><span class="ico">🔧</span>修复按键</summary>
     <ol>
@@ -786,6 +869,14 @@
       <li>电视屏幕键盘跟随方向键而非光标：用方向键移动，再按 OK。</li>
     </ol>
     <p class="tip">可显示电视状态和真实音量，并直接打开 YouTube、Netflix 等。Google TV 是 Android TV 的新界面，两者的控制方式相同。</p>
+    <h3>调试连接（高级）</h3>
+    <p>部分旧款 Android TV 通过 Wi‑Fi 控制时会忽略“信号源”和“设置”键。“调试连接”通过电视的开发者端口（ADB）发送这两个键。</p>
+    <ol>
+      <li>在电视上：设置 → 设备偏好设置 → 关于，然后连按“版本号”7 次。</li>
+      <li>在“开发者选项”中开启“USB 调试”或“网络调试”。</li>
+      <li>在应用的 Android TV 遥控器页面底部点按“建立连接”，然后在电视屏幕上选择“允许”。</li>
+    </ol>
+    <p class="tip">可选功能，应用会为这台电视记住它。点按“关闭连接”即可停止。手机需要 Android 8 或更高版本。找不到？请更新应用。</p>
   </details>
   <details id="zh-bt">
     <summary><span class="ico">🔵</span>蓝牙遥控器：Fire TV、Android 盒子、Apple TV</summary>
@@ -838,6 +929,7 @@
       <li>蓝牙（“附近设备”）仅用于蓝牙遥控器和光标：查找电视、配对并发送按键。在 Android 11 及更早版本中，系统要求“位置信息”权限才能搜索蓝牙设备；我们不读取也不保存你的位置。</li>
       <li>本地网络用于在家中直接控制智能电视和格力空调，不经过任何服务器。</li>
       <li>账户为可选项，代码分享匿名，且默认关闭。</li>
+      <li>只有 Remote DNA 智能体会把你在其中输入的内容发送到我们的服务器和一个 AI 服务以获得回答。请不要在其中输入个人信息。</li>
       <li>完整政策见“我的”。</li>
     </ul>
   </details>
@@ -853,6 +945,7 @@
       <li><span>Conoces el número de modelo</span><a href="#es-model">🔎 Buscar por modelo</a></li>
       <li><span>Solo conoces la marca</span><a href="#es-tv">📺 Agregar una TV</a></li>
       <li><span>No sabes nada, o nada funcionó</span><a href="#es-teach">🎓 Enseñar mi TV</a></li>
+      <li><span>Prefieres que te guíen en un chat</span><a href="#es-agent">🧬 Agente Remote DNA</a></li>
       <li><span>Una Android TV o Google TV</span><a href="#es-atv">🤖 Google TV / Android TV</a></li>
       <li><span>Un receptor o caja IPTV</span><a href="#es-stb">📦 Receptor</a></li>
       <li><span>Un Fire TV, caja Android o Apple TV</span><a href="#es-bt">🔵 Bluetooth</a></li>
@@ -924,6 +1017,18 @@
     </ol>
     <p class="tip">¿Lo tocaste por error? No pasa nada: una pregunta lo muestra y el envío sigue donde se detuvo. ¿Ya buscaste sin resultado? El botón “Búsqueda profunda (más larga)” bajo “Comenzar” lleva directo a ella.</p>
   </details>
+  <details id="es-agent">
+    <summary><span class="ico">🧬</span>Agente Remote DNA <span class="new">Beta</span></summary>
+    <p>Una conversación que reconstruye el control de tu TV: describe la TV o escribe su número de modelo, y el agente encuentra el código y lo prueba contigo, botón por botón.</p>
+    <ol>
+      <li>Toca el botón flotante (una burbuja con una hélice) abajo en la pantalla, en cualquier pestaña. Arrástralo a un lado si tapa algo.</li>
+      <li>Escribe en tu idioma, por ejemplo “Mi TV Iris perdió su control, la etiqueta dice 43G7200”, o solo la marca.</li>
+      <li>Antes de probar un botón, el agente te pregunta: “Enviar”, “No enviar” o “Enviar otro botón”. Nada llega a la TV sin tu permiso.</li>
+      <li>Apunta el teléfono a la TV y responde con un toque: “Sí, la TV respondió” o “No, no pasó nada”. ¿La TV estaba apagada? Dilo y vuelve a enviar.</li>
+      <li>Tras dos o tres botones, el agente predice el resto. Toca “Guardar este control”: aparece en la pestaña del control como dispositivo activo.</li>
+    </ol>
+    <p class="tip">Necesita internet: lo que escribes se envía a nuestro servidor y a un servicio de IA para responderte, así que no escribas datos personales. La IA puede equivocarse: compruébalo tú. La señal sale del emisor infrarrojo de tu teléfono. ¿No ves el botón flotante? Actualiza la app.</p>
+  </details>
   <details id="es-fix">
     <summary><span class="ico">🔧</span>Arreglar un botón</summary>
     <ol>
@@ -984,6 +1089,14 @@
       <li>El teclado en pantalla de la TV sigue las flechas, no el puntero: muévete con las flechas y pulsa OK.</li>
     </ol>
     <p class="tip">Se muestran el estado de la TV y su volumen real, y abres YouTube, Netflix y más directamente. Google TV es la interfaz nueva de Android TV: se controlan igual.</p>
+    <h3>Enlace de depuración (avanzado)</h3>
+    <p>Algunas Android TV antiguas ignoran Fuente y Ajustes por Wi‑Fi. El enlace de depuración los envía por el puerto de desarrollador de la TV (ADB).</p>
+    <ol>
+      <li>En la TV: Ajustes → Preferencias del dispositivo → Información, y pulsa Compilación 7 veces.</li>
+      <li>En Opciones de desarrollador, activa Depuración USB o Depuración de red.</li>
+      <li>En el control Android TV de la app, abajo en la pantalla: “Conectar el enlace”, y elige “Permitir” en la pantalla de la TV.</li>
+    </ol>
+    <p class="tip">Opcional, y se recuerda para esta TV. Detenlo con “Apagar el enlace”. Requiere Android 8 o posterior en el teléfono. ¿No lo encuentras? Actualiza la app.</p>
   </details>
   <details id="es-bt">
     <summary><span class="ico">🔵</span>Control Bluetooth: Fire TV, cajas Android, Apple TV</summary>
@@ -1036,6 +1149,7 @@
       <li>El Bluetooth (“Dispositivos cercanos”) solo sirve para el control Bluetooth y el cursor: encontrar la TV, emparejarla y enviar teclas. En Android 11 o anterior, el sistema exige el permiso “Ubicación” para buscar dispositivos Bluetooth; no leemos ni guardamos tu ubicación.</li>
       <li>La red local sirve para controlar Smart TV y aires Gree directamente en casa, sin pasar por ningún servidor.</li>
       <li>La cuenta es opcional, y compartir códigos es anónimo y está desactivado salvo que lo actives.</li>
+      <li>Solo el agente Remote DNA envía lo que escribes en él a nuestro servidor y a un servicio de IA para responderte. No escribas datos personales en él.</li>
       <li>La política completa está en “Yo”.</li>
     </ul>
   </details>
@@ -1051,6 +1165,7 @@
       <li><span>Você sabe o número do modelo</span><a href="#pt-model">🔎 Buscar pelo modelo</a></li>
       <li><span>Você só sabe a marca</span><a href="#pt-tv">📺 Adicionar uma TV</a></li>
       <li><span>Você não sabe nada, ou nada funcionou</span><a href="#pt-teach">🎓 Ensinar minha TV</a></li>
+      <li><span>Prefere ser guiado em uma conversa</span><a href="#pt-agent">🧬 Agente Remote DNA</a></li>
       <li><span>Uma Android TV ou Google TV</span><a href="#pt-atv">🤖 Google TV / Android TV</a></li>
       <li><span>Um receptor ou TV box IPTV</span><a href="#pt-stb">📦 Receptor</a></li>
       <li><span>Um Fire TV, TV box Android ou Apple TV</span><a href="#pt-bt">🔵 Bluetooth</a></li>
@@ -1122,6 +1237,18 @@
     </ol>
     <p class="tip">Tocou sem querer? Sem problema: uma pergunta mostra isso, e o envio continua de onde parou. Já buscou sem resultado? O botão “Busca profunda (mais longa)” abaixo de “Começar” leva direto a ela.</p>
   </details>
+  <details id="pt-agent">
+    <summary><span class="ico">🧬</span>Agente Remote DNA <span class="new">Beta</span></summary>
+    <p>Uma conversa que reconstrói o controle da sua TV: descreva a TV ou digite o número do modelo, e o agente encontra o código e testa com você, botão por botão.</p>
+    <ol>
+      <li>Toque no botão flutuante (uma bolha com uma hélice) na parte de baixo da tela, em qualquer aba. Arraste-o para um lado se cobrir algo.</li>
+      <li>Escreva no seu idioma, por exemplo “Minha TV Iris perdeu o controle, a etiqueta diz 43G7200”, ou só a marca.</li>
+      <li>Antes de testar um botão, o agente pergunta: “Enviar”, “Não enviar” ou “Enviar outro botão”. Nada chega à TV sem a sua permissão.</li>
+      <li>Aponte o telefone para a TV e responda com um toque: “Sim, a TV respondeu” ou “Não, nada aconteceu”. A TV estava desligada? Diga isso e ele envia de novo.</li>
+      <li>Depois de dois ou três botões, o agente prevê o resto. Toque em “Salvar este controle”: ele aparece na aba do controle como dispositivo ativo.</li>
+    </ol>
+    <p class="tip">Precisa de internet: o que você escreve vai para o nosso servidor e para um serviço de IA para ser respondido, então não digite dados pessoais. A IA pode errar: confira você mesmo. O sinal sai do emissor infravermelho do seu telefone. Não vê o botão flutuante? Atualize o app.</p>
+  </details>
   <details id="pt-fix">
     <summary><span class="ico">🔧</span>Consertar um botão</summary>
     <ol>
@@ -1182,6 +1309,14 @@
       <li>O teclado na tela da TV segue as setas, não o ponteiro: mova-se com as setas e pressione OK.</li>
     </ol>
     <p class="tip">O estado da TV e o volume real aparecem, e você abre YouTube, Netflix e outros direto. Google TV é a interface nova da Android TV: as duas são controladas do mesmo jeito.</p>
+    <h3>Ligação de depuração (avançado)</h3>
+    <p>Algumas Android TV antigas ignoram Fonte e Configurações pelo Wi‑Fi. A ligação de depuração envia esses botões pela porta de desenvolvedor da TV (ADB).</p>
+    <ol>
+      <li>Na TV: Configurações → Preferências do dispositivo → Sobre, e toque 7 vezes em Versão.</li>
+      <li>Em Opções do desenvolvedor, ative Depuração USB ou Depuração de rede.</li>
+      <li>No controle Android TV do app, na parte de baixo da tela: “Conectar a ligação”, e escolha “Permitir” na tela da TV.</li>
+    </ol>
+    <p class="tip">Opcional, e lembrado para esta TV. Pare com “Desligar a ligação”. Requer Android 8 ou superior no telefone. Não encontrou? Atualize o app.</p>
   </details>
   <details id="pt-bt">
     <summary><span class="ico">🔵</span>Controle Bluetooth: Fire TV, TV boxes Android, Apple TV</summary>
@@ -1234,6 +1369,7 @@
       <li>O Bluetooth (“Dispositivos próximos”) serve só para o controle Bluetooth e o cursor: encontrar a TV, parear e enviar teclas. No Android 11 ou anterior, o sistema exige a permissão “Localização” para procurar aparelhos Bluetooth; não lemos nem guardamos sua localização.</li>
       <li>A rede local serve para controlar Smart TVs e ares-condicionados Gree direto em casa, sem passar por nenhum servidor.</li>
       <li>A conta é opcional, e o compartilhamento de códigos é anônimo e fica desligado até você ativá-lo.</li>
+      <li>Só o agente Remote DNA envia o que você escreve nele para o nosso servidor e para um serviço de IA para ser respondido. Não digite dados pessoais nele.</li>
       <li>A política completa está em “Eu”.</li>
     </ul>
   </details>
